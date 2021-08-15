@@ -1,0 +1,189 @@
+#category > p {
+    position: absolute;
+    height: 5vh;
+    left: 35px;
+    margin-top: 5vh;
+
+    font-family: 'Heebo', sans-serif;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 25px;
+    line-height: 51px;
+
+    color: #33353E;
+}
+
+#category > i {
+    position: absolute;
+    height: 5vh;
+    left: 2px;
+    margin-top: 5vh;
+
+    font-size: 21px;
+    line-height: 60px;
+
+    color: #33353E;
+}
+
+#ct_hr {
+    position: absolute;
+    left: 14%;
+    right: 14%;
+    bottom: 78.6%;
+    top: 15%;
+    height: 2px;
+
+    border: 0;
+    border-radius: 100rem;
+
+    background-color: #e7ebf0;
+}
+#new_schedule {
+    position: fixed;
+    right: 3%;
+    bottom: 4%;
+    width: 4.5em;
+    height: 4.5em;
+    border: 0;
+    outline: 0;
+    border-radius: 100%;
+    background-color: rgb(50, 125, 255);
+    z-index: 1;
+    cursor: pointer;
+    transition: background-color 150ms linear, opacity 100ms ease-out;
+}
+
+#new_schedule > div {
+    width: 120%;
+    height: 120%;
+    border-radius: 100%;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+    z-index: -1;
+
+    background-color: rgba(50, 125, 255, 0.225);
+
+    transition: all 300ms linear;
+}
+
+#new_schedule:hover {
+    right: 2.875%;
+    bottom: 3.775%;
+    width: 4.75em;
+    height: 4.75em;
+
+    background-color: #4688ff;
+}
+
+#new_schedule:active {
+    background: #276de6;
+}
+
+#new_schedule > i {
+    position: absolute;
+    top: 14px;
+    left: 15px;
+    color: #ffffff;
+    font-size: 2.5em;
+    transition: color 150ms linear;
+}
+
+#new_schedule:hover > i {
+    top: 14px;
+    left: 15px;
+    font-size: 2.7em;
+}
+
+#new_schedule:active > i {
+    color: #c2c2c2;
+}
+
+#new_schedule:hover > div {
+    width: 130%;
+    height: 130%;
+}
+
+#new_schedule:active > div {
+    background-color: rgba(50, 125, 255, 0.175);
+}
+
+#sch_div {
+    position: absolute;
+    left: 14%;
+    right: 14%;
+    top: 16%;
+}
+
+#sch_div > div {
+    position: absolute;
+    left: 40px;
+    right: 40px;
+    height: 125px;
+    display: flex;
+}
+
+#sch_div > div > hr {
+    position: absolute;
+    left: -40px;
+    right: -40px;
+    top: 93%;
+    height: 2px;
+
+    border: 0;
+    border-radius: 100rem;
+
+    background-color: #e7ebf0;
+
+    animation: hr_fade 1s;
+}
+
+#sch_div > div > h1 {
+    position: absolute;
+    top: 13%;
+    bottom: 100%;
+
+    font-family: 'Heebo', sans-serif;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 34px;
+    display: flex;
+    align-items: center;
+
+    color: #33353E;
+
+    animation: sch_fade 1s;
+}
+
+@keyframes sch_fade {
+    from {
+        padding-top: 50px;
+        opacity: 0;
+    } to {
+        padding-top: 0;
+        opacity: 1;
+    }
+}
+
+@keyframes ct_hr_fade {
+    from {
+        top: 189px;
+        opacity: 0;
+    } to {
+        top: 139px;
+        opacity: 1;
+    }
+}
+
+@keyframes hr_fade {
+    from {
+        top: 166px;
+        opacity: 0;
+    } to {
+        top: 116px;
+        opacity: 1;
+    }
+}
