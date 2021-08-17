@@ -13,6 +13,13 @@
     color: #33353E;
 }
 
+#category {
+    position: absolute;
+    width: 90vw;
+    margin-top: 5vh;
+    margin-left: 14vw;
+}
+
 #category > i {
     position: absolute;
     height: 5vh;
