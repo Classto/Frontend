@@ -4,6 +4,10 @@ import icon from './icon.svg';
 import './introduce.css';
 
 class Introduce extends Component {
+  move_to_github() {
+    window.location.href = "https://github.com/Classto/Frontend"
+  }
+
   render() {
     return (
       <div>
@@ -12,7 +16,7 @@ class Introduce extends Component {
           <div id="m_icon_div">
             <img src={icon} alt="icon"/>
           </div>
-          <button id="m_get_github" onclick="location.href = 'https\://github.com/Classto'">
+          <button id="m_get_github" onClick={ this.move_to_github }>
             <i className="fab fa-github fa-3x"></i>
           </button>
           <Link to="/editor">
