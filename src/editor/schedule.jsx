@@ -1,0 +1,31 @@
+import { Component } from 'react';
+import './schedule.css';
+
+class Schedule extends Component {
+  render() {
+    const { meetings } = this.props;
+    const schedule = meetings.map((meet) =>
+      <li>
+        <div className="schedule">
+          <h1>{ meet }</h1>
+          <div id="t_vl1"></div>
+          <div id="t_vl2"></div>
+          <i id="title_i1" className="fas fa-edit"></i><i id="title_i2" className="fas fa-external-link-alt"></i><i id="time_i" className="fas fa-clock"></i><span id="time"></span>
+          <div id="m_vl1" style={{ left: '39px' }}></div>
+          <i id="name_i" className="fas fa-id-badge" style={{ left: '55px' }}></i> 
+          <span id="name" style={{ left: '81px' }}></span>
+          <div id="m_vl2" style={{ left: '92px' }}></div>
+          <span id="id" style={{ left: '105px' }}></span>
+          <hr />
+        </div>
+      </li>
+    )
+    return (
+      <div id="schedule">
+        <ul>{ schedule }</ul>
+      </div>
+    );
+  }
+}
+
+export default Schedule;

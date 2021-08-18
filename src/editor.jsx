@@ -1,8 +1,10 @@
 import { Component } from 'react';
+import Schedule from './editor/schedule';
 import './editor.css';
 
 class Editor extends Component {
   render() {
+    const meetings = [1,2,3,4];
     return (
       <div>
         <div id="category">
@@ -10,7 +12,9 @@ class Editor extends Component {
           <i className="fas fa-chevron-down fa-2x"></i>
         </div>
         <hr id="ct_hr"></hr>
-        <div id="sch_div"></div>
+        <div id="sch_div">
+          <Schedule meetings={ meetings }/>
+        </div>
         <button id="new_schedule">
           <i id="add_btn_plus" className="fas fa-plus"></i>
           <div></div>
