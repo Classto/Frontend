@@ -5,7 +5,7 @@ class Schedule extends Component {
   render() {
     const { meetings } = this.props;
     const schedule = meetings.map((meet) =>
-      <li>
+      <li key={ meet }>
         <div className="schedule">
           <h1>{ meet }</h1>
           <div id="t_vl1"></div>
