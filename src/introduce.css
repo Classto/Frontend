@@ -52,16 +52,36 @@ p::selection, h1::selection {
 }
 
 .introduce {
-    margin-right: 10%;
-    margin-left: 8%;
+    position: absolute;
+    left: 40%;
+    top: 40%;
+    transform: translate(-50%,-40%);
+    width: 70%;
+    /* margin-right: 10%;
+    margin-left: 8%; */
+}
+
+@media screen and (max-width: 700px) {
+    .introduce {
+        left: 30%;
+    }
+    #copyright {
+        left: 10%;
+    }
+    #m_icon_div {/* 저 대충 그 처음에 로드되는 스캐쥴과 나중에 생성되는거 나눠도 되나요 넹 마음대로 하셈 */
+        visibility: hidden;
+    }
+    #m_title {
+        font-size: 1em;
+    }
 }
 
 #m_title {
     position: relative;
     top: 211px;
-    left: 190px; /* 190px */
+    left: 190px;/*190px */
     width: 60%; /* 815px */
-    height: 275px;
+    height: 30%; /* 275px */
     text-align: left;
     font-family: 'Heebo', sans-serif;
     font-size: 90px;
@@ -78,7 +98,9 @@ p::selection, h1::selection {
 #m_icon_div {
     position: relative;
     top: -160px;
-    left: 1040px; /* 1040px */
+    left: 75%; /*1040px*/
+    height: auto;
+    width: auto;
     animation: m_icon_enable 2s;
 }
 
@@ -100,7 +122,7 @@ p::selection, h1::selection {
 
 #m_get_start {
     position: relative;
-    top: -297px;
+    top: -297px; /* -297px */
     left: 205px;
     width: 240px;
     height: 64px;
