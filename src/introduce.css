@@ -61,14 +61,15 @@ p::selection, h1::selection {
     margin-left: 8%; */
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 650px) {
     .introduce {
-        left: 30%;
+        left: 5%;
     }
     #copyright {
-        left: 10%;
+        text-align: center;
+        left: -10%;
     }
-    #m_icon_div {/* 저 대충 그 처음에 로드되는 스캐쥴과 나중에 생성되는거 나눠도 되나요 넹 마음대로 하셈 */
+    #m_icon_div {
         visibility: hidden;
     }
     #m_title {
