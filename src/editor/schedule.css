@@ -114,7 +114,7 @@ ul {
 }
 
 #time {
-    position: absolute;
+    position: relative;
     top: 64%;
     bottom: 100%;
     left: 30px;
@@ -131,7 +131,7 @@ ul {
 }
 
 #m_vl1 {
-    position: absolute;
+    position: relative;
     width: 2px;
     height: 20px;
     top: 63%;
@@ -144,7 +144,7 @@ ul {
 }
 
 #name_i {
-    position: absolute;
+    position: relative;
     top: 63%;
     bottom: 100%;
     left: 149px;
@@ -157,7 +157,7 @@ ul {
 }
 
 #name {
-    position: absolute;
+    position: relative;
     top: 64%;
     bottom: 100%;
     left: 175px;
@@ -174,7 +174,7 @@ ul {
 }
 
 #m_vl2 {
-    position: absolute;
+    position: relative;
     width: 2px;
     height: 20px;
     top: 63%;
@@ -187,7 +187,7 @@ ul {
 }
 
 #id {
-    position: absolute;
+    position: relative;
     top: 64%;
     bottom: 100%;
     margin-top: -7px;

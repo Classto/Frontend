@@ -13,12 +13,12 @@ class Schedule extends Component {
           <i id="title_i1" className="fas fa-edit"></i>
           <i id="title_i2" className="fas fa-external-link-alt"></i>
           <i id="time_i" className="fas fa-clock"></i>
-          <span id="time">time</span>
+          <span id="time">{ meet.time }</span>
           <div id="m_vl1" style={{ left: '39px' }}></div>
           <i id="name_i" className="fas fa-id-badge" style={{ left: '55px' }}></i> 
-          <span id="name" style={{ left: '81px' }}>{ meet.link }</span>
-          <div id="m_vl2" style={{ left: '92px' }}></div>
-          <span id="id" style={{ left: '105px' }}>{ meet.id }</span>
+          <span id="name" style={{ left: '67px' }}>{ meet.link }</span>
+          <div id="m_vl2" style={{ left: '78px' }}></div>
+          <span id="id" style={{ left: '90px' }}>{ meet.id }</span>
           <hr />
         </div>
       </li>
