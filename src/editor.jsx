@@ -4,7 +4,8 @@ import './editor.css';
 
 class Editor extends Component {
   render() {
-    const meetings = [1,2,3,4];
+    const { params } = this.props.match
+    const meetings = JSON.parse(window.localStorage.getItem("meetings"))[params['category']]
     return (
       <div>
         <div id="category">

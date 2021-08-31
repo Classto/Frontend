@@ -5,6 +5,21 @@ import Introduce from './introduce.jsx';
 
 class App extends Component {
   render() {
+    if (window.localStorage.getItem("meetings") === null) {
+      window.localStorage.setItem("meetings", JSON.stringify(
+        {
+          "sample":[
+            {
+              "name": "sample meeting",
+              "time": null,
+              "link": "meeting link",
+              "id":1234
+            }
+          ]
+        }
+      ))
+      window.localStorage.setItem("recent_editor", "sample")
+    }
     return (
       <div>
         <BrowserRouter>
