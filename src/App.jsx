@@ -9,7 +9,7 @@ class App extends Component {
       <div>
         <BrowserRouter>
           <Route exact path="/" component={Introduce}/>
-          <Route path="/editor" component={Editor}/>
+          <Route path="/editor/:category" component={Editor}/>
         </BrowserRouter>
       </div>
     )
