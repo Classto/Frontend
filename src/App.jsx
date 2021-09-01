@@ -11,9 +11,15 @@ class App extends Component {
           "sample":[
             {
               "name": "sample meeting",
-              "time": null,
+              "time": "12:59",
               "link": "meeting link",
               "id":1234
+            },
+            {
+              "name": "meet",
+              "time": "00:00",
+              "link": "link",
+              "id":1
             }
           ]
         }
