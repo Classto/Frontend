@@ -9,7 +9,7 @@
 .schedule > hr {
     position: absolute;
     left: -40px;
-    right: -40px;
+    right: 1%;
     top: 93%;
     height: 2px;
 
