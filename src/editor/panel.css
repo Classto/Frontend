@@ -1,0 +1,459 @@
+#add_pnl_background {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    filter: opacity(70%);
+    transition: filter 300ms linear;
+}
+
+#add_pnl {
+    position: fixed;
+    width: 1000px;
+    height: 600px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+    border-radius: 5px;
+
+    background-color: white;
+}
+
+#add_pnl_header > p {
+    position: absolute;
+    top: -2.5%;
+    left: 3%;
+
+    font-family: 'Heebo', sans-serif;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 38px;
+    display: flex;
+    align-items: center;
+
+    color: #327DFF;
+}
+
+#add_pnl_header > i {
+    position: absolute;
+    top: 6.25%;
+    right: 3%;
+
+    font-size: 25px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    color: #bbbbbb;
+}
+
+#add_pnl_header > hr {
+    position: absolute;
+    left: 0%;
+    right: 65%;
+    bottom: 85%;
+    height: 2px;
+
+    border: 0;
+    border-radius: 100rem;
+
+    background-color: #e7ebf0;
+}
+
+#add_pnl_body {
+    position: absolute;
+    left: 3%;
+    right: 3%;
+    bottom: 10%;
+    height: 72.5%;
+}
+
+#add_pnl_vl {
+    position: absolute;
+    top: 0px;
+    bottom: 75px;
+    width: 2px;
+    left: 50%;
+    transform: translateX(50%);
+    background-color: #e7ebf0;
+    border: 0;
+    border-radius: 100rem;
+}
+
+#add_pnl_title_input:focus, #add_pnl_time_input:focus, #add_pnl_ctgr_input:focus, #add_pnl_nickname_input:focus, #add_pnl_id_input:focus, #add_pnl_pw_input:focus, #add_pnl_type_input:focus, #add_pnl_link_input:focus {
+    border: #327DFF solid 1.5px;
+}
+
+#add_pnl_title {
+    position: absolute;
+    margin-top: 0%;
+    left: 1.25%;
+
+    font-family: 'Heebo', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 23px;
+    color: #4a4c53;
+    display: flex;
+    align-items: center;
+
+    color: #5c5f64;
+}
+
+#add_pnl_title_input {
+    position: absolute;
+    top: 8.5%;
+    left: 1.25%;
+
+    width: 325px;
+
+    font-family: 'Heebo', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 15px;
+    display: flex;
+    outline: none;
+    border: #e7ebf0 solid 1.5px;
+    border-radius: 4px;
+    align-items: center;
+
+    transition: border 100ms linear;
+}
+
+#add_pnl_ctgr {
+    position: absolute;
+    margin-top: 0%;
+    left: 55%;
+
+    font-family: 'Heebo', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 23px;
+    display: flex;
+    align-items: center;
+
+    color: #5c5f64;
+}
+
+#add_pnl_ctgr_input {
+    position: absolute;
+    top: 8.5%;
+    left: 55%;
+
+    width: 325px;
+
+    font-family: 'Heebo', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 15px;
+    display: flex;
+    outline: none;
+    color: #4a4c53;
+    border: #e7ebf0 solid 1.5px;
+    border-radius: 4px;
+    align-items: center;
+
+    transition: border 100ms linear;
+}
+
+#add_pnl_time {
+    position: absolute;
+    margin-top: 10%;
+    left: 1.25%;
+
+    font-family: 'Heebo', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 23px;
+    display: flex;
+    align-items: center;
+
+    color: #5c5f64;
+}
+
+#add_pnl_time_input {
+    position: absolute;
+    top: 30.05%;
+    left: 1.25%;
+
+    font-family: 'Heebo', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 15px;
+    display: flex;
+    outline: none;
+    color: #4a4c53;
+    border: #e7ebf0 solid 1.5px;
+    border-radius: 4px;
+    align-items: center;
+
+    transition: border 100ms linear;
+}
+
+#add_pnl_day {
+    position: absolute;
+    margin-top: 10%;
+    left: 55%;
+
+    font-family: 'Heebo', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 23px;
+    display: flex;
+    align-items: center;
+
+    color: #5c5f64;
+}
+
+#add_pnl_day_input {
+    position: absolute;
+    top: 30.05%;
+    left: 55%;
+
+    font-family: 'Heebo', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 15px;
+    display: flex;
+    outline: none;
+    border: none;
+    color: #4a4c53;
+    border-radius: 4px;
+    align-items: center;
+
+    transition: border 100ms linear;
+}
+
+#add_pnl_nickname {
+    position: absolute;
+    margin-top: 20%;
+    left: 1.25%;
+
+    font-family: 'Heebo', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 23px;
+    color: #5c5f64;
+    display: flex;
+    align-items: center;
+}
+
+#add_pnl_nickname_input {
+    position: absolute;
+    top: 51.8%;
+    left: 1.25%;
+
+    width: 325px;
+
+    font-family: 'Heebo', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 15px;
+    display: flex;
+    outline: none;
+    border: #e7ebf0 solid 1.5px;
+    border-radius: 4px;
+    align-items: center;
+
+    transition: border 100ms linear;
+}
+
+#add_pnl_option {
+    position: absolute;
+    margin-top: 20%;
+    left: 55%;
+
+    font-family: 'Heebo', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 23px;
+    display: flex;
+    align-items: center;
+
+    color: #5c5f64;
+}
+
+#add_pnl_option_input {
+    position: absolute;
+    top: 51.8%;
+    left: 55%;
+
+    font-family: 'Heebo', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 15px;
+    display: flex;
+    outline: none;
+    border: none;
+    color: #4a4c53;
+    border-radius: 4px;
+    align-items: center;
+
+    transition: border 100ms linear;
+}
+
+#add_pnl_type {
+    position: absolute;
+    margin-top: 30%;
+    left: 1.25%;
+
+    font-family: 'Heebo', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 23px;
+    display: flex;
+    align-items: center;
+
+    color: #5c5f64;
+}
+
+#add_pnl_type_input {
+    position: absolute;
+    top: 73.65%;
+    left: 1.25%;
+
+    width: 325px;
+
+    font-family: 'Heebo', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 15px;
+    display: flex;
+    outline: none;
+    color: #4a4c53;
+    border: #e7ebf0 solid 1.5px;
+    border-radius: 4px;
+    align-items: center;
+
+    transition: border 100ms linear, background-color 100ms linear;
+}
+
+#add_pnl_id, #add_pnl_link {
+    position: absolute;
+    margin-top: 30%;
+    left: 55%;
+
+    font-family: 'Heebo', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 23px;
+    color: #5895ff;
+    display: flex;
+    align-items: center;
+}
+
+#add_pnl_id_input {
+    position: absolute;
+    top: 73.65%;
+    left: 55%;
+
+    width: 150px;
+    color: #327DFF;
+    font-family: 'Heebo', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 15px;
+    display: flex;
+    outline: none;
+    border: #e7ebf0 solid 1.5px;
+    border-radius: 4px;
+    align-items: center;
+
+    transition: border 100ms linear;
+}
+
+#add_pnl_pw {
+    position: absolute;
+    margin-top: 30%;
+    left: 73.5%;
+
+    font-family: 'Heebo', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 23px;
+    color: #5895ff;
+    display: flex;
+    align-items: center;
+}
+
+#add_pnl_pw_input {
+    position: absolute;
+    top: 73.65%;
+    left: 73.5%;
+
+    width: 150px;
+    color: #327DFF;
+    font-family: 'Heebo', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 15px;
+    display: flex;
+    outline: none;
+    border: #e7ebf0 solid 1.5px;
+    border-radius: 4px;
+    align-items: center;
+
+    transition: border 100ms linear;
+}
+
+#add_pnl_link_input {
+    position: absolute;
+    top: 73.65%;
+    left: 55%;
+
+    width: 325px;
+    color: #327DFF;
+    font-family: 'Heebo', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 15px;
+    display: flex;
+    outline: none;
+    border: #e7ebf0 solid 1.5px;
+    border-radius: 4px;
+    align-items: center;
+
+    transition: border 100ms linear;
+}
+
+#add_pnl > button {
+    position: absolute;
+    width: 20%;
+    height: 50px;
+    left: 40%;
+    bottom: 30px;
+    outline: none;
+    border: none;
+    background-color: #327dff;
+    border-radius: 10px;
+    box-shadow: 0 6px 25px rgba(50, 125, 255, 0.45);
+    transition: background 150ms linear;
+    cursor: pointer;
+}
+
+#add_pnl > button > p {
+    position: absolute;
+    top: -23px;
+    left: 54px;
+
+    color: #fff;
+    font-family: 'Heebo', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 28px;
+    text-align: center;
+    transition: color 150ms linear;
+}
+
+#add_pnl > button:hover {
+    background: #4688ff;
+}
+
+#add_pnl > button:active {
+    background: #276de6;
+}
+
+#add_pnl > button:active > p{
+    color: #c2c2c2;
+}
