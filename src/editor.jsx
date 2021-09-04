@@ -1,5 +1,6 @@
 import { Component } from 'react';
 import Schedule from './editor/schedule';
+import Panel from './editor/panel';
 import './editor.css';
 
 class Editor extends Component {
@@ -20,6 +21,7 @@ class Editor extends Component {
           <i id="add_btn_plus" className="fas fa-plus"></i>
           <div></div>
         </button>
+        <Panel display={ false }/>
       </div>
     );
   }
