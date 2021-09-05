@@ -3,6 +3,12 @@ import './schedule.css';
 
 class Schedule extends Component {
   render() {
+    // try {
+    //   const { m } = this.props;
+    // } catch(errror) {
+    //   if (errror instanceof TypeError) {
+    //   }
+    // }
     const { meetings } = this.props;
     const schedule = meetings.map((meet) =>
       <li key={ meet.name }>
