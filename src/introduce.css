@@ -25,24 +25,6 @@ p::selection, h1::selection {
     animation: m_icon_enable 2s;
 }
 
-@keyframes m_title_enable {
-    from {
-        opacity: 0;
-        top: 195px;
-    } to {
-        opacity: 1;
-        top: 210px;
-    }
-}
-
-@keyframes m_icon_enable {
-    from {
-        opacity: 0;
-    } to {
-        opacity: 1;
-    }
-}
-
 @keyframes e_pnl_enable {
     from {
         left: -25vw;
@@ -123,9 +105,9 @@ p::selection, h1::selection {
 
 #m_get_start {
     position: relative;
-    top: -297px; /* -297px */
-    left: 205px;
-    width: 240px;
+    top: -297px;
+    left: 215px;
+    width: 235px;
     height: 64px;
     background: #327DFF 0 0 no-repeat padding-box;
     box-shadow: 0 6px 25px rgba(50, 125, 255, 0.45);
