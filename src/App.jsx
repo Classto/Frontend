@@ -13,13 +13,17 @@ class App extends Component {
               "name": "sample meeting",
               "time": "12:59",
               "link": "meeting link",
-              "id":1234
+              "id": 1234,
+              "password": 1234,
+              "category":"sample"
             },
             {
               "name": "meet",
               "time": "00:00",
               "link": "link",
-              "id":1
+              "id":1,
+              "password": 1234,
+              "category":"sample"
             }
           ]
         }
