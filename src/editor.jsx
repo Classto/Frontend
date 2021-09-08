@@ -17,11 +17,11 @@ class Editor extends Component {
         <div id="sch_div">
           <Schedule meetings={ meetings }/>
         </div>
-        <button id="new_schedule">
+        {/* <button id="new_schedule" onClick={ () => {display = true} }>
           <i id="add_btn_plus" className="fas fa-plus"></i>
           <div></div>
-        </button>
-        <Panel display={ false }/>
+        </button> */}
+        <Panel display={ display }/>
       </div>
     );
   }
