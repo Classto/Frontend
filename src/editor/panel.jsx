@@ -1,18 +1,68 @@
-import { Component } from 'react';
+import React, { Component } from 'react';
 import './panel.css';
 
+class newMeeting {
+  constructor(title, category, time, days, id, password, link, options = {}) {
+    this.title =      title;
+    this.category =   category;
+    this.time =       time;
+    this.days =       days;
+    this.id =         id;
+    this.password =   password;
+    this.link =       link;
+    this.nickname =   options['nickname'] !== undefined ? options['nickname'] : null;
+    this.camera =     options['camera'] !== undefined ? options['camera'] : null;
+    this.microphone = options['microphone'] !== undefined ? options['microphone'] : null;
+  }
+  info() {
+    return({
+      "name" : this.title,
+      "time" : this.time,
+      "link" : this.link,
+      "id"   : this.id,
+      "password" : this.password,
+      "category" : this.category,
+      "options"  : {
+        "camera"     : this.camera,
+        "microphone" : this.microphone,
+        "nickname"   : this.nickname
+      }
+    })
+  }
+}
 class Panel extends Component {
+  state = {
+    display: 'none'
+  }
+  handel_change() {
+    console.log('its a change')
+  }
+  open_close_panel() {
+    switch(this.state.display) {
+      default:
+        break
+      case 'none':
+        this.setState({
+          display: 'block'
+        })
+        break
+      case 'block':
+        this.setState({
+          display: 'none'
+        })
+        break
+    }
+  }
   render() {
-    const { display } = this.props;
-    console.log(display)
     return (
-      <div id="pannel" style={{display: 'none'}}>
+      <div>
+      <div id="pannel" style={{ display: this.state.display }}>
       <div id='add_pnl_background'></div>
       
       <nav id="add_pnl">
         <div id="add_pnl_header">
           <p>Create Schedule</p>
-          <i id="add_pnl_header_i" className="fas fa-times"></i>
+          <i id="add_pnl_header_i" className="fas fa-times" onClick={ this.open_close_panel.bind(this) }></i>
           <hr></hr>
         </div>
         
@@ -68,6 +118,11 @@ class Panel extends Component {
           <p>Submit</p>
         </button>
       </nav>
+      </div>
+      <button id="new_schedule" onClick={ this.open_close_panel.bind(this) }>
+        <i id="add_btn_plus" className="fas fa-plus"></i>
+        <div></div>
+      </button>
       </div>
     )
   }
