@@ -21,7 +21,7 @@ class Editor extends Component {
           <i id="add_btn_plus" className="fas fa-plus"></i>
           <div></div>
         </button> */}
-        <Panel display={ display }/>
+        <Panel/>
       </div>
     );
   }
