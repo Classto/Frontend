@@ -102,8 +102,8 @@ class Panel extends Component {
       
           <p id="add_pnl_type">Connection type</p>
           <select id="add_pnl_type_input">
-            <option id="fst" value="idpw" value="Zoom Meeting ID & PW"></option>
-            <option id="lst" value="link" value="Zoom Meeting Link"></option>
+            <option id="fst" value="idpw">Zoom Meeting ID & PW</option>
+            <option id="lst" value="link">oom Meeting Link</option>
           </select>
       
           <p id="add_pnl_id">Meeting ID</p>
