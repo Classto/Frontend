@@ -69,7 +69,7 @@ class Panel extends Component {
         <div id="add_pnl_body">
           <hr id="add_pnl_vl"></hr>
           <p id="add_pnl_title">Schedule Title</p>
-          <input id="add_pnl_title_input" type="text" placeholder="Classto Schedule" maxLength="30" value=""></input>
+          <input id="add_pnl_title_input" type="text" placeholder="Classto Schedule" maxLength="30"></input>
       
           <p id="add_pnl_ctgr">Schedule Category</p>
           <select id="add_pnl_ctgr_input">
