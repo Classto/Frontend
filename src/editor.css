@@ -33,16 +33,17 @@ label, label > input {
 
 #category {
     position: absolute;
-    width: 90vw;
-    margin-top: 5vh;
+    height: 50px;
+    width: 150px;
     margin-left: 14vw;
 }
 
 #category > p {
-    position: absolute;
+    position: relative;
+
     height: 5vh;
-    left: 32.5px;
-    margin-top: 5.5vh;
+    margin-left: 32.5px;
+    margin: 0;
 
     font-family: 'Heebo', sans-serif;
     font-style: normal;
@@ -54,21 +55,20 @@ label, label > input {
 }
 
 #category > i {
-    position: absolute;
-    height: 5vh;
-    left: 2px;
-    margin-top: 5vh;
+    position: relative;
+
+    margin-left: 2px;
 
     font-size: 21px;
-    line-height: 60px;
 
     color: #33353E;
 }
 
 #ct_hr {
     position: absolute;
-    left: 14%;
-    right: 12vw;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 75vw;
     bottom: 78.6%;
     top: 15%;
     height: 2px;
@@ -81,8 +81,9 @@ label, label > input {
 
 #sch_div {
     position: absolute;
-    left: 14%;
-    right: 14%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 75vw;
     top: 16%;
 }
 

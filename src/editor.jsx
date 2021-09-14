@@ -9,10 +9,10 @@ class Editor extends Component {
     const meetings = JSON.parse(window.localStorage.getItem("meetings"))[params['category']]
     return (
       <div>
-        <div id="category">
+        <button id="category">
           <p>Sample</p>
           <i className="fas fa-chevron-down fa-2x"></i>
-        </div>
+        </button>
         <hr id="ct_hr"></hr>
         <div id="sch_div">
           <Schedule meetings={ meetings }/>
