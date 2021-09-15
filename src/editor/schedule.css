@@ -113,14 +113,14 @@ ul {
 
 #time {
     position: relative;
-    top: 64%;
+    top: 65%;
     bottom: 100%;
     left: 30px;
     margin-top: -7px;
     width: auto;
     font-family: 'Heebo', sans-serif;
     font-style: normal;
-    font-weight: 900;
+    font-weight: 800;
     font-size: 21px;
 
     color: #327DFF;
@@ -156,14 +156,14 @@ ul {
 
 #name {
     position: relative;
-    top: 64%;
+    top: 65%;
     bottom: 100%;
     left: 175px;
     margin-top: -7px;
     width: auto;
     font-family: 'Heebo', sans-serif;
     font-style: normal;
-    font-weight: 900;
+    font-weight: 800;
     font-size: 21px;
 
     color: #327DFF;
@@ -186,13 +186,13 @@ ul {
 
 #id {
     position: relative;
-    top: 64%;
+    top: 65%;
     bottom: 100%;
     margin-top: -7px;
 
     font-family: 'Heebo', sans-serif;
     font-style: normal;
-    font-weight: 900;
+    font-weight: 800;
     font-size: 21px;
 
     color: #327DFF;

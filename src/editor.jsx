@@ -4,6 +4,12 @@ import Panel from './editor/panel';
 import './editor.css';
 
 class Editor extends Component {
+  componentDidMount() {
+    document.getElementById('category').addEventListener('click', (event) => {
+      
+    });
+  }
+
   render() {
     const { params } = this.props.match
     const meetings = JSON.parse(window.localStorage.getItem("meetings"))[params['category']]
