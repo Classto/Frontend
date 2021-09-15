@@ -36,7 +36,7 @@ label, label > input {
     top: 15%;
     margin-top: -50px;
     height: 50px;
-    width: 150px;
+    width: 145px;
     margin-left: 12.5vw;
 
     outline: none;
@@ -64,7 +64,7 @@ label, label > input {
 
     font-family: 'Heebo', sans-serif;
     font-style: normal;
-    font-weight: 900;
+    font-weight: 800;
     font-size: 25px;
 
     color: #33353E;
@@ -72,7 +72,7 @@ label, label > input {
 
 #category > i {
     position: absolute;
-    margin-left: -60px;
+    margin-left: -58px;
     top:50%;
     transform:translateY(-50%);
     font-size: 21px;
