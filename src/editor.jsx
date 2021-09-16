@@ -6,8 +6,20 @@ import './editor.css';
 
 class Editor extends Component {
   componentDidMount() {
+    let isMenuOpen = false;
+
+    document.getElementById('Menu').style.display = 'none';
+
     document.getElementById('category').addEventListener('click', (event) => {
-      
+      const menuPnl = document.getElementById('Menu');
+
+      if (isMenuOpen) {
+        menuPnl.style.display = 'none';
+        isMenuOpen = false;
+      } else if (!isMenuOpen) {
+        menuPnl.style.display = 'block';
+        isMenuOpen = true;
+      }
     });
   }
 
@@ -25,10 +37,11 @@ class Editor extends Component {
           <div></div>
         </button> */}
         <Panel/>
-        <div id="category">
-          <p>{ params['category']}</p>
-          <i className="fas fa-chevron-down fa-2x"></i>
-
+        <div id="category-div">
+          <div id="category">
+            <p>{ params['category']}</p>
+            <i className="fas fa-chevron-down fa-2x"></i>
+          </div>
           <Menu/>
         </div>
       </div>
