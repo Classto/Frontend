@@ -3,7 +3,7 @@ import './menu.css';
 
 class Menu extends Component {
   render() {
-    const categorys = ['sample', 'school']
+    const categorys = ['sample', 'school', 'game', 'this is very long category']
     const menu = categorys.map((category) => 
       <li key={ category }>{ category }</li>
     )
