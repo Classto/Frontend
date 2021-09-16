@@ -7,10 +7,12 @@
     margin-left: -15px;
     margin-right: -15px;
 
-    background-color: #327dff;
+    background-color: #ffffff;
     text-align: center;
 
     border-radius: 7px;
+
+    box-shadow: 0 3px 15px rgba(50, 125, 255, 0.3);
 }
 
 #Menu > div {
@@ -23,7 +25,7 @@
 
     transform: rotate(45deg);
     -webkit-transform: rotate(45deg);
-    background-color: #327dff;
+    background-color: #ffffff;
 
     border-radius: 3px;
 }
@@ -40,7 +42,7 @@
     font-style: normal;
     font-weight: 200;
     font-size: 20px;
-    color: #ffffff;
+    color: #33353E;
 
     text-align: left;
     white-space: nowrap;
