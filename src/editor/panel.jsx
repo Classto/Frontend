@@ -34,17 +34,17 @@ class Panel extends Component {
   state = {
     display: 'none',
   }
-  componentDidUpdate() {
-    if(this.state.display === 'block') {
-      return null
-    }
-    this.setState({
-      new_meeting: new newMeeting()
-    })
-    console.log('hello')
-  }
-  handel_change() {
-    console.log('its a change')
+  // componentDidUpdate() {
+  //   if(this.state.display === 'block') {
+  //     return null
+  //   }
+  //   this.setState({
+  //     new_meeting: new newMeeting()
+  //   })
+  //   console.log('hello')
+  // }
+  new_schedule() {
+    new newMeeting()
   }
   open_close_panel() {
     switch(this.state.display) {
