@@ -32,7 +32,16 @@ class newMeeting {
 }
 class Panel extends Component {
   state = {
-    display: 'none'
+    display: 'none',
+  }
+  componentDidUpdate() {
+    if(this.state.display === 'block') {
+      return null
+    }
+    this.setState({
+      new_meeting: new newMeeting()
+    })
+    console.log('hello')
   }
   handel_change() {
     console.log('its a change')
