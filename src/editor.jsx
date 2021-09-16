@@ -16,7 +16,7 @@ class Editor extends Component {
     return (
       <div>
         <button id="category">
-          <p>Sample</p>
+          <p>{ params['category']}</p>
           <i className="fas fa-chevron-down fa-2x"></i>
         </button>
         <hr id="ct_hr"></hr>
