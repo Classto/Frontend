@@ -4,15 +4,21 @@ import Panel from './editor/panel';
 import './editor.css';
 
 class Editor extends Component {
+  componentDidMount() {
+    document.getElementById('category').addEventListener('click', (event) => {
+      
+    });
+  }
+
   render() {
     const { params } = this.props.match
     const meetings = JSON.parse(window.localStorage.getItem("meetings"))[params['category']]
     return (
       <div>
-        <div id="category">
+        <button id="category">
           <p>Sample</p>
           <i className="fas fa-chevron-down fa-2x"></i>
-        </div>
+        </button>
         <hr id="ct_hr"></hr>
         <div id="sch_div">
           <Schedule meetings={ meetings }/>
@@ -21,7 +27,7 @@ class Editor extends Component {
           <i id="add_btn_plus" className="fas fa-plus"></i>
           <div></div>
         </button> */}
-        <Panel display={ display }/>
+        <Panel/>
       </div>
     );
   }
