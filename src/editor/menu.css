@@ -30,8 +30,11 @@
     border-radius: 3px;
 }
 
+#Menu > ul {
+    margin-left: 25px;
+}
+
 #Menu > ul > li {
-    position: relative;
     cursor: pointer;
 
     width: 500px;
@@ -46,6 +49,11 @@
 
     text-align: left;
     white-space: nowrap;
+}
+
+#Menu > ul > li > a {
+    text-decoration: none;
+    color: inherit;
 }
 
 #Menu > ul > li:last-child {
