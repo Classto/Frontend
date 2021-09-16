@@ -1,6 +1,7 @@
 import { Component } from 'react';
 import Schedule from './editor/schedule';
 import Panel from './editor/panel';
+import Menu from './editor/menu';
 import './editor.css';
 
 class Editor extends Component {
@@ -15,10 +16,6 @@ class Editor extends Component {
     const meetings = JSON.parse(window.localStorage.getItem("meetings"))[params['category']]
     return (
       <div>
-        <button id="category">
-          <p>{ params['category']}</p>
-          <i className="fas fa-chevron-down fa-2x"></i>
-        </button>
         <hr id="ct_hr"></hr>
         <div id="sch_div">
           <Schedule meetings={ meetings }/>
@@ -28,6 +25,12 @@ class Editor extends Component {
           <div></div>
         </button> */}
         <Panel/>
+        <div id="category">
+          <p>{ params['category']}</p>
+          <i className="fas fa-chevron-down fa-2x"></i>
+
+          <Menu/>
+        </div>
       </div>
     );
   }
