@@ -31,8 +31,11 @@ class newMeeting {
   }
 }
 class Panel extends Component {
-  state = {
-    display: 'none',
+  constructor() {
+    super()
+    this.state = {
+      display: 'none',
+    }
   }
   // componentDidUpdate() {
   //   if(this.state.display === 'block') {
@@ -43,6 +46,9 @@ class Panel extends Component {
   //   })
   //   console.log('hello')
   // }
+  handle_input(event) {
+    console.log(event)
+  }
   new_schedule() {
     new newMeeting()
   }
@@ -66,31 +72,31 @@ class Panel extends Component {
     return (
       <div>
       <div id="pannel" style={{ display: this.state.display }}>
-      <div id='add_pnl_background'></div>
+      <div id='background'></div>
       
       <nav id="add_pnl">
-        <div id="add_pnl_header">
+        <div id="header">
           <p>Create Schedule</p>
-          <i id="add_pnl_header_i" className="fas fa-times" onClick={ this.open_close_panel.bind(this) }></i>
+          <i id="header_i" className="fas fa-times" onClick={ this.open_close_panel.bind(this) }></i>
           <hr></hr>
         </div>
         
-        <div id="add_pnl_body">
-          <hr id="add_pnl_vl"></hr>
-          <p id="add_pnl_title">Schedule Title</p>
-          <input id="add_pnl_title_input" type="text" placeholder="Classto Schedule" maxLength="30"></input>
+        <div id="body">
+          <hr id="vl"></hr>
+          <p id="title">Schedule Title</p>
+          <input id="title_input" type="text" placeholder="Classto Schedule" maxLength="30" onChange={ this.handle_input }></input>
       
-          <p id="add_pnl_ctgr">Schedule Category</p>
-          <select id="add_pnl_ctgr_input">
+          <p id="ctgr">Schedule Category</p>
+          <select id="ctgr_input">
             <option value="0">Develop</option>
             <option value="1">School</option>
           </select>
       
-          <p id="add_pnl_time">Time To Connect</p>
-          <input id="add_pnl_time_input" type="time"></input>
+          <p id="pnl_time">Time To Connect</p>
+          <input id="time_input" type="time"></input>
             
-          <p id="add_pnl_day">Repeating Days Of The Week</p>
-          <div id="add_pnl_day_input">
+          <p id="day">Repeating Days Of The Week</p>
+          <div id="day_input">
             <label><input type="checkbox" value="Sun"></input></label>
             <label><input type="checkbox" value="Mon"></input></label>
             <label><input type="checkbox" value="Tue"></input></label>
@@ -100,30 +106,30 @@ class Panel extends Component {
             <label><input type="checkbox" value="Sat"></input></label>
           </div>
       
-          <p id="add_pnl_nickname">Meeting Nickname</p>
-          <input id="add_pnl_nickname_input" type="text" placeholder="Classto User" maxLength="30"></input>
+          <p id="nickname">Meeting Nickname</p>
+          <input id="nickname_input" type="text" placeholder="Classto User" maxLength="30"></input>
       
-          <p id="add_pnl_option">Video&Audio Option</p>
-          <div id="add_pnl_option_input">
+          <p id="option">Video&Audio Option</p>
+          <div id="option_input">
             <label><input type="checkbox" value="Video"></input></label>
             <label><input type="checkbox" value="Audio"></input></label>
           </div>
       
-          <p id="add_pnl_type">Connection type</p>
-          <select id="add_pnl_type_input">
+          <p id="type">Connection type</p>
+          <select id="type_input">
             <option id="fst" value="idpw">Zoom Meeting ID & PW</option>
             <option id="lst" value="link">Zoom Meeting Link</option>
           </select>
       
-          <p id="add_pnl_id">Meeting ID</p>
-          <input id="add_pnl_id_input" type="text" maxLength="11" placeholder="Enter Meeting ID"></input>
-          <p id="add_pnl_pw">Meeting PW</p>
-          <input id="add_pnl_pw_input" type="text" placeholder="Enter Meeting PW"></input>
+          <p id="_id">Meeting ID</p>
+          <input id="id_input" type="text" maxLength="11" placeholder="Enter Meeting ID"></input>
+          <p id="pw">Meeting PW</p>
+          <input id="pw_input" type="text" placeholder="Enter Meeting PW"></input>
       
-          <p id="add_pnl_link">Meeting Link</p>
-          <input id="add_pnl_link_input" type="text" placeholder="Enter Meeting Link"></input>
+          <p id="link">Meeting Link</p>
+          <input id="link_input" type="text" placeholder="Enter Meeting Link"></input>
         </div>
-        <button id="add_pnl_btn">
+        <button id="btn">
           <p>Submit</p>
         </button>
       </nav>
