@@ -15,8 +15,6 @@
     border-radius: 100rem;
 
     background-color: #e7ebf0;
-
-    animation: hr_fade 1s;
 }
 
 .schedule > h1 {
@@ -32,8 +30,6 @@
     align-items: center;
 
     color: #33353E;
-
-    animation: sch_fade 1s;
 }
 
 ul {
@@ -52,8 +48,6 @@ ul {
     background-color: #e7ebf0;
     border: 0;
     border-radius: 100rem;
-
-    animation: vl_fade_t 1s;
 }
 
 #title_i1 {
@@ -65,8 +59,7 @@ ul {
     font-size: 28px;
 
     color: #327DFF;
-
-    animation: sch_fade 1s;
+    
     cursor: pointer;
 }
 
@@ -80,8 +73,6 @@ ul {
     background-color: #e7ebf0;
     border: 0;
     border-radius: 100rem;
-
-    animation: vl_fade_t 1s;
 }
 
 #title_i2 {
@@ -94,8 +85,6 @@ ul {
     font-size: 28px;
 
     color: #327DFF;
-
-    animation: sch_fade 1s;
     cursor: pointer;
 }
 
@@ -107,8 +96,6 @@ ul {
     font-size: 21px;
 
     color: #327DFF;
-
-    animation: sch_fade 1s;
 }
 
 #time {
@@ -124,8 +111,6 @@ ul {
     font-size: 21px;
 
     color: #327DFF;
-
-    animation: sch_fade 1s;
 }
 
 #m_vl1 {
@@ -137,8 +122,6 @@ ul {
     background-color: #e7ebf0;
     border: 0;
     border-radius: 100rem;
-
-    animation: vl_fade_m 1s;
 }
 
 #name_i {
@@ -150,8 +133,6 @@ ul {
     font-size: 21px;
 
     color: #327DFF;
-
-    animation: sch_fade 1s;
 }
 
 #name {
@@ -167,8 +148,6 @@ ul {
     font-size: 21px;
 
     color: #327DFF;
-
-    animation: sch_fade 1s;
 }
 
 #m_vl2 {
@@ -180,8 +159,6 @@ ul {
     background-color: #e7ebf0;
     border: 0;
     border-radius: 100rem;
-
-    animation: vl_fade_m 1s;
 }
 
 #id {
@@ -196,56 +173,4 @@ ul {
     font-size: 21px;
 
     color: #327DFF;
-
-    animation: sch_fade 1s;
-}
-
-@keyframes sch_fade {
-    from {
-        padding-top: 50px;
-        opacity: 0;
-    } to {
-        padding-top: 0;
-        opacity: 1;
-    }
-}
-
-@keyframes ct_hr_fade {
-    from {
-        top: 189px;
-        opacity: 0;
-    } to {
-        top: 139px;
-        opacity: 1;
-    }
-}
-
-@keyframes hr_fade {
-    from {
-        top: 166px;
-        opacity: 0;
-    } to {
-        top: 116px;
-        opacity: 1;
-    }
-}
-
-@keyframes vl_fade_t {
-    from {
-        top: 75px;
-        opacity: 0;
-    } to {
-        top: 25px;
-        opacity: 1;
-    }
-}
-
-@keyframes vl_fade_m {
-    from {
-        top: 129px;
-        opacity: 0;
-    } to {
-        top: 79px;
-        opacity: 1;
-    }
 }

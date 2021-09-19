@@ -12,7 +12,6 @@ class Editor extends Component {
 
     document.getElementById('category').addEventListener('click', (event) => {
       const menuPnl = document.getElementById('Menu');
-
       if (isMenuOpen) {
         menuPnl.style.display = 'none';
         isMenuOpen = false;
