@@ -1,5 +1,5 @@
 # Project Classto
-Add, Edit, Enjoy Your online Schedules
+Add, Edit, Share Your online Schedules
 
 ## Add
 add your online schedules with classto
@@ -7,6 +7,9 @@ add your online schedules with classto
 ## Edit
 manage online meetings more easy with Classto
 
-## Enjoy
+## Share
 share your schedules with your friends and enjoy!
 
+
+### credit
+Enjoy!
