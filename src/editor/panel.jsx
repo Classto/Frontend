@@ -66,11 +66,13 @@ class Panel extends Component {
         this.setState({
           display: 'block'
         })
+        document.getElementById('new_schedule').style.display = 'none';
         break
       case 'block':
         this.setState({
           display: 'none'
         })
+        document.getElementById('new_schedule').style.display = 'block';
         break
     }
   }
