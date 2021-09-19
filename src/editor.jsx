@@ -35,7 +35,6 @@ class Editor extends Component {
           <i id="add_btn_plus" className="fas fa-plus"></i>
           <div></div>
         </button> */}
-        <Panel/>
         <div id="category-div">
           <div id="category">
             <p>{ params['category']}</p>
@@ -43,6 +42,7 @@ class Editor extends Component {
           </div>
           <Menu/>
         </div>
+        <Panel/>
       </div>
     );
   }
