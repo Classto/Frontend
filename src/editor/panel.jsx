@@ -35,6 +35,7 @@ class Panel extends Component {
     super()
     this.state = {
       display: 'none',
+      inputs: {}
     }
   }
   // componentDidUpdate() {
@@ -47,7 +48,12 @@ class Panel extends Component {
   //   console.log('hello')
   // }
   handle_input(event) {
-    console.log(event)
+    let new_input = this.state.inputs
+    new_input[event.target.id] = event.target.value
+    this.setState({
+      inputs: this.state.inputs
+    })
+    console.log(this.state.inputs)
   }
   new_schedule() {
     new newMeeting()
@@ -84,7 +90,7 @@ class Panel extends Component {
         <div id="body">
           <hr id="vl"></hr>
           <p id="title">Schedule Title</p>
-          <input id="title_input" type="text" placeholder="Classto Schedule" maxLength="30" onChange={ this.handle_input }></input>
+          <input id="title_input" type="text" placeholder="Classto Schedule" maxLength="30" onChange={ this.handle_input.bind(this) }></input>
       
           <p id="ctgr">Schedule Category</p>
           <select id="ctgr_input">
@@ -96,7 +102,7 @@ class Panel extends Component {
           <input id="time_input" type="time"></input>
             
           <p id="day">Repeating Days Of The Week</p>
-          <div id="day_input">
+          <form id="day_input" onSubmit={ this.handle_input.bind(this )}>
             <label><input type="checkbox" value="Sun"></input></label>
             <label><input type="checkbox" value="Mon"></input></label>
             <label><input type="checkbox" value="Tue"></input></label>
@@ -104,10 +110,10 @@ class Panel extends Component {
             <label><input type="checkbox" value="Thu"></input></label>
             <label><input type="checkbox" value="Fri"></input></label>
             <label><input type="checkbox" value="Sat"></input></label>
-          </div>
+          </form>
       
           <p id="nickname">Meeting Nickname</p>
-          <input id="nickname_input" type="text" placeholder="Classto User" maxLength="30"></input>
+          <input id="nickname_input" type="text" placeholder="Classto User" maxLength="30" onChange={ this.handle_input.bind(this) }></input>
       
           <p id="option">Video&Audio Option</p>
           <div id="option_input">
