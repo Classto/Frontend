@@ -12,7 +12,9 @@
 
     border-radius: 7px;
 
-    box-shadow: 0 5px 15px rgba(50, 125, 255, 0.3);
+    box-shadow: 0 0px 20px rgba(50, 125, 255, 0.3);
+
+    z-index: 1;
 }
 
 #Menu > div {
@@ -28,6 +30,10 @@
     background-color: #ffffff;
 
     border-radius: 3px;
+
+    box-shadow: 0 0px 20px 0px -20px rgba(50, 125, 255, 0.3);
+
+    z-index: -5;
 }
 
 #Menu > ul {
@@ -35,10 +41,7 @@
 }
 
 #Menu > ul > li {
-    cursor: pointer;
-
-    width: 500px;
-
+    width: 135px;
     padding-bottom: 15px;
 
     font-family: 'Heebo', sans-serif;
@@ -47,8 +50,10 @@
     font-size: 20px;
     color: #33353E;
 
-    text-align: left;
+    text-align: center;
     white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 #Menu > ul > li > a {
@@ -57,5 +62,5 @@
 }
 
 #Menu > ul > li:last-child {
-    padding-bottom: 22px;
+    padding-bottom: 15px;
 }
