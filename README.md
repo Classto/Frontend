@@ -9,7 +9,3 @@ manage online meetings more easy with Classto
 
 ## Share
 share your schedules with your friends and enjoy!
-
-
-### credit
-Enjoy!
