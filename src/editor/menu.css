@@ -48,6 +48,8 @@
     font-style: normal;
     font-weight: 200;
     font-size: 20px;
+
+    transition: background-color 150ms linear;
 }
 
 #Menu > ul > li > div {
@@ -69,10 +71,12 @@
 
     text-decoration: none;
     color: #33353E;
-
-    transition: background-color 150ms linear;
 }
 
 #Menu > ul > li:hover {
-    background-color: #327DFF;
+    background-color: #e9edf7;
+}
+
+#Menu > ul > li:active {
+    background-color: #d3d8e6;
 }
