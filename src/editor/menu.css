@@ -16,7 +16,7 @@
 }
 
 #Menu > div {
-    position: relative;
+    position: absolute;
     top: -5px;
     left: 75px;
 
@@ -33,18 +33,21 @@
 }
 
 #Menu > ul {
-    margin-left: 20px;
+    position: relative;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 #Menu > ul > li {
-    width: 135px;
-    padding-bottom: 15px;
+    width: 100%;
+    height: 42px;
 
     font-family: 'Heebo', sans-serif;
     font-style: normal;
     font-weight: 200;
     font-size: 20px;
-    color: #33353E;
 
     text-align: center;
     white-space: nowrap;
@@ -53,10 +56,15 @@
 }
 
 #Menu > ul > li > a {
+    position: relative;
+    top: 20%;
+
     text-decoration: none;
-    color: inherit;
+    color: #33353E;
+
+    transition: background-color 150ms linear;
 }
 
-#Menu > ul > li:last-child {
-    padding-bottom: 15px;
+#Menu > ul > li:hover {
+    background-color: #327DFF;
 }
