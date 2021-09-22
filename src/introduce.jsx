@@ -4,9 +4,14 @@ import icon from './icon.svg';
 import './introduce.css';
 
 class Introduce extends Component {
-  move_to_github() {
-    window.location.href = "https://github.com/Classto/Frontend"
+  componentDidMount() {
+    document.title = 'Classto';
   }
+
+  move_to_github() {
+    window.location.href = "https://github.com/Classto"
+  }
+
   render() {
     let editor_link = window.localStorage.getItem("recent_editor")
     return (
@@ -19,7 +24,7 @@ class Introduce extends Component {
           <button id="m_get_github" onClick={ this.move_to_github }>
             <i className="fab fa-github fa-3x"></i>
           </button>
-          <Link to={`editor/${editor_link}`}>
+          <Link to={`editor/${editor_link}`} onClick={ this.to_editor }>
             <button id="m_get_start">
               <p id="m_get_start_text">Get Started</p>
               <i id="m_get_start_icon" className="fas fa-angle-right fa-3x"></i>

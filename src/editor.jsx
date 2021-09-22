@@ -6,6 +6,8 @@ import './editor.css';
 
 class Editor extends Component {
   componentDidMount() {
+    document.title = 'Editor - Classto';
+
     let isMenuOpen = false;
 
     document.getElementById('Menu').style.display = 'none';
