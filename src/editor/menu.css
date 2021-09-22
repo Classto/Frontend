@@ -48,6 +48,14 @@
     font-style: normal;
     font-weight: 200;
     font-size: 20px;
+}
+
+#Menu > ul > li > div {
+    position: relative;
+    height: 100%;
+    width: 85%;
+    left: 50%;
+    transform: translateX(-50%);
 
     text-align: center;
     white-space: nowrap;
@@ -55,7 +63,7 @@
     text-overflow: ellipsis;
 }
 
-#Menu > ul > li > a {
+#Menu > ul > li > div > a {
     position: relative;
     top: 20%;
 
