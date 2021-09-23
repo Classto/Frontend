@@ -34,7 +34,6 @@
 
 #Menu > ul {
     position: relative;
-    padding-top: 30px;
     left: 50%;
     transform: translateX(-50%);
 }
@@ -74,6 +73,10 @@
 
 #Menu > ul > li:last-child {
     border-radius: 0 0 7px 7px;
+}
+
+#Menu > ul > li:first-child {
+    border-radius: 7px 7px 0 0;
 }
 
 #Menu > ul > li:hover {

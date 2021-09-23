@@ -11,7 +11,6 @@ class Menu extends Component {
     return(
       <div id="Menu">
         <div/>
-
         <ul>{ menu }</ul>
       </div>
       )
