@@ -6,7 +6,7 @@ class Menu extends Component {
   render() {
     const categorys = ['sample', 'school', 'GAME', 'This is very long category']
     const menu = categorys.map((category) => 
-      <li key={ category }><div><Link to={ "/editor/" + category }>{ category }</Link></div></li>
+      <li key={ category }><Link to={ "/editor/" + category }><div>{ category }</div></Link></li>
     )
     return(
       <div id="Menu">

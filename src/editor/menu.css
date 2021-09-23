@@ -34,8 +34,7 @@
 
 #Menu > ul {
     position: relative;
-    padding-top: 35px;
-    padding-bottom: 10px;
+    padding-top: 30px;
     left: 50%;
     transform: translateX(-50%);
 }
@@ -52,9 +51,9 @@
     transition: background-color 150ms linear;
 }
 
-#Menu > ul > li > div {
+#Menu > ul > li > a > div {
     position: relative;
-    height: 100%;
+    height: 33px;
     width: 85%;
     left: 50%;
     transform: translateX(-50%);
@@ -65,12 +64,16 @@
     text-overflow: ellipsis;
 }
 
-#Menu > ul > li > div > a {
+#Menu > ul > li > a {
     position: relative;
     top: 20%;
 
     text-decoration: none;
     color: #33353E;
+}
+
+#Menu > ul > li:last-child {
+    border-radius: 0 0 7px 7px;
 }
 
 #Menu > ul > li:hover {
