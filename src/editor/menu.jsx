@@ -11,7 +11,10 @@ class Menu extends Component {
     return(
       <div id="Menu">
         <div/>
-        <ul>{ menu }</ul>
+        <ul>
+          { menu }
+          <li><i class="fas fa-plus"></i></li>
+          </ul>
       </div>
       )
   }

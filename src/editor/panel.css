@@ -7,7 +7,7 @@
     border: 0;
     outline: 0;
     border-radius: 100%;
-    background-color: rgb(50, 125, 255);
+    background-color: #327dff;
     z-index: 1;
     cursor: pointer;
     transition: background-color 150ms linear, opacity 100ms ease-out;
