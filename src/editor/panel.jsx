@@ -105,13 +105,13 @@ class Panel extends Component {
             
           <p id="day">Repeating Days Of The Week</p>
           <form id="day_input" onSubmit={ this.handle_input.bind(this )}>
-            <label><input type="checkbox" value="Sun"></input></label>
-            <label><input type="checkbox" value="Mon"></input></label>
-            <label><input type="checkbox" value="Tue"></input></label>
-            <label><input type="checkbox" value="Sun"></input></label>
-            <label><input type="checkbox" value="Thu"></input></label>
-            <label><input type="checkbox" value="Fri"></input></label>
-            <label><input type="checkbox" value="Sat"></input></label>
+            <label><button value="Sun">S</button></label>
+            <label><button value="Mon">M</button></label>
+            <label><button value="Tue">T</button></label>
+            <label><button value="Sun">S</button></label>
+            <label><button value="Thu">T</button></label>
+            <label><button value="Fri">F</button></label>
+            <label><button value="Sat">S</button></label>
           </form>
       
           <p id="nickname">Meeting Nickname</p>
@@ -119,8 +119,8 @@ class Panel extends Component {
       
           <p id="option">Video&Audio Option</p>
           <div id="option_input">
-            <label><input type="checkbox" value="Video"></input></label>
-            <label><input type="checkbox" value="Audio"></input></label>
+            <label><button type="checkbox" value="Video"><i class="fas fa-microphone"></i></button></label>
+            <label><button type="checkbox" value="Audio"><i class="fas fa-video"></i></button></label>
           </div>
       
           <p id="type">Connection type</p>

@@ -298,6 +298,24 @@
     transition: border 100ms linear;
 }
 
+#day_input > label > button {
+    width: 25px;
+    height: 25px;
+    margin-right: 10px;
+    border-radius: 12.5px;
+
+    font-family: 'Heebo', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 15px;
+    color: #ffffff;
+
+    background-color: #bbc2c7;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
 #nickname {
     position: absolute;
     margin-top: 20%;
@@ -305,7 +323,7 @@
 
     font-family: 'Heebo', sans-serif;
     font-style: normal;
-    font-weight: 700;
+    font-weight: 400;
     font-size: 23px;
     color: #5c5f64;
     display: flex;
@@ -364,6 +382,22 @@
     align-items: center;
 
     transition: border 100ms linear;
+}
+
+#option_input > label > button {
+    width: 25px;
+    height: 25px;
+    margin-right: 10px;
+    border-radius: 12.5px;
+
+    font-size: 13px;
+    text-align: center;
+    color: #ffffff;
+
+    background-color: #bbc2c7;
+    border: none;
+    outline: none;
+    cursor: pointer;
 }
 
 #type {
