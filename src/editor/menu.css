@@ -7,12 +7,15 @@
     margin-left: -15px;
     margin-right: -15px;
 
+    padding-top: 15px;
+    padding-bottom: 15px;
+
     background-color: #ffffff;
     text-align: center;
 
     border-radius: 7px;
 
-    box-shadow: 0 0px 20px rgba(50, 125, 255, 0.3);
+    box-shadow: 0 5px 20px rgba(50, 125, 255, 0.3);
 }
 
 #Menu > div {
@@ -69,14 +72,6 @@
 
     text-decoration: none;
     color: #33353E;
-}
-
-#Menu > ul > li:last-child {
-    border-radius: 0 0 7px 7px;
-}
-
-#Menu > ul > li:first-child {
-    border-radius: 7px 7px 0 0;
 }
 
 #Menu > ul > li:hover {
