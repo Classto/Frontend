@@ -7,7 +7,7 @@
     margin-left: -15px;
     margin-right: -15px;
 
-    padding-top: 15px;
+    padding-top: 12px;
 
     background-color: #ffffff;
     text-align: center;
@@ -20,7 +20,7 @@
 #Menu > div {
     position: absolute;
     top: -5px;
-    left: 75px;
+    left: 76.5px;
 
     width: 20px;
     height: 20px;
@@ -72,7 +72,7 @@
 }
 
 #Menu > ul > li:last-child {
-    height: 35px;
+    height: 30px;
 
     border-radius: 0 0 12px 12px;
     background-color: #327DFF;
@@ -82,7 +82,7 @@
 
 #Menu > ul > li:last-child > i {
     position: relative;
-    top: 4.5px;
+    top: 2px;
 
     font-size: 20px;
     color: #ffffff;
