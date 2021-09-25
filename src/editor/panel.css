@@ -400,6 +400,10 @@
     cursor: pointer;
 }
 
+#option_input > label:last-child > button > i{
+    margin-left: -0.5px;
+}
+
 #type {
     position: absolute;
     margin-top: 30%;
