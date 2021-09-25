@@ -110,6 +110,16 @@ label, label > input {
     top: 16%;
 }
 
+@media screen and (max-width: 1200px) {
+    #ct_hr, #sch_div {
+        width: 90vw;
+    }
+
+    #category-div {
+        margin-left: 5vw;
+    }
+}
+
 @keyframes sch_fade {
     from {
         padding-top: 50px;
