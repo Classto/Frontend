@@ -82,6 +82,10 @@ class Panel extends Component {
     let new_input = this.state.inputs
     if (!!!new_input['repeating-days'].includes(event.target.value)) {
       new_input['repeating-days'].push(event.target.value)
+      event.target.style.backgroundColor = '#327DFF'
+    } else {
+      new_input['repeating-days'].splice(new_input['repeating-days'].indexOf(event.target.value), 1)
+      event.target.style.backgroundColor = '#c8cfd4'
     }
     this.setState({
       inputs: this.state.inputs
@@ -91,8 +95,14 @@ class Panel extends Component {
   handle_opt(event) {
     event.preventDefault()
     let new_input = this.state.inputs
-    event.target.value = !!!event.target.value
-    new_input['options'][event.target.name] = event.target.value
+    if (event.target.value === 'false') {
+      event.target.value = 'true'
+      event.target.style.backgroundColor = '#327DFF'
+    } else {
+      event.target.value = 'false'
+      event.target.style.backgroundColor = '#c8cfd4'
+    }
+    new_input['options'][event.target.name] = event.target.value === 'true'
     this.setState({
       inputs: this.state.inputs
     })
@@ -180,8 +190,8 @@ class Panel extends Component {
       
           <p id="option">Video&Audio Option</p>
           <div id="option_input">
-            <button type="checkbox" name="audio" value={ false } onClick={ this.handle_opt } className="fas fa-microphone"></button>
-            <button type="checkbox" name="video" value={ false } onClick={ this.handle_opt } className="fas fa-video"></button>
+            <button type="checkbox" name="audio" value={ 'false' } onClick={ this.handle_opt } className="fas fa-microphone"></button>
+            <button type="checkbox" name="video" value={ 'false' } onClick={ this.handle_opt } className="fas fa-video"></button>
           </div>
       
           <p id="type">Connection type</p>

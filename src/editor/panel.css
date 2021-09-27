@@ -311,10 +311,12 @@
     font-size: 15px;
     color: #ffffff;
 
-    background-color: #bbc2c7;
+    background-color: #c8cfd4;
     border: none;
     outline: none;
     cursor: pointer;
+
+    transition: background-color 150ms linear;
 }
 
 #nickname {
@@ -395,14 +397,18 @@
     text-align: center;
     color: #ffffff;
 
-    background-color: #bbc2c7;
+    background-color: #c8cfd4;
     border: none;
     outline: none;
     cursor: pointer;
+
+    transition: background-color 150ms linear;
 }
 
-#option_input > button > i{
-    margin-left: -0.75px;
+#option_input > button > i {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 #type {
