@@ -37,8 +37,11 @@ class Panel extends Component {
       toggle_panel: 'none',
       inputs: {}
     }
+    this.new_schedule = this.new_schedule.bind(this)
+    this.open_close_panel = this.open_close_panel.bind(this)
+    this.handle_input = this.handle_input.bind(this)
 
-    this.new_schedule.bind(this)
+    this.ctgr_input = React.createRef()
   }
   // componentDidUpdate() {
   //   if(this.state.display === 'block') {
@@ -57,27 +60,40 @@ class Panel extends Component {
     })
     console.log(this.state.inputs)
   }
+
+  handle_ctgr() {
+    for (var ctg in JSON.parse(localStorage.getItem("meetings"))) {
+      this.ctgr_input.current.appendChild(new Option(ctg,'',false))
+    }
+  }
+
   new_schedule(event) {
     event.preventDefault()
     console.log('new!')
+    console.log(this.state.inputs)
+    this.open_close_panel()
   }
+
   open_close_panel() {
     switch(this.state.toggle_panel) {
       default:
         break
       case 'none':
+        this.handle_ctgr()
         this.setState({
           toggle_panel: 'block',
         })
         break
       case 'block':
-        this.setState({
+        this.setState({ 
           toggle_panel: 'none',
         })
         break
     }
   }
+
   render() {
+    console.log(this.ctgr_input.current)
     return (
       <div>
       <div id="pannel" style={{ display: this.state.toggle_panel }}>
@@ -86,23 +102,20 @@ class Panel extends Component {
       <form id="add_pnl" onSubmit={ this.new_schedule }>
         <div id="header">
           <p>Create Schedule</p>
-          <i id="header_i" className="fas fa-times" onClick={ this.open_close_panel.bind(this) }></i>
+          <i id="header_i" className="fas fa-times" onClick={ this.open_close_panel }></i>
           <hr></hr>
         </div>
         
         <div id="body">
           <hr id="vl"></hr>
           <p id="title">Schedule Title</p>
-          <input id="title_input" type="text" placeholder="Classto Schedule" maxLength="30" onChange={ this.handle_input.bind(this) }></input>
+          <input id="title_input" type="text" placeholder="Classto Schedule" maxLength="30" onChange={ this.handle_input }></input>
       
           <p id="ctgr">Schedule Category</p>
-          <select id="ctgr_input">
-            <option value="0">Develop</option>
-            <option value="1">School</option>
-          </select>
+          <select id="ctgr_input" ref={ this.ctgr_input }></select>
       
           <p id="pnl_time">Time To Connect</p>
-          <input id="time_input" type="time"></input>
+          <input id="time_input" type="time" onChange={ this.handle_input }></input>
             
           <p id="day">Repeating Days Of The Week</p>
           <div id="day_input">
@@ -116,7 +129,7 @@ class Panel extends Component {
           </div>
       
           <p id="nickname">Meeting Nickname</p>
-          <input id="nickname_input" type="text" placeholder="Classto User" maxLength="30" onChange={ this.handle_input.bind(this) }></input>
+          <input id="nickname_input" type="text" placeholder="Classto User" maxLength="30" onChange={ this.handle_input }></input>
       
           <p id="option">Video&Audio Option</p>
           <div id="option_input">
@@ -130,18 +143,18 @@ class Panel extends Component {
             <option id="lst" value="link">Zoom Meeting Link</option>
           </select>
       
-          <p id="_id">Meeting ID</p>
+          {/* <p id="_id">Meeting ID</p>
           <input id="id_input" type="text" maxLength="11" placeholder="Enter Meeting ID"></input>
           <p id="pw">Meeting PW</p>
-          <input id="pw_input" type="text" placeholder="Enter Meeting PW"></input>
+          <input id="pw_input" type="text" placeholder="Enter Meeting PW"></input> */}
       
           <p id="link">Meeting Link</p>
-          <input id="link_input" type="text" placeholder="Enter Meeting Link"></input>
+          <input id="link_input" type="text" placeholder="Enter Meeting Link" onChange={ this.handle_input }></input>
         </div>
         <input id="btn" type="submit" value="Submit"></input>
       </form>
       </div>
-      <button id="new_schedule" onClick={ this.open_close_panel.bind(this) } style={{ display: this.state.toggle_panel === 'block' ? 'none' : 'block'}}>
+      <button id="new_schedule" onClick={ this.open_close_panel } style={{ display: this.state.toggle_panel === 'block' ? 'none' : 'block'}}>
         <i id="add_btn_plus" className="fas fa-plus"></i>
         <div></div>
       </button>
