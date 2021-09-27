@@ -1,35 +1,35 @@
 import React, { Component } from 'react';
 import './panel.css';
 
-class newMeeting {
-  constructor(title, category, time, days, id, password, link, options = {}) {
-    this.title =      title;
-    this.category =   category;
-    this.time =       time;
-    this.days =       days;
-    this.id =         id;
-    this.password =   password;
-    this.link =       link;
-    this.nickname =   options['nickname'] !== undefined ? options['nickname'] : null;
-    this.camera =     options['camera'] !== undefined ? options['camera'] : null;
-    this.microphone = options['microphone'] !== undefined ? options['microphone'] : null;
-  }
-  info() {
-    return({
-      "name" : this.title,
-      "time" : this.time,
-      "link" : this.link,
-      "id"   : this.id,
-      "password" : this.password,
-      "category" : this.category,
-      "options"  : {
-        "camera"     : this.camera,
-        "microphone" : this.microphone,
-        "nickname"   : this.nickname
-      }
-    })
-  }
-}
+// class newMeeting {
+//   constructor(title, category, time, days, id, password, link, options = {}) {
+//     this.title =      title;
+//     this.category =   category;
+//     this.time =       time;
+//     this.days =       days;
+//     this.id =         id;
+//     this.password =   password;
+//     this.link =       link;
+//     this.nickname =   options['nickname'] !== undefined ? options['nickname'] : null;
+//     this.camera =     options['camera'] !== undefined ? options['camera'] : null;
+//     this.microphone = options['microphone'] !== undefined ? options['microphone'] : null;
+//   }
+//   info() {
+//     return({
+//       "name" : this.title,
+//       "time" : this.time,
+//       "link" : this.link,
+//       "id"   : this.id,
+//       "password" : this.password,
+//       "category" : this.category,
+//       "options"  : {
+//         "camera"     : this.camera,
+//         "microphone" : this.microphone,
+//         "nickname"   : this.nickname
+//       }
+//     })
+//   }
+// }
 class Panel extends Component {
   constructor() {
     super()
