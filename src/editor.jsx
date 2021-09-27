@@ -5,10 +5,16 @@ import Menu from './editor/menu';
 import './editor.css';
 
 class Editor extends Component {
+  constructor() {
+    super()
+    this.state = {
+      is_menu_open : false
+    }
+  }
   componentDidMount() {
     document.title = 'Classto - Editor';
 
-    let isMenuOpen = false;
+    let isMenuOpen = this.state.is_menu_open
 
     document.getElementById('Menu').style.display = 'none';
 
