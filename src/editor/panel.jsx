@@ -117,8 +117,8 @@ class Panel extends Component {
       
           <p id="option">Video&Audio Option</p>
           <div id="option_input">
-            <label><button type="checkbox" value="Video"><i class="fas fa-microphone"></i></button></label>
-            <label><button type="checkbox" value="Audio"><i class="fas fa-video"></i></button></label>
+            <label><button type="checkbox" value="Video"><i className="fas fa-microphone"></i></button></label>
+            <label><button type="checkbox" value="Audio"><i className="fas fa-video"></i></button></label>
           </div>
       
           <p id="type">Connection type</p>
