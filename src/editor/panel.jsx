@@ -36,7 +36,7 @@ class Panel extends Component {
     this.state = {
       toggle_panel: 'none',
       inputs: {
-        'repeating_days': []
+        'repeating-days': []
       }
     }
     this.new_schedule = this.new_schedule.bind(this)
@@ -74,7 +74,7 @@ class Panel extends Component {
   handle_btns(event) {
     event.preventDefault()
     let new_input = this.state.inputs
-    new_input['repeating_days'].push(event.target.value)
+    new_input['repeating-days'].push(event.target.value)
     this.setState({
       inputs: this.state.inputs
     })
@@ -89,7 +89,7 @@ class Panel extends Component {
     console.log(this.ctgr_input.current.value) // category
 
     this.setState({
-      inputs: {'repeating_days': []}
+      inputs: {'repeating-days': []}
     })
     this.open_close_panel()
   }
