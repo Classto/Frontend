@@ -56,10 +56,6 @@ class Editor extends Component {
         <div id="sch_div">
           <Schedule meetings={ meetings }/>
         </div>
-        {/* <button id="new_schedule" onClick={ () => {display = true} }>
-          <i id="add_btn_plus" className="fas fa-plus"></i>
-          <div></div>
-        </button> */}
         <div id="category-div">
           <div id="category" onClick={ this.toggle_menu.bind(this) }>
             <p>{ params['category']}</p>
