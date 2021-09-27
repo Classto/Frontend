@@ -37,6 +37,8 @@ class Panel extends Component {
       toggle_panel: 'none',
       inputs: {}
     }
+
+    this.new_schedule.bind(this)
   }
   // componentDidUpdate() {
   //   if(this.state.display === 'block') {
@@ -55,8 +57,9 @@ class Panel extends Component {
     })
     console.log(this.state.inputs)
   }
-  new_schedule() {
-    new newMeeting()
+  new_schedule(event) {
+    event.preventDefault()
+    console.log('new!')
   }
   open_close_panel() {
     switch(this.state.toggle_panel) {
@@ -80,7 +83,7 @@ class Panel extends Component {
       <div id="pannel" style={{ display: this.state.toggle_panel }}>
       <div id='background'></div>
       
-      <nav id="add_pnl">
+      <form id="add_pnl" onSubmit={ this.new_schedule }>
         <div id="header">
           <p>Create Schedule</p>
           <i id="header_i" className="fas fa-times" onClick={ this.open_close_panel.bind(this) }></i>
@@ -102,7 +105,7 @@ class Panel extends Component {
           <input id="time_input" type="time"></input>
             
           <p id="day">Repeating Days Of The Week</p>
-          <form id="day_input" onSubmit={ this.handle_input.bind(this )}>
+          <div id="day_input">
             <label><button value="Sun">S</button></label>
             <label><button value="Mon">M</button></label>
             <label><button value="Tue">T</button></label>
@@ -110,15 +113,15 @@ class Panel extends Component {
             <label><button value="Thu">T</button></label>
             <label><button value="Fri">F</button></label>
             <label><button value="Sat">S</button></label>
-          </form>
+          </div>
       
           <p id="nickname">Meeting Nickname</p>
           <input id="nickname_input" type="text" placeholder="Classto User" maxLength="30" onChange={ this.handle_input.bind(this) }></input>
       
           <p id="option">Video&Audio Option</p>
           <div id="option_input">
-            <label><button type="checkbox" value="Video"><i className="fas fa-microphone"></i></button></label>
-            <label><button type="checkbox" value="Audio"><i className="fas fa-video"></i></button></label>
+            <button type="checkbox" value="Video"><i className="fas fa-microphone"></i></button>
+            <button type="checkbox" value="Audio"><i className="fas fa-video"></i></button>
           </div>
       
           <p id="type">Connection type</p>
@@ -135,10 +138,8 @@ class Panel extends Component {
           <p id="link">Meeting Link</p>
           <input id="link_input" type="text" placeholder="Enter Meeting Link"></input>
         </div>
-        <button id="btn">
-          <p>Submit</p>
-        </button>
-      </nav>
+        <input id="btn" type="submit" value="Submit"></input>
+      </form>
       </div>
       <button id="new_schedule" onClick={ this.open_close_panel.bind(this) } style={{ display: this.state.toggle_panel === 'block' ? 'none' : 'block'}}>
         <i id="add_btn_plus" className="fas fa-plus"></i>
