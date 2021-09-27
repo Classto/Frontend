@@ -63,14 +63,16 @@ class Panel extends Component {
 
   handle_ctgr() {
     for (var ctg in JSON.parse(localStorage.getItem("meetings"))) {
-      this.ctgr_input.current.appendChild(new Option(ctg,'',false))
+      this.ctgr_input.current.innerHTML = ""
+      this.ctgr_input.current.appendChild(new Option(ctg, ctg, false))
     }
   }
 
   new_schedule(event) {
     event.preventDefault()
     console.log('new!')
-    console.log(this.state.inputs)
+    console.log(this.state.inputs) // title, nickname, link, time
+    console.log(this.ctgr_input.current.value) // category
     this.open_close_panel()
   }
 
