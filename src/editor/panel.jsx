@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import TimeField from 'react-simple-timefield';
 import './panel.css';
 
 // class newMeeting {
@@ -62,7 +63,7 @@ class Panel extends Component {
   // }
   handle_input(event) {
     let new_input = this.state.inputs
-    new_input[event.target.id] = event.target.value
+    new_input[event.target.name] = event.target.value
     this.setState({
       inputs: this.state.inputs
     })
@@ -100,9 +101,14 @@ class Panel extends Component {
   new_schedule(event) {
     event.preventDefault()
 
-    console.log('new!')
-    console.log(this.state.inputs) // title, nickname, link, time, repeating_days
-    console.log(this.ctgr_input.current.value) // category
+    let meetings = JSON.parse(localStorage.getItem('meetings'))
+    meetings[this.ctgr_input.current.value].push(this.state.inputs)
+
+    localStorage.setItem('meetings', JSON.stringify(meetings))
+    // console.log(meetings)
+    // console.log('new!')
+    // console.log(this.state.inputs) // title, nickname, link, time, repeating_days, options
+    // console.log(this.ctgr_input.current.value) // category
 
     this.setState({
       inputs: {
@@ -150,13 +156,13 @@ class Panel extends Component {
         <div id="body">
           <hr id="vl"></hr>
           <p id="title">Schedule Title</p>
-          <input id="title_input" type="text" placeholder="Classto Schedule" maxLength="30" onChange={ this.handle_input }></input>
+          <input id="title_input" type="text" placeholder="Classto Schedule" name="name" maxLength="30" onChange={ this.handle_input }></input>
       
           <p id="ctgr">Schedule Category</p>
           <select id="ctgr_input" ref={ this.ctgr_input }></select>
       
           <p id="pnl_time">Time To Connect</p>
-          <input id="time_input" type="time" onChange={ this.handle_input }></input>
+          <TimeField id="time_input" value="00:00" name="time" onChange={ this.handle_input }></TimeField>
             
           <p id="day">Repeating Days Of The Week</p>
           <div id="day_input">
@@ -190,7 +196,7 @@ class Panel extends Component {
           <input id="pw_input" type="text" placeholder="Enter Meeting PW"></input> */}
       
           <p id="link">Meeting Link</p>
-          <input id="link_input" type="text" placeholder="Enter Meeting Link" onChange={ this.handle_input }></input>
+          <input id="link_input" type="text" placeholder="Enter Meeting Link" name="link" onChange={ this.handle_input }></input>
         </div>
         <input id="btn" type="submit" value="Submit"></input>
       </form>

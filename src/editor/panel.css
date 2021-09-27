@@ -249,6 +249,7 @@
     position: absolute;
     top: 30.05%;
     left: 1.25%;
+    min-width: 15%;
 
     font-family: 'Heebo', sans-serif;
     font-style: normal;
