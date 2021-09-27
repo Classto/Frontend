@@ -35,11 +35,14 @@ class Panel extends Component {
     super()
     this.state = {
       toggle_panel: 'none',
-      inputs: {}
+      inputs: {
+        'repeating_days': []
+      }
     }
     this.new_schedule = this.new_schedule.bind(this)
     this.open_close_panel = this.open_close_panel.bind(this)
     this.handle_input = this.handle_input.bind(this)
+    this.handle_btns = this.handle_btns.bind(this)
 
     this.ctgr_input = React.createRef()
   }
@@ -68,11 +71,26 @@ class Panel extends Component {
     }
   }
 
+  handle_btns(event) {
+    event.preventDefault()
+    let new_input = this.state.inputs
+    new_input['repeating_days'].push(event.target.value)
+    this.setState({
+      inputs: this.state.inputs
+    })
+    console.log(event.target.value)
+  }
+
   new_schedule(event) {
     event.preventDefault()
+
     console.log('new!')
-    console.log(this.state.inputs) // title, nickname, link, time
+    console.log(this.state.inputs) // title, nickname, link, time, repeating_days
     console.log(this.ctgr_input.current.value) // category
+
+    this.setState({
+      inputs: {'repeating_days': []}
+    })
     this.open_close_panel()
   }
 
@@ -95,7 +113,6 @@ class Panel extends Component {
   }
 
   render() {
-    console.log(this.ctgr_input.current)
     return (
       <div>
       <div id="pannel" style={{ display: this.state.toggle_panel }}>
@@ -121,13 +138,13 @@ class Panel extends Component {
             
           <p id="day">Repeating Days Of The Week</p>
           <div id="day_input">
-            <label><button value="Sun">S</button></label>
-            <label><button value="Mon">M</button></label>
-            <label><button value="Tue">T</button></label>
-            <label><button value="Sun">S</button></label>
-            <label><button value="Thu">T</button></label>
-            <label><button value="Fri">F</button></label>
-            <label><button value="Sat">S</button></label>
+            <label><button onClick={ this.handle_btns } value="Sun">S</button></label>
+            <label><button onClick={ this.handle_btns } value="Mon">M</button></label>
+            <label><button onClick={ this.handle_btns } value="Tue">T</button></label>
+            <label><button onClick={ this.handle_btns } value="Sun">S</button></label>
+            <label><button onClick={ this.handle_btns } value="Thu">T</button></label>
+            <label><button onClick={ this.handle_btns } value="Fri">F</button></label>
+            <label><button onClick={ this.handle_btns } value="Sat">S</button></label>
           </div>
       
           <p id="nickname">Meeting Nickname</p>
