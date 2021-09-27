@@ -13,7 +13,7 @@ class Menu extends Component {
         <div/>
         <ul>
           { menu }
-          <li><i class="fas fa-plus"></i></li>
+          <li><i className="fas fa-plus"></i></li>
           </ul>
       </div>
       )
