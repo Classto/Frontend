@@ -36,13 +36,18 @@ class Panel extends Component {
     this.state = {
       toggle_panel: 'none',
       inputs: {
-        'repeating-days': []
+        'repeating-days': [],
+        'options': {
+          'video': false,
+          'audio': false
+        },
       }
     }
     this.new_schedule = this.new_schedule.bind(this)
     this.open_close_panel = this.open_close_panel.bind(this)
     this.handle_input = this.handle_input.bind(this)
     this.handle_btns = this.handle_btns.bind(this)
+    this.handle_opt = this.handle_opt.bind(this)
 
     this.ctgr_input = React.createRef()
   }
@@ -74,11 +79,22 @@ class Panel extends Component {
   handle_btns(event) {
     event.preventDefault()
     let new_input = this.state.inputs
-    new_input['repeating-days'].push(event.target.value)
+    if (!!!new_input['repeating-days'].includes(event.target.value)) {
+      new_input['repeating-days'].push(event.target.value)
+    }
     this.setState({
       inputs: this.state.inputs
     })
-    console.log(event.target.value)
+  }
+
+  handle_opt(event) {
+    event.preventDefault()
+    let new_input = this.state.inputs
+    event.target.value = !!!event.target.value
+    new_input['options'][event.target.name] = event.target.value
+    this.setState({
+      inputs: this.state.inputs
+    })
   }
 
   new_schedule(event) {
@@ -89,7 +105,13 @@ class Panel extends Component {
     console.log(this.ctgr_input.current.value) // category
 
     this.setState({
-      inputs: {'repeating-days': []}
+      inputs: {
+        'repeating-days': [],
+        'options': {
+          'video': false,
+          'audio': false
+        },
+      }
     })
     this.open_close_panel()
   }
@@ -152,13 +174,13 @@ class Panel extends Component {
       
           <p id="option">Video&Audio Option</p>
           <div id="option_input">
-            <button type="checkbox" value="Video"><i className="fas fa-microphone"></i></button>
-            <button type="checkbox" value="Audio"><i className="fas fa-video"></i></button>
+            <button type="checkbox" name="audio" value={ false } onClick={ this.handle_opt } className="fas fa-microphone"></button>
+            <button type="checkbox" name="video" value={ false } onClick={ this.handle_opt } className="fas fa-video"></button>
           </div>
       
           <p id="type">Connection type</p>
           <select id="type_input">
-            <option id="fst" value="idpw">Zoom Meeting ID & PW</option>
+            {/* <option id="fst" value="idpw">Zoom Meeting ID & PW</option> */}
             <option id="lst" value="link">Zoom Meeting Link</option>
           </select>
       
