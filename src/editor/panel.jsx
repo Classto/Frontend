@@ -34,7 +34,7 @@ class Panel extends Component {
   constructor() {
     super()
     this.state = {
-      display: 'none',
+      toggle_panel: 'none',
       inputs: {}
     }
   }
@@ -59,27 +59,25 @@ class Panel extends Component {
     new newMeeting()
   }
   open_close_panel() {
-    switch(this.state.display) {
+    switch(this.state.toggle_panel) {
       default:
         break
       case 'none':
         this.setState({
-          display: 'block'
+          toggle_panel: 'block',
         })
-        document.getElementById('new_schedule').style.display = 'none';
         break
       case 'block':
         this.setState({
-          display: 'none'
+          toggle_panel: 'none',
         })
-        document.getElementById('new_schedule').style.display = 'block';
         break
     }
   }
   render() {
     return (
       <div>
-      <div id="pannel" style={{ display: this.state.display }}>
+      <div id="pannel" style={{ display: this.state.toggle_panel }}>
       <div id='background'></div>
       
       <nav id="add_pnl">
@@ -142,7 +140,7 @@ class Panel extends Component {
         </button>
       </nav>
       </div>
-      <button id="new_schedule" onClick={ this.open_close_panel.bind(this) }>
+      <button id="new_schedule" onClick={ this.open_close_panel.bind(this) } style={{ display: this.state.toggle_panel === 'block' ? 'none' : 'block'}}>
         <i id="add_btn_plus" className="fas fa-plus"></i>
         <div></div>
       </button>
