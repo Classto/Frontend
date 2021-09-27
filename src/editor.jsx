@@ -6,7 +6,7 @@ import './editor.css';
 
 class Editor extends Component {
   componentDidMount() {
-    document.title = 'Editor - Classto';
+    document.title = 'Classto - Editor';
 
     let isMenuOpen = false;
 
