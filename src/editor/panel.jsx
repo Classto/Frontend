@@ -102,7 +102,7 @@ class Panel extends Component {
       event.target.value = false
       event.target.style.backgroundColor = '#c8cfd4'
     }
-    new_input['options'][event.target.name] = event.target.value === true
+    new_input['options'][event.target.name] = event.target.value
     this.setState({
       inputs: this.state.inputs
     })
