@@ -106,7 +106,7 @@ class Panel extends Component {
     })
   }
 
-  new_schedule(event) {
+  new_schedule() {
     let meetings = JSON.parse(localStorage.getItem('meetings'))
     meetings[this.ctgr_input.current.value].push(this.state.inputs)
 
