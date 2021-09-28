@@ -27,6 +27,7 @@ class App extends Component {
         }
       ))
       window.localStorage.setItem("recent_editor", "sample")
+      window.localStorage.setItem("categorys", JSON.stringify(["sample"]))
     }
     return (
       <div>
