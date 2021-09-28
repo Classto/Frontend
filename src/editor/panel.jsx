@@ -95,14 +95,12 @@ class Panel extends Component {
   handle_opt(event) {
     event.preventDefault()
     let new_input = this.state.inputs
-    if (event.target.value === 'false') {
-      event.target.value = 'true'
+    if (!!!this.state.inputs.options[event.target.name]) {
       event.target.style.backgroundColor = '#327DFF'
     } else {
-      event.target.value = 'false'
       event.target.style.backgroundColor = '#c8cfd4'
     }
-    new_input['options'][event.target.name] = event.target.value === 'true'
+    new_input['options'][event.target.name] = !!!this.state.inputs.options[event.target.name]
     this.setState({
       inputs: this.state.inputs
     })
@@ -190,8 +188,8 @@ class Panel extends Component {
       
           <p id="option">Video&Audio Option</p>
           <div id="option_input">
-            <button type="checkbox" name="audio" value={ 'false' } onClick={ this.handle_opt } className="fas fa-microphone"></button>
-            <button type="checkbox" name="video" value={ 'false' } onClick={ this.handle_opt } className="fas fa-video"></button>
+            <button type="checkbox" name="audio" onClick={ this.handle_opt } className="fas fa-microphone"></button>
+            <button type="checkbox" name="video" onClick={ this.handle_opt } className="fas fa-video"></button>
           </div>
       
           <p id="type">Connection type</p>
