@@ -182,7 +182,7 @@ class Panel extends Component {
           </div>
       
           <p id="nickname">Meeting Nickname</p>
-          <input id="nickname_input" type="text" placeholder="Classto User" maxLength="30" onChange={ this.handle_input }></input>
+          <input id="nickname_input" type="text" placeholder="Classto User" maxLength="30" name="nickname" onChange={ this.handle_input }></input>
       
           <p id="option">Video&Audio Option</p>
           <div id="option_input">

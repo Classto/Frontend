@@ -22,7 +22,7 @@ class Schedule extends Component {
           <span id="time">{ meet.time }</span>
           <div id="m_vl1" style={{ left: '39px' }}></div>
           <i id="name_i" className="fas fa-id-badge" style={{ left: '55px' }}></i> 
-          <span id="name" style={{ left: '67px' }}>{ meet.link }</span>
+          <span id="name" style={{ left: '67px' }}>{ meet.nickname }</span>
           <div id="m_vl2" style={{ left: '78px' }}></div>
           <span id="id" style={{ left: '90px' }}>{ meet.id }</span>
           <hr />
