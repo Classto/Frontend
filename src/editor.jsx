@@ -11,23 +11,30 @@ class Editor extends Component {
       toggle_menu : 'none'
     }
   }
+
   componentDidMount() {
     document.title = 'Classto - Editor';
 
-    // let isMenuOpen = this.state.is_menu_open
+    this.enter_zoom = this.enter_zoom.bind(this)
+    this.enter_zoom()
+    this.interval = setInterval(this.enter_zoom, 1000 * 60)
+  }
 
-    // document.getElementById('Menu').style.display = 'none';
+  componentWillUnmount() {
+    clearInterval(this.interval)
+  }
 
-    // document.getElementById('category').addEventListener('click', (event) => {
-    //   const menuPnl = document.getElementById('Menu');
-    //   if (isMenuOpen) {
-    //     menuPnl.style.display = 'none';
-    //     isMenuOpen = false;
-    //   } else if (!isMenuOpen) {
-    //     menuPnl.style.display = 'block';
-    //     isMenuOpen = true;
-    //   }
-    // });
+  enter_zoom() {
+    const current_time = new Date()
+
+    const reserved_meetings = JSON.parse(localStorage.getItem('meetings'))[this.params['category']]
+    reserved_meetings.forEach(meeting => {
+      if (meeting.time === `${current_time.getHours()}:${current_time.getMinutes()}`) {
+        console.log('oh')
+      }
+    });
+
+    console.log(current_time.getHours(), current_time.getMinutes())
   }
 
   toggle_menu() {
@@ -49,7 +56,9 @@ class Editor extends Component {
 
   render() {
     const { params } = this.props.match
+    this.params = params
     const meetings = JSON.parse(window.localStorage.getItem("meetings"))[params['category']]
+
     return (
       <div>
         <hr id="ct_hr"></hr>
@@ -58,7 +67,7 @@ class Editor extends Component {
         </div>
         <div id="category-div">
           <div id="category" onClick={ this.toggle_menu.bind(this) }>
-            <p>{ params['category']}</p>
+            <p>{ params['category'] }</p>
             <i className="fas fa-chevron-down fa-2x"></i>
           </div>
           <div style={{ display: this.state.toggle_menu }}>
