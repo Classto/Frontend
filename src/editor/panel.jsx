@@ -172,13 +172,13 @@ class Panel extends Component {
             
           <p id="day">Repeating Days Of The Week</p>
           <div id="day_input">
-            <label><button onClick={ this.handle_btns } value="Sun">S</button></label>
-            <label><button onClick={ this.handle_btns } value="Mon">M</button></label>
-            <label><button onClick={ this.handle_btns } value="Tue">T</button></label>
-            <label><button onClick={ this.handle_btns } value="Sun">S</button></label>
-            <label><button onClick={ this.handle_btns } value="Thu">T</button></label>
-            <label><button onClick={ this.handle_btns } value="Fri">F</button></label>
-            <label><button onClick={ this.handle_btns } value="Sat">S</button></label>
+            <label><button onClick={ this.handle_btns } value="0">S</button></label>
+            <label><button onClick={ this.handle_btns } value="1">M</button></label>
+            <label><button onClick={ this.handle_btns } value="2">T</button></label>
+            <label><button onClick={ this.handle_btns } value="3">S</button></label>
+            <label><button onClick={ this.handle_btns } value="4">T</button></label>
+            <label><button onClick={ this.handle_btns } value="5">F</button></label>
+            <label><button onClick={ this.handle_btns } value="6">S</button></label>
           </div>
       
           <p id="nickname">Meeting Nickname</p>

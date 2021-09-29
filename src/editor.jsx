@@ -26,10 +26,10 @@ class Editor extends Component {
 
   enter_zoom() {
     const current_time = new Date()
-
     const reserved_meetings = JSON.parse(localStorage.getItem('meetings'))[this.params['category']]
+
     reserved_meetings.forEach(meeting => {
-      if (meeting.time === `${current_time.getHours()}:${current_time.getMinutes()}`) {
+      if (meeting.time === `${current_time.getHours()}:${current_time.getMinutes()}` && meeting["repeating-days"].includes(current_time.getDay.toString())) {
         console.log('oh')
       }
     });
