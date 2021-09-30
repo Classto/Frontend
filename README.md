@@ -1,5 +1,5 @@
 # Project Classto
-Add, Edit, Share Your online Schedules
+Project Classto, join your zoom easily
 
 ## Add
 add your online schedules with Classto
