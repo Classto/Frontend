@@ -2,7 +2,7 @@
 Add, Edit, Share Your online Schedules
 
 ## Add
-add your online schedules with classto
+add your online schedules with Classto
 
 ## Edit
 manage online meetings more easy with Classto
