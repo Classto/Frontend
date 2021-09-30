@@ -192,17 +192,17 @@ class Panel extends Component {
       
           <p id="type">Connection type</p>
           <select id="type_input">
-            {/* <option id="fst" value="idpw">Zoom Meeting ID & PW</option> */}
-            <option id="lst" value="link">Zoom Meeting Link</option>
+            <option id="fst" value="idpw">Zoom Meeting ID & PW</option>
+            {/* <option id="lst" value="link">Zoom Meeting Link</option> */}
           </select>
       
-          {/* <p id="_id">Meeting ID</p>
-          <input id="id_input" type="text" maxLength="11" placeholder="Enter Meeting ID"></input>
+          <p id="_id">Meeting ID</p>
+          <input id="id_input" type="text" maxLength="11" placeholder="Enter Meeting ID" name="id" onChange={ this.handle_input }></input>
           <p id="pw">Meeting PW</p>
-          <input id="pw_input" type="text" placeholder="Enter Meeting PW"></input> */}
+          <input id="pw_input" type="text" placeholder="Enter Meeting PW" name="pwd" onChange={ this.handle_input }></input>
       
-          <p id="link">Meeting Link</p>
-          <input id="link_input" type="text" placeholder="Enter Meeting Link" name="link" onChange={ this.handle_input }></input>
+          {/* <p id="link">Meeting Link</p>
+          <input id="link_input" type="text" placeholder="Enter Meeting Link" name="link" onChange={ this.handle_input }></input> */}
         </div>
         <input id="btn" type="submit" value="Submit"></input>
       </form>

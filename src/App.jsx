@@ -15,6 +15,7 @@ class App extends Component {
               "link": "meeting link",
               "id": 1234,
               "password": 1234,
+              "repeating-days" : []
             },
             {
               "name": "meet",
@@ -22,6 +23,7 @@ class App extends Component {
               "link": "link",
               "id":1,
               "password": 1234,
+              "repeating-days" : []
             }
           ]
         }
