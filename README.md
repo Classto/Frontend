@@ -1,5 +1,5 @@
 # Project Classto
-Project Classto, join your zoom easily
+Join Your Meeting Easily 
 
 ## Add
 add your online schedules with Classto
