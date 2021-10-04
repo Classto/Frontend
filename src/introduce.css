@@ -1,8 +1,50 @@
 @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@700;800;900&display=swap');
 
-.introduce {
+#introduce {
+    width: 100vw;
     height: 100vh;
+    background-color: #327DFF;
+}
+
+#main-title {
+    position: relative;
+    top: 75px;
+    left: 50%;
+    transform: translateX(-50%);
     margin: 0;
 
-    background-color: #327DFF;
+    font-weight: 900;
+    text-align: center;
+    color: #ffffff;
+    font-size: 125px;
+}
+
+#main-description {
+    position: relative;
+    margin: 0;
+    top: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    font-weight: 800;
+    text-align: center;
+    color: #ffffff;
+    font-size: 80px;
+}
+
+#main-editor {
+    position: relative;
+    width: 300px;
+    height: 70px;
+
+    border-radius: 50px;
+    background-color: #ffffff;
+}
+
+/* ratio 5.2 : 1 */
+#main-landscape { 
+    position: relative;
+    width: 100vw;
+    height: 20vw;
+    top: 305px;
 }
