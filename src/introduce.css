@@ -128,10 +128,9 @@
     color: #ffffff;
 }
 
-#about > span {
+#about > p > span {
     color: #327DFF;
     text-decoration:underline;
-    text-underline-position:under;
     cursor: pointer;
 }
 
