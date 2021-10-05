@@ -2,6 +2,11 @@ import { Component } from 'react';
 import './schedule.css';
 
 class Schedule extends Component {
+  del_schedule(meet) {
+    this.props.meetings.splice(this.props.meetings.indexOf(meet), 1)
+    localStorage.setItem('meetings', JSON.stringify(this.props))
+  }
+
   render() {
     // try {
     //   const { m } = this.props;
@@ -17,7 +22,7 @@ class Schedule extends Component {
           <div id="t_vl1"></div>
           <div id="t_vl2"></div>
           <i id="title_i1" className="fas fa-edit"></i>
-          <i id="title_i2" class="far fa-trash-alt"></i>
+          <i id="title_i2" class="far fa-trash-alt" onClick={ this.del_schedule.bind(this, meet) }></i>
           <i id="time_i" className="fas fa-clock"></i>
           <span id="time">{ meet.time }</span>
           <div id="m_vl1" style={{ left: '39px' }}></div>
