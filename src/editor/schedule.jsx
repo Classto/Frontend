@@ -17,7 +17,7 @@ class Schedule extends Component {
           <div id="t_vl1"></div>
           <div id="t_vl2"></div>
           <i id="title_i1" className="fas fa-edit"></i>
-          <i id="title_i2" className="fas fa-external-link-alt"></i>
+          <i id="title_i2" class="far fa-trash-alt"></i>
           <i id="time_i" className="fas fa-clock"></i>
           <span id="time">{ meet.time }</span>
           <div id="m_vl1" style={{ left: '39px' }}></div>
