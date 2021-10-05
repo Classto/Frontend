@@ -172,6 +172,10 @@
     color: #33353E;
 }
 
+#usage > p {
+    margin-bottom: 0;
+}
+
 #usage > p > span {
     position: relative;
     top: -173px;
