@@ -56,15 +56,17 @@ class Editor extends Component {
   }
 
   render() {
-    const { params } = this.props.match
+    const { params } = this.props.match //여기 코드 너무 엉망이어서 나중에 최적화 할게요 일단 놔두셈
     this.params = params
     const meetings = JSON.parse(window.localStorage.getItem("meetings"))[params['category']]
+    const category = params["category"]
+    console.log(typeof category)
 
     return (
       <div>
         <hr id="ct_hr"></hr>
         <div id="sch_div">
-          <Schedule meetings={ meetings }/>
+          <Schedule meetings={ meetings } category={ category }/>
         </div>
         <div id="category-div">
           <div id="category" onClick={ this.toggle_menu.bind(this) }>
