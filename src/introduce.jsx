@@ -33,18 +33,11 @@ class Introduce extends Component {
           <div id="usage">
             <h1>Usage</h1>
             <p>
-              Click<br/>Add your meetings, and just wait on time. 
-              <Link id="main-link" to={`editor/${editor_link}`}>
-                <div id="main-usage-editor">
-                  <i className="fas fa-calendar-day"></i>
-                  <p>Open Editor</p>
-                </div>
-              </Link>
-              <span>to start to use Classto.</span>
+              Click <Link to={`editor/${editor_link}`}>Open Editor</Link> button to use Classto.<br/>Add your meetings, and just wait on time. 
             </p>
           </div>
         </nav>
-        <p id="copyright">Copyright ©2021 Zoom Video Communications, Inc. All rights reserved.</p>
+        <p id="copyright">Copyright ©2021 Classto. All rights reserved.</p>
       </div>
     );
   }
