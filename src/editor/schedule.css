@@ -17,16 +17,23 @@
     background-color: #e7ebf0;
 }
 
-.schedule > h1 {
-    position: absolute;
+.schedule > #title {
+    width: 85%;
+    margin-top: -0.5%;
+    margin-left: -1.25%;
+}
+
+.schedule > #title > h1 {
     top: 13%;
     bottom: 100%;
-
     font-family: 'Heebo', sans-serif;
     font-style: normal;
     font-weight: 900;
     font-size: 34px;
-    display: flex;
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
     align-items: center;
 
     color: #33353E;

@@ -326,7 +326,7 @@
 
     font-family: 'Heebo', sans-serif;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 700;
     font-size: 23px;
     color: #5c5f64;
     display: flex;
@@ -351,64 +351,6 @@
     align-items: center;
 
     transition: border 100ms linear;
-}
-
-#option {
-    position: absolute;
-    margin-top: 20%;
-    left: 55%;
-
-    font-family: 'Heebo', sans-serif;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 23px;
-    display: flex;
-    align-items: center;
-
-    color: #5c5f64;
-}
-
-#option_input {
-    position: absolute;
-    top: 51.8%;
-    left: 55%;
-
-    font-family: 'Heebo', sans-serif;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 15px;
-    display: flex;
-    outline: none;
-    border: none;
-    color: #4a4c53;
-    border-radius: 4px;
-    align-items: center;
-
-    transition: border 100ms linear;
-}
-
-#option_input > button {
-    width: 25px;
-    height: 25px;
-    margin-right: 10px;
-    border-radius: 12.5px;
-
-    font-size: 13px;
-    text-align: center;
-    color: #ffffff;
-
-    background-color: #c8cfd4;
-    border: none;
-    outline: none;
-    cursor: pointer;
-
-    transition: background-color 150ms linear;
-}
-
-#option_input > button > i {
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
 }
 
 #type {
@@ -555,7 +497,7 @@
     font-weight: 700;
     font-size: 28px;
     text-align: center;
-    transition: color 150ms linear;
+    transition: background 150ms linear;
 }
 
 #add_pnl > input:hover {
