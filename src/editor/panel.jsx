@@ -70,7 +70,16 @@ class Panel extends Component {
     })
   }
 
-  new_schedule() {
+  new_schedule(e) {
+    e.preventDefault()
+    for (var options in this.state.inputs) {
+      // console.log(this.state.inputs[options])
+      if (this.state.inputs[options] === [] || this.state.inputs[options] === "") {
+        console.log(typeof this.state.inputs[options])
+      } else {
+        console.log('asdasd')
+      }
+    }
     let meetings = JSON.parse(localStorage.getItem('meetings'))
     meetings[this.ctgr_input.current.value].push(this.state.inputs)
 
@@ -126,7 +135,7 @@ class Panel extends Component {
         <div id="body">
           <hr id="vl"></hr>
           <p id="title">Schedule Title</p>
-          <input id="title_input" type="text" placeholder="Classto Schedule" name="name" maxLength="30" onChange={ this.handle_input }></input>
+          <input id="title_input" type="text" placeholder="Enter Schedule Name" name="name" maxLength="30" onChange={ this.handle_input }></input>
       
           <p id="ctgr">Schedule Category</p>
           <select id="ctgr_input" ref={ this.ctgr_input }></select>
@@ -139,20 +148,14 @@ class Panel extends Component {
             <label><button onClick={ this.handle_btns } value="0">S</button></label>
             <label><button onClick={ this.handle_btns } value="1">M</button></label>
             <label><button onClick={ this.handle_btns } value="2">T</button></label>
-            <label><button onClick={ this.handle_btns } value="3">S</button></label>
+            <label><button onClick={ this.handle_btns } value="3">W</button></label>
             <label><button onClick={ this.handle_btns } value="4">T</button></label>
             <label><button onClick={ this.handle_btns } value="5">F</button></label>
             <label><button onClick={ this.handle_btns } value="6">S</button></label>
           </div>
       
           <p id="nickname">Meeting Nickname</p>
-          <input id="nickname_input" type="text" placeholder="Classto User" maxLength="30" name="nickname" onChange={ this.handle_input }></input>
-      
-          <p id="option">Video&Audio Option</p>
-          <div id="option_input">
-            <button type="checkbox" name="audio" onClick={ this.handle_opt } className="fas fa-microphone"></button>
-            <button type="checkbox" name="video" onClick={ this.handle_opt } className="fas fa-video"></button>
-          </div>
+          <input id="nickname_input" type="text" placeholder="Enter Nickname" maxLength="30" name="nickname" onChange={ this.handle_input }></input>
       
           <p id="type">Connection type</p>
           <select id="type_input">

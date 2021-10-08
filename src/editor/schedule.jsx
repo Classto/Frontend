@@ -21,6 +21,14 @@ class Schedule extends Component {
     localStorage.setItem("meetings", JSON.stringify(pr_meetings))
   }
 
+  open_link(meeting) {
+    try {
+      window.location.href = `zoommtg://zoom.us/join?action=join&confno=${meeting.id}&pwd=${meeting.pwd}&uname=${meeting.nickname}`
+    } catch(errror) {
+      //줌이 설치되어있지 않을 때
+    }
+  }
+
   render() {
     // try { 이거는 필요함
     //   const { m } = this.props;
@@ -31,10 +39,12 @@ class Schedule extends Component {
     const schedule = this.state.meetings.map((meet) =>
       <li key={ meet.name }>
         <div className="schedule">
-          <h1>{ meet.name }</h1>
+          <div id="title">
+            <h1>{ meet.name }</h1>
+          </div>
           <div id="t_vl1"></div>
           <div id="t_vl2"></div>
-          <i id="title_i1" className="fas fa-edit"></i>
+          <i id="title_i1" class="fas fa-external-link-alt" onClick={ this.open_link.bind(this, meet) }></i>
           <i id="title_i2" className="far fa-trash-alt" onClick={ this.del_schedule.bind(this, meet) }></i>
           <i id="time_i" className="fas fa-clock"></i>
           <span id="time">{ meet.time }</span>
