@@ -61,7 +61,6 @@ class Editor extends Component {
     this.params = params
     const meetings = JSON.parse(window.localStorage.getItem("meetings"))[params['category']]
     const category = params["category"]
-    console.log(typeof category)
 
     return (
       <div>

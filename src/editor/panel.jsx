@@ -41,12 +41,6 @@ class Panel extends Component {
     }
   }
 
-  handle_ctgr_input() {
-    this.setState({
-      category: this.ctgr_input.options[this.ctgr_input.selectedIndex].innerHTML
-    })
-  }
-
   handle_btns(event) {
     event.preventDefault()
     let new_input = this.state.inputs
@@ -82,8 +76,6 @@ class Panel extends Component {
       // console.log(this.state.inputs[options])
       if (this.state.inputs[options] === [] || this.state.inputs[options] === "") {
         console.log(typeof this.state.inputs[options])
-      } else {
-        console.log('asdasd')
       }
     }
     let meetings = JSON.parse(localStorage.getItem('meetings'))
@@ -147,7 +139,7 @@ class Panel extends Component {
           <select id="ctgr_input" ref={ this.ctgr_input } onChange={ this.handle_ctgr_input }></select>
       
           <p id="pnl_time">Time To Connect</p>
-          <TimeField id="time_input" value="00:00" name="time" onChange={ this.handle_input }></TimeField>
+          <TimeField id="time_input" value="00:00" name="time"></TimeField>
             
           <p id="day">Repeating Days Of The Week</p>
           <div id="day_input">
