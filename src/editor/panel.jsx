@@ -35,7 +35,7 @@ class Panel extends Component {
 
   handle_ctgr() {
     const ctgrs = JSON.parse(localStorage.getItem('categorys'))
-
+    this.ctgr_input.current.innerHTML = ''
     for (let ctg in ctgrs) {
       this.ctgr_input.current.appendChild(new Option(ctgrs[ctg], ctgrs[ctg], false))
     }
