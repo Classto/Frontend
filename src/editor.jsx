@@ -37,8 +37,6 @@ class Editor extends Component {
         }
       }
     });
-
-    console.log(current_time.getHours(), current_time.getMinutes())
   }
 
   toggle_menu() {

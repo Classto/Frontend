@@ -31,14 +31,20 @@ class Panel extends Component {
     this.setState({
       inputs: this.state.inputs
     })
-    console.log(this.state.inputs)
   }
 
   handle_ctgr() {
-    for (var ctg in JSON.parse(localStorage.getItem("meetings"))) {
-      this.ctgr_input.current.innerHTML = ""
-      this.ctgr_input.current.appendChild(new Option(ctg, ctg, false))
+    const ctgrs = JSON.parse(localStorage.getItem('categorys'))
+
+    for (let ctg in ctgrs) {
+      this.ctgr_input.current.appendChild(new Option(ctgrs[ctg], ctgrs[ctg], false))
     }
+  }
+
+  handle_ctgr_input() {
+    this.setState({
+      category: this.ctgr_input.options[this.ctgr_input.selectedIndex].innerHTML
+    })
   }
 
   handle_btns(event) {
@@ -138,7 +144,7 @@ class Panel extends Component {
           <input id="title_input" type="text" placeholder="Enter Schedule Name" name="name" maxLength="30" onChange={ this.handle_input }></input>
       
           <p id="ctgr">Schedule Category</p>
-          <select id="ctgr_input" ref={ this.ctgr_input }></select>
+          <select id="ctgr_input" ref={ this.ctgr_input } onChange={ this.handle_ctgr_input }></select>
       
           <p id="pnl_time">Time To Connect</p>
           <TimeField id="time_input" value="00:00" name="time" onChange={ this.handle_input }></TimeField>
