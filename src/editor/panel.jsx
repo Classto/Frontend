@@ -29,7 +29,7 @@ class Panel extends Component {
     let new_input = this.state.inputs
     new_input[event.target.name] = event.target.value
     this.setState({
-      inputs: this.state.inputs
+      inputs: new_input
     })
   }
 
@@ -52,7 +52,7 @@ class Panel extends Component {
       event.target.style.backgroundColor = '#c8cfd4'
     }
     this.setState({
-      inputs: this.state.inputs
+      inputs: new_input
     })
   }
 
@@ -66,7 +66,7 @@ class Panel extends Component {
     }
     new_input['options'][event.target.name] = !!!this.state.inputs.options[event.target.name]
     this.setState({
-      inputs: this.state.inputs
+      inputs: new_input
     })
   }
 
@@ -120,62 +120,62 @@ class Panel extends Component {
   render() {
     return (
       <div>
-      <div id="pannel" style={{ display: this.state.toggle_panel }}>
-      <div id='background'></div>
-      
-      <form id="add_pnl" onSubmit={ this.new_schedule }>
-        <div id="header">
-          <p>Create Schedule</p>
-          <i id="header_i" className="fas fa-times" onClick={ this.open_close_panel }></i>
-          <hr></hr>
-        </div>
-        
-        <div id="body">
-          <hr id="vl"></hr>
-          <p id="title">Schedule Title</p>
-          <input id="title_input" type="text" placeholder="Enter Schedule Name" name="name" maxLength="30" onChange={ this.handle_input }></input>
-      
-          <p id="ctgr">Schedule Category</p>
-          <select id="ctgr_input" ref={ this.ctgr_input } onChange={ this.handle_ctgr_input }></select>
-      
-          <p id="pnl_time">Time To Connect</p>
-          <TimeField id="time_input" value="00:00" name="time"></TimeField>
+        <div id="pannel" style={{ display: this.state.toggle_panel }}>
+          <div id='background'></div>
+          
+          <form id="add_pnl" onSubmit={ this.new_schedule }>
+            <div id="header">
+              <p>Create Schedule</p>
+              <i id="header_i" className="fas fa-times" onClick={ this.open_close_panel }></i>
+              <hr></hr>
+            </div>
             
-          <p id="day">Repeating Days Of The Week</p>
-          <div id="day_input">
-            <label><button onClick={ this.handle_btns } value="0">S</button></label>
-            <label><button onClick={ this.handle_btns } value="1">M</button></label>
-            <label><button onClick={ this.handle_btns } value="2">T</button></label>
-            <label><button onClick={ this.handle_btns } value="3">W</button></label>
-            <label><button onClick={ this.handle_btns } value="4">T</button></label>
-            <label><button onClick={ this.handle_btns } value="5">F</button></label>
-            <label><button onClick={ this.handle_btns } value="6">S</button></label>
+            <div id="body">
+              <hr id="vl"></hr>
+              <p id="title">Schedule Title</p>
+              <input id="title_input" type="text" placeholder="Enter Schedule Name" name="name" maxLength="30" onChange={ this.handle_input }></input>
+          
+              <p id="ctgr">Schedule Category</p>
+              <select id="ctgr_input" ref={ this.ctgr_input } onChange={ this.handle_ctgr_input }></select>
+          
+              <p id="pnl_time">Time To Connect</p>
+              <TimeField id="time_input" value="00:00" name="time"></TimeField>
+                
+              <p id="day">Repeating Days Of The Week</p>
+              <div id="day_input">
+                <label><button onClick={ this.handle_btns } value="0">S</button></label>
+                <label><button onClick={ this.handle_btns } value="1">M</button></label>
+                <label><button onClick={ this.handle_btns } value="2">T</button></label>
+                <label><button onClick={ this.handle_btns } value="3">W</button></label>
+                <label><button onClick={ this.handle_btns } value="4">T</button></label>
+                <label><button onClick={ this.handle_btns } value="5">F</button></label>
+                <label><button onClick={ this.handle_btns } value="6">S</button></label>
+              </div>
+          
+              <p id="nickname">Meeting Nickname</p>
+              <input id="nickname_input" type="text" placeholder="Enter Nickname" maxLength="30" name="nickname" onChange={ this.handle_input }></input>
+          
+              <p id="type">Connection type</p>
+              <select id="type_input">
+                <option id="fst" value="idpw">Zoom Meeting ID & PW</option>
+                {/* <option id="lst" value="link">Zoom Meeting Link</option> */}
+              </select>
+          
+              <p id="_id">Meeting ID</p>
+              <input id="id_input" type="text" maxLength="11" placeholder="Enter Meeting ID" name="id" onChange={ this.handle_input }></input>
+              <p id="pw">Meeting PW</p>
+              <input id="pw_input" type="text" placeholder="Enter Meeting PW" name="pwd" onChange={ this.handle_input }></input>
+          
+              {/* <p id="link">Meeting Link</p>
+              <input id="link_input" type="text" placeholder="Enter Meeting Link" name="link" onChange={ this.handle_input }></input> */}
+            </div>
+            <input id="btn" type="submit" value="Submit"></input>
+          </form>
           </div>
-      
-          <p id="nickname">Meeting Nickname</p>
-          <input id="nickname_input" type="text" placeholder="Enter Nickname" maxLength="30" name="nickname" onChange={ this.handle_input }></input>
-      
-          <p id="type">Connection type</p>
-          <select id="type_input">
-            <option id="fst" value="idpw">Zoom Meeting ID & PW</option>
-            {/* <option id="lst" value="link">Zoom Meeting Link</option> */}
-          </select>
-      
-          <p id="_id">Meeting ID</p>
-          <input id="id_input" type="text" maxLength="11" placeholder="Enter Meeting ID" name="id" onChange={ this.handle_input }></input>
-          <p id="pw">Meeting PW</p>
-          <input id="pw_input" type="text" placeholder="Enter Meeting PW" name="pwd" onChange={ this.handle_input }></input>
-      
-          {/* <p id="link">Meeting Link</p>
-          <input id="link_input" type="text" placeholder="Enter Meeting Link" name="link" onChange={ this.handle_input }></input> */}
-        </div>
-        <input id="btn" type="submit" value="Submit"></input>
-      </form>
-      </div>
-      <button id="new_schedule" onClick={ this.open_close_panel } style={{ display: this.state.toggle_panel === 'block' ? 'none' : 'block'}}>
-        <i id="add_btn_plus" className="fas fa-plus"></i>
-        <div></div>
-      </button>
+        <button id="new_schedule" onClick={ this.open_close_panel } style={{ display: this.state.toggle_panel === 'block' ? 'none' : 'block'}}>
+          <i id="add_btn_plus" className="fas fa-plus"></i>
+          <div></div>
+        </button>
       </div>
     )
   }
