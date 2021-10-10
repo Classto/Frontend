@@ -35,7 +35,7 @@ class App extends Component {
       <div>
         <BrowserRouter>
           <Route exact path="/" component={Introduce}/>
-          <Route path="/editor/:category" component={Editor}/>
+          <Route path="/:category" component={Editor}/>
         </BrowserRouter>
       </div>
     )

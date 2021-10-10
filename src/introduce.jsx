@@ -18,7 +18,7 @@ class Introduce extends Component {
       <div id="introduce">
         <h1 id="main-title">Classto</h1>
         <h1 id="main-description">Join Your Meeting Easily</h1>
-        <Link id="main-link" to={`editor/${editor_link}`}>
+        <Link id="main-link" to={editor_link}>
           <div id="main-editor">
             <i className="fas fa-calendar-day"></i>
             <p>Open Editor</p>
@@ -33,7 +33,7 @@ class Introduce extends Component {
           <div id="usage">
             <h1>Usage</h1>
             <p>
-              Click <Link to={`editor/${editor_link}`}>Open Editor</Link> button to use Classto.<br/>Add your meetings, and just wait on time. 
+              Click <Link to={editor_link}>Open Editor</Link> button to use Classto.<br/>Add your meetings, and just wait on time. 
             </p>
           </div>
         </nav>
