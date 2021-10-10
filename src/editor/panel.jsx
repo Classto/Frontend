@@ -14,11 +14,13 @@ class Panel extends Component {
           'video': false,
           'audio': false
         },
+        'category': window.localStorage.getItem("recent_editor")
       }
     }
     this.new_schedule = this.new_schedule.bind(this)
     this.open_close_panel = this.open_close_panel.bind(this)
     this.handle_input = this.handle_input.bind(this)
+    this.handle_ctgr_input = this.handle_ctgr_input.bind(this)
     this.handle_btns = this.handle_btns.bind(this)
     this.handle_opt = this.handle_opt.bind(this)
 
@@ -31,13 +33,27 @@ class Panel extends Component {
     this.setState({
       inputs: new_input
     })
+
+    console.log(this.state.inputs)
+  }
+
+  handle_ctgr_input() {
+    let new_input = this.state.inputs
+    let ctgr_select = document.querySelector('#ctgr_input')
+    new_input['category'] = ctgr_select.options[ctgr_select.selectedIndex].value;
+    this.setState({
+      inputs: new_input
+    })
   }
 
   handle_ctgr() {
     const ctgrs = JSON.parse(localStorage.getItem('categorys'))
     this.ctgr_input.current.innerHTML = ''
     for (let ctg in ctgrs) {
-      this.ctgr_input.current.appendChild(new Option(ctgrs[ctg], ctgrs[ctg], false))
+      if (ctgrs[ctg] === window.localStorage.getItem("recent_editor"))
+        this.ctgr_input.current.appendChild(new Option(ctgrs[ctg], ctgrs[ctg], true))
+      else
+        this.ctgr_input.current.appendChild(new Option(ctgrs[ctg], ctgrs[ctg], false))
     }
   }
 
@@ -120,6 +136,10 @@ class Panel extends Component {
   render() {
     return (
       <div>
+        <button id="new_schedule" onClick={ this.open_close_panel } style={{ display: this.state.toggle_panel === 'block' ? 'none' : 'block'}}>
+          <i id="add_btn_plus" className="fas fa-plus"></i>
+          <div></div>
+        </button>
         <div id="pannel" style={{ display: this.state.toggle_panel }}>
           <div id='background'></div>
           
@@ -172,10 +192,6 @@ class Panel extends Component {
             <input id="btn" type="submit" value="Submit"></input>
           </form>
           </div>
-        <button id="new_schedule" onClick={ this.open_close_panel } style={{ display: this.state.toggle_panel === 'block' ? 'none' : 'block'}}>
-          <i id="add_btn_plus" className="fas fa-plus"></i>
-          <div></div>
-        </button>
       </div>
     )
   }
