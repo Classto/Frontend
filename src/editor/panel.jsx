@@ -29,7 +29,7 @@ class Panel extends Component {
     let new_input = this.state.inputs
     new_input[event.target.name] = event.target.value
     this.setState({
-      inputs: this.state.inputs
+      inputs: this.new_input
     })
   }
 
