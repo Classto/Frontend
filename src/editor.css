@@ -36,19 +36,21 @@ label, label > input {
     top: 15%;
     margin-top: -50px;
     height: 50px;
-    width: 145px;
+    width: auto;
+    max-width: 250px;
+    min-width: 145px;
     margin-left: 20vw;
 }
 
 #category {
     height: 100%;
-    width: 100%;
+    width: auto;
 
     outline: none;
     border: 0;
     border-radius: 10px;
     background-color: #ffffff00;
-
+    padding-right: 17px;
     transition: background-color 150ms linear;
 
     cursor: pointer;
@@ -58,14 +60,24 @@ label, label > input {
     background-color: #e5eaf0;
 }
 
-#category > p {
-    position: absolute;
+#category > div {
+    position: relative;
+    height: 50px;
+    width: auto;
+    margin-left: 45px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#category > div > p {
+    position: relative;
+    display: inline-block;
     
     top:50%;
     transform:translateY(-50%);
-    margin-left: 45px;
-    margin-top: 0;
-    margin-bottom: 0;
+    max-width: 195px;
+    margin: 0;
 
     font-family: 'Heebo', sans-serif;
     font-style: normal;
@@ -73,6 +85,9 @@ label, label > input {
     font-size: 25px;
 
     color: #33353E;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 #category > i {

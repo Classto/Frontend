@@ -70,7 +70,9 @@ class Editor extends Component {
         </div>
         <div id="category-div">
           <div id="category" onClick={ this.toggle_menu.bind(this) }>
-            <p>{ params['category'] }</p>
+            <div>
+              <p>{ params['category'] }</p>
+            </div>
             <i className="fas fa-chevron-down fa-2x"></i>
           </div>
           <div style={{ display: this.state.toggle_menu }}>
