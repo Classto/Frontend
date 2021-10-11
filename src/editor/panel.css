@@ -1,48 +1,38 @@
 #new_schedule {
-    position: fixed;
-    right: 3%;
-    bottom: 4%;
-    width: 4.5em;
-    height: 4.5em;
+    position: absolute;
+    top: 15%;
+    width: 50px;
+    height: 50px;
+    margin-top: -50px;
+    right: 20vw;
     border: 0;
+    border-radius: 10px;
     outline: 0;
-    border-radius: 100%;
-    background-color: #327dff;
-    z-index: 1;
+    background-color: #ffffff;
+    z-index: -1;
     cursor: pointer;
     transition: background-color 150ms linear, opacity 100ms ease-out;
+    text-align: center;
+}
+
+@media screen and (max-width: 1200px) {
+    #new_schedule {
+        right: 5vw;
+    }
 }
 
 #new_schedule:hover {
-    right: 2.875%;
-    bottom: 3.775%;
-    width: 4.75em;
-    height: 4.75em;
-
-    background-color: #4688ff;
-}
-
-#new_schedule:active {
-    background: #276de6;
+    background-color: #e5eaf0;
 }
 
 #new_schedule > i {
     position: absolute;
-    top: 14px;
-    left: 15px;
-    color: #ffffff;
-    font-size: 2.5em;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #33353E;
+    font-size: 21px;
     transition: color 150ms linear;
-}
-
-#new_schedule:hover > i {
-    top: 14px;
-    left: 15px;
-    font-size: 2.7em;
-}
-
-#new_schedule:active > i {
-    color: #c2c2c2;
 }
 
 #background {
