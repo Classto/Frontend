@@ -42,10 +42,12 @@ class Schedule extends Component {
           <div id="title">
             <h1>{ meet.name }</h1>
           </div>
-          <div id="t_vl1"></div>
-          <div id="t_vl2"></div>
-          <i id="title_i1" class="fas fa-external-link-alt" onClick={ this.open_link.bind(this, meet) }></i>
-          <i id="title_i2" className="far fa-trash-alt" onClick={ this.del_schedule.bind(this, meet) }></i>
+          <div id="title_i1">
+            <i class="fas fa-external-link-alt" onClick={ this.open_link.bind(this, meet) } />
+          </div>
+          <div id="title_i2">
+            <i className="far fa-trash-alt" onClick={ this.del_schedule.bind(this, meet) } />
+          </div>
           <i id="time_i" className="fas fa-clock"></i>
           <span id="time">{ meet.time }</span>
           <div id="m_vl1" style={{ left: '39px' }}></div>
