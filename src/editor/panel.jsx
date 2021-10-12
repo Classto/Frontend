@@ -137,7 +137,7 @@ class Panel extends Component {
     return (
       <div>
         <button id="new_schedule" onClick={ this.open_close_panel }>
-          <i id="add_btn_plus" className="fas fa-plus"></i>
+          <i className="fas fa-plus"></i>
         </button>
         <div id="pannel" style={{ display: this.state.toggle_panel }}>
           <div id='background'></div>
