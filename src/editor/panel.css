@@ -261,6 +261,12 @@
     align-items: center;
 
     transition: border 100ms linear;
+
+    -ms-user-select: none; 
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
 }
 
 #day_input > label > button {
