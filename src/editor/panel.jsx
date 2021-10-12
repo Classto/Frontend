@@ -87,8 +87,7 @@ class Panel extends Component {
     })
   }
 
-  new_schedule(e) {
-    e.preventDefault()
+  new_schedule() {
     for (var options in this.state.inputs) {
       // console.log(this.state.inputs[options])
       if (this.state.inputs[options] === [] || this.state.inputs[options] === "") {
