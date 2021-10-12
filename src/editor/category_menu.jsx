@@ -1,8 +1,8 @@
 import { Component } from 'react';
 import { Link } from 'react-router-dom';
-import './menu.css';
+import './category_menu.css';
 
-class Menu extends Component {
+class CategoryMenu extends Component {
   render() {
     const categorys = JSON.parse(localStorage.getItem('categorys'))
     const menu = categorys.map((category) => 
@@ -19,4 +19,4 @@ class Menu extends Component {
   }
 }
 
-export default Menu;
+export default CategoryMenu;

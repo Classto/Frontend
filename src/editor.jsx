@@ -1,14 +1,14 @@
 import { Component } from 'react';
 import Schedule from './editor/schedule';
 import Panel from './editor/panel';
-import Menu from './editor/menu';
+import CategoryMenu from './editor/category_menu';
 import './editor.css';
 
 class Editor extends Component {
   constructor() {
     super()
     this.state = {
-      toggle_menu : 'none'
+      toggle_category_menu : 'none'
     }
   }
 
@@ -29,28 +29,23 @@ class Editor extends Component {
     const reserved_meetings = JSON.parse(localStorage.getItem('meetings'))[this.params['category']]
     
     reserved_meetings.forEach(meeting => {
-      if (meeting.time === `${current_time.getHours()}:${current_time.getMinutes()}` && meeting["repeating-days"].includes(current_time.getDay().toString())) {
-        try {
-          window.location.href = `zoommtg://zoom.us/join?action=join&confno=${meeting.id}&pwd=${meeting.pwd}&uname=${meeting.nickname}`
-        } catch(errror) {
-          //줌이 설치되어있지 않을 때
-        }
-      }
+      if (meeting.time === `${current_time.getHours()}:${current_time.getMinutes()}` && meeting["repeating-days"].includes(current_time.getDay().toString()))
+        window.location.href = `zoommtg://zoom.us/join?action=join&confno=${meeting.id}&pwd=${meeting.pwd}&uname=${meeting.nickname}`
     });
   }
 
-  toggle_menu() {
-    switch(this.state.toggle_menu) {
+  toggle_category_menu() {
+    switch(this.state.toggle_category_menu) {
       default:
         break
       case 'none':
         this.setState({
-          toggle_menu: 'block',
+          toggle_category_menu: 'block',
         })
         break
       case 'block':
         this.setState({
-          toggle_menu: 'none',
+          toggle_category_menu: 'none',
         })
         break
     }
@@ -69,14 +64,14 @@ class Editor extends Component {
           <Schedule meetings={ meetings } category={ category }/>
         </div>
         <div id="category-div">
-          <div id="category" onClick={ this.toggle_menu.bind(this) }>
+          <div id="category" onClick={ this.toggle_category_menu.bind(this) }>
             <div>
               <p>{ params['category'] }</p>
             </div>
             <i className="fas fa-chevron-down fa-2x"></i>
           </div>
-          <div style={{ display: this.state.toggle_menu }}>
-            <Menu/>
+          <div style={{ display: this.state.toggle_category_menu }}>
+            <CategoryMenu/>
           </div>
         </div>
         <Panel/>

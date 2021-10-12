@@ -15,7 +15,8 @@ class Panel extends Component {
           'audio': false
         },
         'category': window.localStorage.getItem("recent_editor")
-      }
+      },
+      toggle_add_menu: 'none'
     }
     this.new_schedule = this.new_schedule.bind(this)
     this.open_close_panel = this.open_close_panel.bind(this)
@@ -133,12 +134,36 @@ class Panel extends Component {
     }
   }
 
+  toggle_add_menu() {
+    switch(this.state.toggle_add_menu) {
+      default:
+        break
+      case 'none':
+        this.setState({
+          toggle_add_menu: 'block'
+        })
+        break
+      case 'block':
+        this.setState({
+          toggle_add_menu: 'none'
+        })
+        break
+    }
+  }
+
   render() {
     return (
       <div>
-        <button id="new_schedule" onClick={ this.open_close_panel }>
+        <button id="new_schedule" onClick={ this.toggle_add_menu.bind(this) }>
           <i className="fas fa-plus"></i>
         </button>
+        <div id="add_menu" style={{ display: this.state.toggle_add_menu }}>
+          <div/>
+          <ul>
+            <li onClick={ this.open_close_panel }><p>Add Schedule</p></li>
+            <li><p>Add Category</p></li>
+          </ul>
+        </div>
         <div id="pannel" style={{ display: this.state.toggle_panel }}>
           <div id='background'></div>
           
