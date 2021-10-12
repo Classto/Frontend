@@ -158,7 +158,7 @@ class Panel extends Component {
               <select id="ctgr_input" ref={ this.ctgr_input } onChange={ this.handle_ctgr_input }></select>
           
               <p id="pnl_time">Time To Connect</p>
-              <TimeField id="time_input" value="00:00" name="time"></TimeField>
+              <TimeField id="time_input" value="00:00" name="time" onChange={ this.handle_input }></TimeField>
                 
               <p id="day">Repeating Days Of The Week</p>
               <div id="day_input">
