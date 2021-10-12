@@ -152,7 +152,7 @@ class Panel extends Component {
             <div id="body">
               <hr id="vl"></hr>
               <p id="title">Schedule Title</p>
-              <input id="title_input" type="text" placeholder="Enter Schedule Name" name="name" maxLength="30" onChange={ this.handle_input }></input>
+              <input id="title_input" type="text" placeholder="Enter Schedule Name" name="name" onChange={ this.handle_input }></input>
           
               <p id="ctgr">Schedule Category</p>
               <select id="ctgr_input" ref={ this.ctgr_input } onChange={ this.handle_ctgr_input }></select>
