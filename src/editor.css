@@ -11,20 +11,9 @@
     color: #b4b6be;
 }
 
-::-webkit-scrollbar { 
-    display: none; 
-}
-
 body {
     height: 100%;
     margin: 0;
-    -ms-user-select: none; 
-    -moz-user-select: -moz-none;
-    -khtml-user-select: none;
-    -webkit-user-select: none;
-    user-select: none;
-    overflow-x: hidden;
-    -ms-overflow-style: none;
 }
 
 label, label > input {
