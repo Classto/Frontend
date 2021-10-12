@@ -171,7 +171,6 @@ class Panel extends Component {
             <div id="header">
               <p>Create Schedule</p>
               <i id="header_i" className="fas fa-times" onClick={ this.open_close_panel }></i>
-              <hr></hr>
             </div>
             
             <div id="body">

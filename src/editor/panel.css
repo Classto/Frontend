@@ -59,13 +59,13 @@
 
 #header > p {
     position: absolute;
-    top: -2.5%;
-    left: 3%;
+    top: -2%;
+    left: 4.25%;
 
     font-family: 'Heebo', sans-serif;
     font-style: normal;
     font-weight: 900;
-    font-size: 38px;
+    font-size: 40px;
     display: flex;
     align-items: center;
 
@@ -83,19 +83,6 @@
     cursor: pointer;
 
     color: #bbbbbb;
-}
-
-#header > hr {
-    position: absolute;
-    left: 0%;
-    right: 65%;
-    bottom: 85%;
-    height: 2px;
-
-    border: 0;
-    border-radius: 100rem;
-
-    background-color: #e7ebf0;
 }
 
 #body {
