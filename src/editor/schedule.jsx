@@ -22,7 +22,7 @@ class Schedule extends Component {
   }
 
   open_link(meeting) {
-    window.location.href = `zoommmmtg://zoom.us/join?action=join&confno=${meeting.id}&pwd=${meeting.pwd}&uname=${meeting.nickname}`
+    window.location.href = `zoommtg://zoom.us/join?action=join&confno=${meeting.id}&pwd=${meeting.pwd}&uname=${meeting.nickname}`
   }
 
   render() {
