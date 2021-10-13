@@ -7,7 +7,8 @@ class Panel extends Component {
   constructor() {
     super()
     this.state = {
-      toggle_panel: 'none',
+      toggle_schedule_panel: 'none',
+      toggle_category_panel: 'none',
       inputs: {
         'repeating-days': [],
         'options': {
@@ -19,9 +20,13 @@ class Panel extends Component {
       toggle_add_menu: 'none'
     }
     this.new_schedule = this.new_schedule.bind(this)
-    this.open_close_panel = this.open_close_panel.bind(this)
+    this.new_category = this.new_category.bind(this)
+    this.open_close_schedule_panel = this.open_close_schedule_panel.bind(this)
+    this.open_close_category_panel = this.open_close_category_panel.bind(this)
+    this.close_background = this.close_background.bind(this)
     this.handle_input = this.handle_input.bind(this)
     this.handle_ctgr_input = this.handle_ctgr_input.bind(this)
+    this.handle_category = this.handle_category.bind(this)
     this.handle_btns = this.handle_btns.bind(this)
     this.handle_opt = this.handle_opt.bind(this)
 
@@ -34,8 +39,6 @@ class Panel extends Component {
     this.setState({
       inputs: new_input
     })
-
-    console.log(this.state.inputs)
   }
 
   handle_ctgr_input() {
@@ -87,8 +90,7 @@ class Panel extends Component {
     })
   }
 
-  new_schedule(e) {
-    e.preventDefault()
+  new_schedule() {
     for (var options in this.state.inputs) {
       // console.log(this.state.inputs[options])
       if (this.state.inputs[options] === [] || this.state.inputs[options] === "") {
@@ -113,22 +115,57 @@ class Panel extends Component {
         },
       }
     })
-    this.open_close_panel()
+    this.open_close_schedule_panel()
   }
 
-  open_close_panel() {
-    switch(this.state.toggle_panel) {
+  new_category() {
+    let categorys = JSON.parse(localStorage.getItem('categorys'))
+    let arr = []
+    for (let i = 0; i < categorys.length; i++) {
+      arr.push(categorys[i])
+      console.log(arr)
+    }
+    arr.push(this.state.category_inputs)
+
+    localStorage.setItem('categorys', JSON.stringify(arr))
+
+    this.setState({
+      category_inputs: ""
+    })
+    this.open_close_category_panel()
+  }
+
+  open_close_schedule_panel() {
+    switch(this.state.toggle_schedule_panel) {
       default:
         break
       case 'none':
         this.handle_ctgr()
         this.setState({
-          toggle_panel: 'block',
+          toggle_schedule_panel: 'block'
         })
         break
       case 'block':
         this.setState({ 
-          toggle_panel: 'none',
+          toggle_schedule_panel: 'none'
+        })
+        break
+    }
+  }
+
+  open_close_category_panel() {
+    switch(this.state.toggle_category_panel) {
+      default:
+        break
+      case 'none':
+        this.handle_ctgr()
+        this.setState({
+          toggle_category_panel: 'block'
+        })
+        break
+      case 'block':
+        this.setState({ 
+          toggle_category_panel: 'none'
         })
         break
     }
@@ -151,6 +188,19 @@ class Panel extends Component {
     }
   }
 
+  close_background() {
+    this.setState({
+      toggle_schedule_panel: 'none',
+      toggle_category_panel: 'none'
+    })
+  }
+
+  handle_category(event) {
+    this.setState({
+      category_inputs: event.target.value
+    })
+  }
+
   render() {
     return (
       <div>
@@ -160,17 +210,33 @@ class Panel extends Component {
         <div id="add_menu" style={{ display: this.state.toggle_add_menu }}>
           <div/>
           <ul>
-            <li onClick={ this.open_close_panel }><p>Add Schedule</p></li>
-            <li><p>Add Category</p></li>
+            <li onClick={ this.open_close_schedule_panel }><p>Add Schedule</p></li>
+            <li onClick={ this.open_close_category_panel }><p>Add Category</p></li>
           </ul>
         </div>
-        <div id="pannel" style={{ display: this.state.toggle_panel }}>
-          <div id='background'></div>
+        <div style={{ display: this.state.toggle_category_panel }}>
+          <div id='background' onClick={ this.close_background }></div>
+
+          <form id="category_add_pnl" onSubmit={ this.new_category }>
+            <div id="header">
+              <p>Create Category</p>
+              <i id="header_i" className="fas fa-times" onClick={ this.open_close_category_panel }></i>
+            </div>
+            
+            <div id="category_body">
+              <p id="title">Category Title</p>
+              <input id="category_title_input" type="text" placeholder="Enter Category Name" name="name" onChange={ this.handle_category }></input>
+            </div>
+            <input id="btn" type="submit" value="Submit"></input>
+          </form>
+        </div>
+        <div style={{ display: this.state.toggle_schedule_panel }}>
+          <div id='background' onClick={ this.close_background }></div>
           
           <form id="add_pnl" onSubmit={ this.new_schedule }>
             <div id="header">
               <p>Create Schedule</p>
-              <i id="header_i" className="fas fa-times" onClick={ this.open_close_panel }></i>
+              <i id="header_i" className="fas fa-times" onClick={ this.open_close_schedule_panel }></i>
             </div>
             
             <div id="body">
