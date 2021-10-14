@@ -32,6 +32,7 @@ class Schedule extends Component {
     //   if (errror instanceof TypeError) {
     //   }
     // }
+    console.log(this.state)
     const schedule = this.state.meetings.map((meet) =>
       <li key={ meet.name }>
         <div className="schedule">

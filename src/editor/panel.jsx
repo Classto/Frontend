@@ -4,8 +4,9 @@ import './panel.css';
 
 
 class Panel extends Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
+    this.current_ctgr = props.current_category
     this.state = {
       toggle_schedule_panel: 'none',
       toggle_category_panel: 'none',
@@ -15,7 +16,7 @@ class Panel extends Component {
           'video': false,
           'audio': false
         },
-        'category': window.localStorage.getItem("recent_editor")
+        'category': this.current_category
       },
       toggle_add_menu: 'none'
     }
@@ -59,10 +60,11 @@ class Panel extends Component {
     const ctgrs = JSON.parse(localStorage.getItem('categorys'))
     this.ctgr_input.current.innerHTML = ''
     for (let ctg in ctgrs) {
-      if (ctgrs[ctg] === window.localStorage.getItem("recent_editor"))
-        this.ctgr_input.current.appendChild(new Option(ctgrs[ctg], ctgrs[ctg], true))
+      console.log(ctgrs[ctg] === this.current_ctgr)
+      if (ctgrs[ctg] === this.current_ctgr)
+        this.ctgr_input.current.appendChild(new Option(ctgrs[ctg], ctgrs[ctg], false, true))
       else
-        this.ctgr_input.current.appendChild(new Option(ctgrs[ctg], ctgrs[ctg], false))
+        this.ctgr_input.current.appendChild(new Option(ctgrs[ctg], ctgrs[ctg], false, false))
     }
   }
 
@@ -103,8 +105,9 @@ class Panel extends Component {
       }
     }
     let meetings = JSON.parse(localStorage.getItem('meetings'))
+    if (!meetings.hasOwnProperty(this.ctgr_input.current.value))
+      meetings[this.ctgr_input.current.value] = []
     meetings[this.ctgr_input.current.value].push(this.state.inputs)
-
     localStorage.setItem('meetings', JSON.stringify(meetings))
     // console.log(meetings)
     // console.log('new!')
@@ -203,6 +206,7 @@ class Panel extends Component {
   }
 
   render() {
+    console.log(this.state)
     return (
       <div>
         <button id="new_schedule" onClick={ this.toggle_add_menu.bind(this) }>
