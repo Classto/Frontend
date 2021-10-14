@@ -39,7 +39,7 @@ class Schedule extends Component {
             <h1>{ meet.name }</h1>
           </div>
           <div id="title_i1">
-            <i class="fas fa-external-link-alt" onClick={ this.open_link.bind(this, meet) } />
+            <i className="fas fa-external-link-alt" onClick={ this.open_link.bind(this, meet) } />
           </div>
           <div id="title_i2">
             <i className="far fa-trash-alt" onClick={ this.del_schedule.bind(this, meet) } />
