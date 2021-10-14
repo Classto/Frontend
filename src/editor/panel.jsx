@@ -126,11 +126,13 @@ class Panel extends Component {
   new_category() {
     let categorys = JSON.parse(localStorage.getItem('categorys'))
     let arr = []
-    for (let i = 0; i < categorys.length; i++) {
+    for (let i = 0; i < categorys.length; i++)
       arr.push(categorys[i])
-      console.log(arr)
+    if (this.state.category_inputs === undefined) {
+      arr.push(`sample${categorys.length}`)
+    } else {
+      arr.push(this.state.category_inputs)
     }
-    arr.push(this.state.category_inputs)
 
     localStorage.setItem('categorys', JSON.stringify(arr))
 
