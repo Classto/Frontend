@@ -29,7 +29,6 @@ class Panel extends Component {
     this.handle_category = this.handle_category.bind(this)
     this.handle_btns = this.handle_btns.bind(this)
     this.handle_opt = this.handle_opt.bind(this)
-
     this.ctgr_input = React.createRef()
   }
 
@@ -38,6 +37,12 @@ class Panel extends Component {
     new_input[event.target.name] = event.target.value
     this.setState({
       inputs: new_input
+    })
+  }
+
+  handle_category(event) {
+    this.setState({
+      category_inputs: event.target.value
     })
   }
 
@@ -192,12 +197,6 @@ class Panel extends Component {
     this.setState({
       toggle_schedule_panel: 'none',
       toggle_category_panel: 'none'
-    })
-  }
-
-  handle_category(event) {
-    this.setState({
-      category_inputs: event.target.value
     })
   }
 
