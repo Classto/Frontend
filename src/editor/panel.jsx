@@ -16,7 +16,7 @@ class Panel extends Component {
           'video': false,
           'audio': false
         },
-        'category': this.current_category
+        'category': this.current_ctgr
       },
       toggle_add_menu: 'none'
     }
