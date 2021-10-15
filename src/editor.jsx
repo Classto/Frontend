@@ -26,15 +26,11 @@ class Editor extends Component {
 
   enter_zoom() {
     const current_time = new Date()
-    let reserved_meetings = []
-    for (let i = 0; i < Object.values(JSON.parse(window.localStorage.getItem("meetings")))[0].length; i++) {
-      if (Object.values(JSON.parse(window.localStorage.getItem("meetings")))[0][i].category === this.params['category']) {
-        reserved_meetings.push(Object.values(JSON.parse(window.localStorage.getItem("meetings")))[0][i])
-      }
-    }
-    
+    const reserved_meetings = JSON.parse(localStorage.getItem('meetings'))[this.params['category']]
+    let hour = `${current_time.getHours()}`.length === 1 ? `0${current_time.getHours()}` : `${current_time.getHours()}`
+    let minute = `${current_time.getMinutes()}`.length === 1 ? `0${current_time.getMinutes()}` : `${current_time.getMinutes()}`
     reserved_meetings.forEach(meeting => {
-      if (meeting.time === `${current_time.getHours()}:${current_time.getMinutes()}` && meeting["repeating-days"].includes(current_time.getDay().toString()))
+      if (meeting.time === `${hour}:${minute}` && meeting["repeating-days"].includes(current_time.getDay().toString()))
         window.location.href = `zoommtg://zoom.us/join?action=join&confno=${meeting.id}&pwd=${meeting.pwd}&uname=${meeting.nickname}`
     });
   }
