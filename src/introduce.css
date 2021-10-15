@@ -15,7 +15,7 @@
 
     font-weight: 900;
     text-align: center;
-    color: #ffffff;
+    color: #fff;
     font-size: 110px;
 }
 
@@ -28,7 +28,7 @@
 
     font-weight: 700;
     text-align: center;
-    color: #ffffff;
+    color: #fff;
     font-size: 60px;
 }
 
@@ -47,7 +47,7 @@
     transform: translate(-50%, -15%);
 
     border-radius: 50px;
-    background-color: #ffffff;
+    background-color: #fff;
     transition: background-color 150ms linear;
 
     cursor: pointer;
@@ -115,7 +115,7 @@
 }
 
 #main-usage > div > h1 {
-    color: #ffffff;
+    color: #fff;
     font-size: 60px;
     font-weight: 700;
     margin-bottom: 0;
@@ -126,7 +126,7 @@
     font-family: 'Heebo', sans-serif;
     font-weight: 500;
     font-size: 25px;
-    color: #ffffff;
+    color: #fff;
 }
 
 #main-usage > div > p > span, #main-usage > div > p > a {
@@ -149,5 +149,5 @@
     font-weight: 500;
     font-size: 15px;
     white-space: nowrap;
-    color: #ffffff;
+    color: #fff;
 }
