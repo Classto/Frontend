@@ -128,15 +128,22 @@ class Panel extends Component {
 
   new_category() {
     let categorys = JSON.parse(localStorage.getItem('categorys'))
+    let meetings = JSON.parse(localStorage.getItem('meetings'))
     let arr = []
     for (let i = 0; i < categorys.length; i++)
       arr.push(categorys[i])
+
     if (this.state.category_inputs === undefined) {
       arr.push(`sample${categorys.length}`)
+      if (!meetings.hasOwnProperty(`sample${categorys.length}`))
+        meetings[`sample${categorys.length}`] = []
     } else {
       arr.push(this.state.category_inputs)
+      if (!meetings.hasOwnProperty(this.state.category_inputs))
+        meetings[this.state.category_inputs] = []
     }
 
+    localStorage.setItem('meetings', JSON.stringify(meetings))
     localStorage.setItem('categorys', JSON.stringify(arr))
 
     this.setState({
