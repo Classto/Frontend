@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import TimeField from 'react-simple-timefield';
+import { ToastContainer, toast } from 'react-toastify';
 import './panel.css';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 class Panel extends Component {
@@ -134,9 +136,9 @@ class Panel extends Component {
       arr.push(categorys[i])
 
     if (this.state.category_inputs === undefined) {
-      arr.push(`sample${categorys.length}`)
+      arr.push(`category (${categorys.length})`)
       if (!meetings.hasOwnProperty(`sample${categorys.length}`))
-        meetings[`sample${categorys.length}`] = []
+        meetings[`category (${categorys.length})`] = []
     } else {
       arr.push(this.state.category_inputs)
       if (!meetings.hasOwnProperty(this.state.category_inputs))
@@ -150,6 +152,7 @@ class Panel extends Component {
       category_inputs: ""
     })
     this.open_close_category_panel()
+    toast("하와와")
   }
 
   open_close_schedule_panel() {
@@ -293,6 +296,7 @@ class Panel extends Component {
             <input id="btn" type="submit" value="Submit"></input>
           </form>
           </div>
+          <ToastContainer />
       </div>
     )
   }
