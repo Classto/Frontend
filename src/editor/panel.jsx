@@ -136,9 +136,15 @@ class Panel extends Component {
       arr.push(categorys[i])
 
     if (this.state.category_inputs === undefined) {
-      arr.push(`category (${categorys.length})`)
-      if (!meetings.hasOwnProperty(`sample${categorys.length}`))
-        meetings[`category (${categorys.length})`] = []
+      toast.error('Check your input', {
+        position: "bottom-right",
+        autoClose: 3000,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: false,
+      });
+      return
     } else {
       arr.push(this.state.category_inputs)
       if (!meetings.hasOwnProperty(this.state.category_inputs))
@@ -152,7 +158,6 @@ class Panel extends Component {
       category_inputs: ""
     })
     this.open_close_category_panel()
-    toast("하와와")
   }
 
   open_close_schedule_panel() {
@@ -232,7 +237,7 @@ class Panel extends Component {
         <div style={{ display: this.state.toggle_category_panel }}>
           <div id='background' onClick={ this.close_background }></div>
 
-          <form id="category_add_pnl" onSubmit={ this.new_category }>
+          <form id="category_add_pnl">
             <div id="header">
               <p>Create Category</p>
               <i id="header_i" className="fas fa-times" onClick={ this.open_close_category_panel }></i>
@@ -242,7 +247,7 @@ class Panel extends Component {
               <p id="title">Category Title</p>
               <input id="category_title_input" type="text" placeholder="Enter Category Name" name="name" onChange={ this.handle_category }></input>
             </div>
-            <input id="btn" type="submit" value="Submit"></input>
+            <input id="btn" type="button" value="Submit" onClick={ this.new_category } />
           </form>
         </div>
         <div style={{ display: this.state.toggle_schedule_panel }}>
