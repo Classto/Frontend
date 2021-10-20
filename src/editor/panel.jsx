@@ -13,7 +13,12 @@ class Panel extends Component {
       toggle_schedule_panel: 'none',
       toggle_category_panel: 'none',
       inputs: {
+        'name': "",
         'repeating-days': [],
+        'time': "00:00",
+        'nickname': "",
+        'id': "",
+        'pwd': "",
         'options': {
           'video': false,
           'audio': false
@@ -38,6 +43,7 @@ class Panel extends Component {
   handle_input(event) {
     let new_input = this.state.inputs
     new_input[event.target.name] = event.target.value
+    console.log(event.target.name)
     this.setState({
       inputs: new_input
     })
@@ -101,9 +107,15 @@ class Panel extends Component {
 
   new_schedule() {
     for (var options in this.state.inputs) {
-      // console.log(this.state.inputs[options])
-      if (this.state.inputs[options] === [] || this.state.inputs[options] === "") {
-        console.log(typeof this.state.inputs[options])
+      if (options !== "pwd" && this.state.inputs[options] === [] | this.state.inputs[options] === "") {
+        toast.error('Schedule options can\'t be blank.', {
+          position: "bottom-right",
+          autoClose: 5000,
+          hideProgressBar: true,
+          pauseOnHover: false,
+          draggable: false
+        });
+        return
       }
     }
     let meetings = JSON.parse(localStorage.getItem('meetings'))
@@ -118,11 +130,17 @@ class Panel extends Component {
 
     this.setState({
       inputs: {
+        'name': "",
         'repeating-days': [],
+        'time': "00:00",
+        'nickname': "",
+        'id': "",
+        'pwd': "",
         'options': {
           'video': false,
           'audio': false
         },
+        'category': this.current_ctgr
       }
     })
     this.open_close_schedule_panel()
@@ -135,14 +153,22 @@ class Panel extends Component {
     for (let i = 0; i < categorys.length; i++)
       arr.push(categorys[i])
 
-    if (this.state.category_inputs === undefined) {
-      toast.error('Check your input', {
+    if (this.state.category_inputs === undefined || this.state.category_inputs === "") {
+      toast.error('Category name can\'t be blank.', {
         position: "bottom-right",
-        autoClose: 3000,
+        autoClose: 5000,
         hideProgressBar: true,
-        closeOnClick: true,
         pauseOnHover: false,
-        draggable: false,
+        draggable: false
+      });
+      return
+    } else if (categorys.includes(this.state.category_inputs)) {
+      toast.error('There\'s already a category with the same name.', {
+        position: "bottom-right",
+        autoClose: 5000,
+        hideProgressBar: true,
+        pauseOnHover: false,
+        draggable: false
       });
       return
     } else {
@@ -221,7 +247,6 @@ class Panel extends Component {
   }
 
   render() {
-    console.log(this.state)
     return (
       <div>
         <button id="new_schedule" onClick={ this.toggle_add_menu.bind(this) }>
@@ -236,7 +261,6 @@ class Panel extends Component {
         </div>
         <div style={{ display: this.state.toggle_category_panel }}>
           <div id='background' onClick={ this.close_background }></div>
-
           <form id="category_add_pnl">
             <div id="header">
               <p>Create Category</p>
@@ -252,8 +276,7 @@ class Panel extends Component {
         </div>
         <div style={{ display: this.state.toggle_schedule_panel }}>
           <div id='background' onClick={ this.close_background }></div>
-          
-          <form id="add_pnl" onSubmit={ this.new_schedule }>
+          <form id="add_pnl">
             <div id="header">
               <p>Create Schedule</p>
               <i id="header_i" className="fas fa-times" onClick={ this.open_close_schedule_panel }></i>
@@ -298,10 +321,10 @@ class Panel extends Component {
               {/* <p id="link">Meeting Link</p>
               <input id="link_input" type="text" placeholder="Enter Meeting Link" name="link" onChange={ this.handle_input }></input> */}
             </div>
-            <input id="btn" type="submit" value="Submit"></input>
+            <input id="btn" type="button" value="Submit" onClick={ this.new_schedule }></input>
           </form>
           </div>
-          <ToastContainer />
+          <ToastContainer theme="colored"/>
       </div>
     )
   }
