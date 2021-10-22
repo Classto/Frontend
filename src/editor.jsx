@@ -1,6 +1,6 @@
 import { Component } from 'react';
 import Schedule from './editor/schedule';
-import Panel from './editor/panel';
+import NewSchedule from './editor/new_schedule';
 import CategoryMenu from './editor/category_menu';
 import './editor.css';
 
@@ -82,7 +82,7 @@ class Editor extends Component {
             <CategoryMenu/>
           </div>
         </div>
-        <Panel current_category={ this.params["category"] }/>
+        <NewSchedule current_category={ this.params["category"] }/>
       </div>
     );
   }
