@@ -1,14 +1,15 @@
 import { Component } from 'react';
 import Schedule from './editor/schedule';
-import Panel from './editor/panel';
 import CategoryMenu from './editor/category_menu';
+import AddMenu from './editor/add_menu';
 import './editor.css';
 
 class Editor extends Component {
   constructor() {
     super()
     this.state = {
-      toggle_category_menu : 'none'
+      toggle_category_menu : 'none',
+      toggle_add_menu: 'none'
     }
   }
 
@@ -52,6 +53,23 @@ class Editor extends Component {
     }
   }
 
+  toggle_add_menu() {
+    switch(this.state.toggle_add_menu) {
+      default:
+        break
+      case 'none':
+        this.setState({
+          toggle_add_menu: 'block',
+        })
+        break
+      case 'block':
+        this.setState({
+          toggle_add_menu: 'none',
+        })
+        break
+    }
+  }
+
   render() {
     const { params } = this.props.match //여기 코드 너무 엉망이어서 나중에 최적화 할게요 일단 놔두셈
     this.params = params
@@ -78,7 +96,12 @@ class Editor extends Component {
             <CategoryMenu/>
           </div>
         </div>
-        <Panel current_category={ this.params["category"] }/>
+        <button id="new_schedule" onClick={ this.toggle_add_menu.bind(this) }>
+          <i className="fas fa-plus"></i>
+        </button>
+        <div style={{ display: this.state.toggle_add_menu }}>
+          <AddMenu params={ this.params }/>
+        </div>
       </div>
     );
   }
