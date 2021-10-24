@@ -22,13 +22,10 @@ class Panel extends Component {
           'audio': false
         },
         'category': this.current_ctgr
-      },
-      toggle_add_menu: 'none',
-      toggle_schedule_panel: 'none'
+      }
     }
     this.new_schedule = this.new_schedule.bind(this)
     this.close_schedule_panel = this.close_schedule_panel.bind(this)
-    this.close_background = this.close_background.bind(this)
     this.handle_input = this.handle_input.bind(this)
     this.handle_ctgr_input = this.handle_ctgr_input.bind(this)
     this.handle_ctgr = this.handle_ctgr.bind(this)
@@ -73,23 +70,6 @@ class Panel extends Component {
     this.setState({
       inputs: new_input
     })
-  }
-
-  open_close_schedule_panel() {
-    switch(this.state.toggle_schedule_panel) {
-      default:
-        break
-      case 'none':
-        this.setState({
-          toggle_schedule_panel: 'block'
-        })
-        break
-      case 'block':
-        this.setState({ 
-          toggle_schedule_panel: 'none'
-        })
-        break
-    }
   }
 
   handle_btns(event) {
@@ -162,32 +142,11 @@ class Panel extends Component {
     this.close_schedule_panel()
   }
 
-  toggle_add_menu() {
-    switch(this.state.toggle_add_menu) {
-      default:
-        break
-      case 'none':
-        this.setState({
-          toggle_add_menu: 'block'
-        })
-        break
-      case 'block':
-        this.setState({
-          toggle_add_menu: 'none'
-        })
-        break
-    }
-  }
-
-  close_background() {
-    this.props.set_toggle_schedule_panel()
-  }
-
   render() {
     return (
       <div>
         <div>
-          <div id='background' onClick={ this.close_background }></div>
+          <div id='background' onClick={ this.close_schedule_panel }></div>
           <form id="add_pnl">
             <div id="header">
               <p>Create Schedule</p>
