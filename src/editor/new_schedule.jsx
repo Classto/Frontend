@@ -30,7 +30,7 @@ class NewSchedule extends Component {
     let new_input = this.state.inputs
     new_input[event.target.name] = event.target.value
     this.setState({
-      inputs: this.new_input
+      inputs: new_input
     })
   }
 
@@ -71,8 +71,7 @@ class NewSchedule extends Component {
     })
   }
 
-  new_schedule(e) {
-    e.preventDefault()
+  new_schedule() {
     for (var options in this.state.inputs) {
       // console.log(this.state.inputs[options])
       if (this.state.inputs[options] === [] || this.state.inputs[options] === "") {
