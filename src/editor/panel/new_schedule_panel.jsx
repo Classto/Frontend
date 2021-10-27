@@ -42,7 +42,6 @@ class Panel extends Component {
     const ctgrs = JSON.parse(localStorage.getItem('categorys'))
     this.ctgr_input.current.innerHTML = ''
     for (let ctg in ctgrs) {
-      console.log(ctgrs[ctg] === this.current_ctgr)
       if (ctgrs[ctg] === this.current_ctgr)
         this.ctgr_input.current.appendChild(new Option(ctgrs[ctg], ctgrs[ctg], false, true))
       else
@@ -53,7 +52,6 @@ class Panel extends Component {
   handle_input(event) {
     let new_input = this.state.inputs
     new_input[event.target.name] = event.target.value
-    console.log(event.target.name)
     this.setState({
       inputs: new_input
     })
@@ -104,7 +102,7 @@ class Panel extends Component {
   new_schedule() {
     for (var options in this.state.inputs) {
       if (options !== "pwd" && this.state.inputs[options] === [] | this.state.inputs[options] === "") {
-        toast.error(options, {
+        toast.error(`'${options}' option can't be blank.`, {
           position: "bottom-right",
           autoClose: 5000,
           hideProgressBar: true,
