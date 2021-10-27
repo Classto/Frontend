@@ -1,14 +1,15 @@
 import { Component } from 'react';
 import Schedule from './editor/schedule';
-import NewSchedule from './editor/new_schedule';
 import CategoryMenu from './editor/category_menu';
+import AddMenu from './editor/add_menu';
 import './editor.css';
 
 class Editor extends Component {
   constructor() {
     super()
     this.state = {
-      toggle_menu : 'none'
+      toggle_category_menu : 'none',
+      toggle_add_menu: 'none'
     }
   }
 
@@ -58,6 +59,23 @@ class Editor extends Component {
     }
   }
 
+  toggle_add_menu() {
+    switch(this.state.toggle_add_menu) {
+      default:
+        break
+      case 'none':
+        this.setState({
+          toggle_add_menu: 'block',
+        })
+        break
+      case 'block':
+        this.setState({
+          toggle_add_menu: 'none',
+        })
+        break
+    }
+  }
+
   render() {
     const { params } = this.props.match
     this.params = params
@@ -82,7 +100,12 @@ class Editor extends Component {
             <CategoryMenu/>
           </div>
         </div>
-        <NewSchedule current_category={ this.params["category"] }/>
+        <button id="new_schedule" onClick={ this.toggle_add_menu.bind(this) }>
+          <i className="fas fa-plus"></i>
+        </button>
+        <div style={{ display: this.state.toggle_add_menu }}>
+          <AddMenu params={ this.params }/>
+        </div>
       </div>
     );
   }

@@ -13,7 +13,7 @@ class CategoryMenu extends Component {
         <div/>
         <ul>
           { menu }
-          </ul>
+        </ul>
       </div>
       )
   }
