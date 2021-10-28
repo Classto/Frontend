@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import TimeField from 'react-simple-timefield';
 import { ToastContainer, toast } from 'react-toastify';
-import './new_schedule_panel.css';
+import './new_schedule.css';
 import 'react-toastify/dist/ReactToastify.css';
 
 
