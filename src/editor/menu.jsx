@@ -2,7 +2,6 @@ import { Component } from 'react';
 import SchedulePanel from './panel/new_schedule';
 import CategoryPanel from './panel/new_category';
 import './menu.css';
-
 class AddMenu extends Component {
   constructor(props) {
     super(props)
