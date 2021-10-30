@@ -1,7 +1,7 @@
 import { Component } from 'react';
 import Schedule from './editor/schedule';
-import CategoryMenu from './editor/category_menu';
-import AddMenu from './editor/add_menu';
+import CategoryMenu from './editor/category';
+import AddMenu from './editor/menu';
 import './editor.css';
 
 class Editor extends Component {
