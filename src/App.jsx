@@ -13,6 +13,7 @@ class App extends Component {
               "name": "Example Meeting",
               "time": "00:00",
               "link": "meeting link",
+              "nickname": "nickname",
               "id": 11111111111,
               "password": 1,
               "repeating-days" : []
