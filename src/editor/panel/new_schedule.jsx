@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import TimeField from 'react-simple-timefield';
 import { ToastContainer, toast } from 'react-toastify';
-import './new_schedule_panel.css';
+import './new_schedule.css';
 import 'react-toastify/dist/ReactToastify.css';
 
 
@@ -102,7 +102,7 @@ class Panel extends Component {
   new_schedule() {
     for (var options in this.state.inputs) {
       if (options !== "pwd" && this.state.inputs[options] === [] | this.state.inputs[options] === "") {
-        toast.error(`'${options}' option can't be blank.`, {
+        toast.error(`'${options}' value can't be blank.`, {
           position: "bottom-right",
           autoClose: 5000,
           hideProgressBar: true,

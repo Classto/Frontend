@@ -1,7 +1,7 @@
 import { Component } from 'react';
-import SchedulePanel from './panel/new_schedule_panel';
-import CategoryPanel from './panel/new_category_panel';
-import './add_menu.css';
+import SchedulePanel from './panel/new_schedule';
+import CategoryPanel from './panel/new_category';
+import './menu.css';
 
 class AddMenu extends Component {
   constructor(props) {
