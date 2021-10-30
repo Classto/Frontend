@@ -8,28 +8,20 @@ class App extends Component {
     if (window.localStorage.getItem("meetings") === null) {
       window.localStorage.setItem("meetings", JSON.stringify(
         {
-          "sample":[
+          "example":[
             {
-              "name": "sample meeting",
-              "time": "12:59",
-              "link": "meeting link",
-              "id": 1234,
-              "password": 1234,
-              "repeating-days" : []
-            },
-            {
-              "name": "meet",
+              "name": "Example Meeting",
               "time": "00:00",
-              "link": "link",
-              "id":1,
-              "password": 1234,
+              "link": "meeting link",
+              "id": 11111111111,
+              "password": 1,
               "repeating-days" : []
             }
           ]
         }
       ))
-      window.localStorage.setItem("recent_editor", "sample")
-      window.localStorage.setItem("categorys", JSON.stringify(["sample"]))
+      window.localStorage.setItem("recent_editor", "example")
+      window.localStorage.setItem("categorys", JSON.stringify(["example"]))
     }
     return (
       <div>
