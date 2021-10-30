@@ -8,7 +8,7 @@ class Editor extends Component {
   constructor() {
     super()
     this.state = {
-      toggle_category_menu : 'none',
+      toggle_menu : 'none',
       toggle_add_menu: 'none'
     }
   }
