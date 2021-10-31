@@ -13,7 +13,7 @@ class Introduce extends Component {
   }
 
   render() {
-    let editor_link = window.localStorage.getItem("recent_editor")
+    let editor_link = "/editor/" + window.localStorage.getItem("recent_editor")
     return (
       <div id="introduce">
         <h1 id="main-title">Classto</h1>

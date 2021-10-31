@@ -2,6 +2,7 @@ import { Component } from 'react';
 import { Route, BrowserRouter } from 'react-router-dom';
 import Editor from './editor.jsx';
 import Introduce from './introduce.jsx';
+import Login from './login.jsx'
 
 class App extends Component {
   render() {
@@ -28,7 +29,8 @@ class App extends Component {
       <div>
         <BrowserRouter>
           <Route exact path="/" component={Introduce}/>
-          <Route path="/:category" component={Editor}/>
+          <Route path="/editor/:category" component={Editor}/>
+          <Route path="/login" component={Login}/>
         </BrowserRouter>
       </div>
     )
