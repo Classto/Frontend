@@ -16,6 +16,8 @@ class Login extends Component {
         <form id="form">
           <input id="email_input" className="input"/>
           <input id="pwd_input" className="input"/>
+          <input className="button" type="button" value="login"/>
+          <input className="button" type="button" value="register"/>
         </form>
       </div>
     )

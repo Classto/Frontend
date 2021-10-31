@@ -32,3 +32,27 @@ div {
 .input:focus {
     border: #327DFF solid 2px;
 }
+
+.button {
+    margin-top: 5%;
+
+    height: 50px;
+    left: 50%;
+    width: 200px;
+    transform: translateX(-50%);
+    bottom: 30px;
+    outline: none;
+    border: none;
+    background-color: #327dff;
+    border-radius: 10px;
+    box-shadow: 0 6px 25px rgba(50, 125, 255, 0.45);
+    transition: background 150ms linear;
+    cursor: pointer;
+
+    color: #fff;
+    font-family: 'Heebo', sans-serif;
+    font-weight: 650;
+    font-size: 26px;
+    text-align: center;
+    transition: background 150ms linear;
+}
