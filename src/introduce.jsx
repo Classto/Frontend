@@ -1,7 +1,7 @@
 import { Component } from 'react';
 import { Link } from 'react-router-dom';
 import landscape from './landscape.svg';
-import './introduce.css';
+import './styles/introduce.css';
 
 class Introduce extends Component {
   componentDidMount() {
