@@ -3,10 +3,21 @@
     text-align: center;
 }
 
+#login > div > h1 {
+    color: #33353E;
+}
+
 #form {
     text-align: center;
     margin-left: 40%;
     margin-right: 40%;
+}
+
+#form > div {
+    display: flex;
+    position: relative;
+    left: 24%;
+    right: 25%;
 }
 
 .input {
@@ -52,4 +63,8 @@
     font-size: 26px;
     text-align: center;
     transition: background 150ms linear;
+}
+
+.button:first-child{
+    margin-right: 25px;
 }
