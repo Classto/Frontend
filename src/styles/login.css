@@ -2,6 +2,10 @@ div {
     text-align: center;
 }
 
+#login {
+    margin-top: 10%;
+}
+
 #form {
     text-align: center;
     margin-left: 40%;
@@ -9,9 +13,22 @@ div {
 }
 
 .input {
+    border: #d2d5d8 solid 1.5px;
+    border-radius: 4px; 
+    outline: none;
     display: block;
     width: 100%;
     margin: 0;
-    margin-top: 10px;
+    margin-top: 8px;
     margin-left: 0;
+    padding-top: 3%;
+    text-align: center;
+    transition: border 100ms linear;
+    font-family: 'Heebo', sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.input:focus {
+    border: #327DFF solid 2px;
 }

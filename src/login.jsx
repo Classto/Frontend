@@ -6,9 +6,9 @@ import logo from './logo.png'
 class Login extends Component {
   render() {
     return (
-      <div>
-        <div id="classto">
-          <img src={ logo } alt="asdf" id="logo" width="80" height="80"/>
+      <div id="login">
+        <div>
+          <img src={ logo } alt="asdf" id="logo" width="120" height="120"/>
           <h1>
             Classto
           </h1>
