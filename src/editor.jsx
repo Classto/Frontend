@@ -3,7 +3,6 @@ import Schedule from './editor/schedule';
 import CategoryMenu from './editor/category';
 import AddMenu from './editor/menu';
 import './styles/editor.css';
-import api from './api.js'
 
 class Editor extends Component {
   constructor() {
@@ -11,7 +10,6 @@ class Editor extends Component {
     this.state = {
       toggle_menu : 'none',
       toggle_add_menu: 'none',
-      session_id: localStorage.session_id
     }
   }
 
@@ -21,10 +19,6 @@ class Editor extends Component {
     this.enter_zoom = this.enter_zoom.bind(this)
     this.enter_zoom()
     this.interval = setInterval(this.enter_zoom, 1000 * 60)
-
-    if (localStorage.session_id === undefined) {
-      
-    }
   }
 
   componentWillUnmount() {
