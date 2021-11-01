@@ -424,7 +424,7 @@
     transition: border 100ms linear;
 }
 
-#add_pnl > input, #category_add_pnl > input {
+#submit > input, #category_add_pnl > input {
     position: absolute;
     height: 50px;
     left: 50%;

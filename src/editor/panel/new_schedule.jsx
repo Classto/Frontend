@@ -3,6 +3,7 @@ import TimeField from 'react-simple-timefield';
 import { ToastContainer, toast } from 'react-toastify';
 import './new_schedule.css';
 import 'react-toastify/dist/ReactToastify.css';
+import api from '../../api.js'
 
 
 class Panel extends Component {
@@ -12,16 +13,12 @@ class Panel extends Component {
     this.state = {
       inputs: {
         'name': "",
-        'repeating-days': [],
+        'repeating_days': [],
         'time': "00:00",
         'nickname': "",
         'id': "",
         'pwd': "",
         'link': "",
-        'options': {
-          'video': false,
-          'audio': false
-        },
         'category': this.current_ctgr,
         'meet' : "zoom"
       }
@@ -79,11 +76,11 @@ class Panel extends Component {
   handle_btns(event) {
     event.preventDefault()
     let new_input = this.state.inputs
-    if (!!!new_input['repeating-days'].includes(event.target.value)) {
-      new_input['repeating-days'].push(event.target.value)
+    if (!!!new_input['repeating_days'].includes(event.target.value)) {
+      new_input['repeating_days'].push(event.target.value)
       event.target.style.backgroundColor = '#327DFF'
     } else {
-      new_input['repeating-days'].splice(new_input['repeating-days'].indexOf(event.target.value), 1)
+      new_input['repeating_days'].splice(new_input['repeating_days'].indexOf(event.target.value), 1)
       event.target.style.backgroundColor = '#c8cfd4'
     }
     this.setState({
@@ -115,21 +112,23 @@ class Panel extends Component {
       this.link.current.style.display = "none"
     }
     this.setState({
+      'id' : "1",
+      'pwd' : "1",
       'meet' : event.target.value
     })
   }
 
   new_schedule() {
     for (var options in this.state.inputs) {
-      if (options !== "pwd" && this.state.inputs[options] === [] | this.state.inputs[options] === "") {
+      if (!(this.state.inputs.meet==="zoom") && options !== "pwd" && this.state.inputs[options] === [] | this.state.inputs[options] === "") {
         toast.error(`'${options}' value can't be blank.`, {
           position: "bottom-right",
           autoClose: 5000,
-          hideProgressBar: true,
+          hideProgressBar: false,
           pauseOnHover: false,
           draggable: false
         });
-        return
+        return null
       }
     }
     let meetings = JSON.parse(localStorage.getItem('meetings'))
@@ -137,6 +136,18 @@ class Panel extends Component {
       meetings[this.ctgr_input.current.value] = []
     meetings[this.ctgr_input.current.value].push(this.state.inputs)
     localStorage.setItem('meetings', JSON.stringify(meetings))
+    this.state.inputs.repeating_days = JSON.stringify(this.state.inputs.repeating_days)
+    console.log(this.state.inputs)
+    api.post(`/schedule/${localStorage.session_id}`, this.state.inputs)
+      .then(res => {
+        toast.success("added new meeing", {
+          position: "bottom-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          pauseOnHover: false,
+          draggable: false
+        });
+      })
     // console.log(meetings)
     // console.log('new!')
     // console.log(this.state.inputs) // title, nickname, link, time, repeating_days, options
@@ -145,16 +156,12 @@ class Panel extends Component {
     this.setState({
       inputs: {
         'name': "",
-        'repeating-days': [],
+        'repeating_days': [],
         'time': "00:00",
         'nickname': "",
         'id': "",
         'pwd': "",
         'link': "",
-        'options': {
-          'video': false,
-          'audio': false
-        },
         'category': this.current_ctgr,
         'meet' : 'zoom'
       }
@@ -217,7 +224,7 @@ class Panel extends Component {
               <input id="link_input" type="text" placeholder="Enter Meeting Link" name="link" onChange={ this.handle_input }></input>
               </div>
             </div>
-            <input id="btn" type="button" value="Submit" onClick={ this.new_schedule }></input>
+            <input id="btn" type="submit" value="Submit" onClick={ this.new_schedule }></input>
           </form>
         </div>
         <ToastContainer theme="colored"/>
