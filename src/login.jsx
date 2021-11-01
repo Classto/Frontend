@@ -12,19 +12,12 @@ class Login extends Component {
       inputs : {}
     }
     if (!(localStorage.email === undefined)) {
-      api.post("/auth/login", {"email" : this.state.inputs.email, "pw" : this.state.inputs.pwd})
+      api.post("/auth/login", {"email" : localStorage.email, "pw" : localStorage.pwd})
       .then(res => {
           localStorage.session_id = res.data.session_id
           window.location.href = `http://localhost:3000/editor/${res.data.current_category}`
       })
       .catch(function (e) {
-        toast.error("failed to login.", {
-          position: "bottom-right",
-          autoClose: 5000,
-          hideProgressBar: false,
-          pauseOnHover: false,
-          draggable: false
-          })
         }
       )
     }
