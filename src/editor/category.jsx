@@ -1,6 +1,6 @@
 import { Component } from 'react';
 import { Link } from 'react-router-dom';
-import './category.css';
+import './styles/category.css';
 
 class CategoryMenu extends Component {
   render() {

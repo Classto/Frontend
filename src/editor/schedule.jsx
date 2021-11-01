@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import './schedule.css';
+import './styles/schedule.css';
 
 class Schedule extends Component {
   constructor (props) {
