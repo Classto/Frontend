@@ -1,5 +1,6 @@
 import { Component } from "react";
 import './styles/login.css';
+import { ToastContainer, toast } from 'react-toastify';
 import api from './api.js'
 import logo from './logo.png'
 
@@ -8,35 +9,79 @@ class Login extends Component {
   constructor() {
     super()
     this.state = {
-      info : {}
+      inputs : {}
     }
-
-    if (!localStorage.email === undefined) {
-      localStorage.session_id = api.post("/auth/login", {"email" : localStorage.email, "pw" : localStorage.pwd})
-        .then(res => res.data)
-        .then(res => {
-            localStorage.session_id = res.session_id
-            window.location.href = `http://localhost:3000/editor/${res.current_category}`
+    if (!(localStorage.email === undefined)) {
+      api.post("/auth/login", {"email" : this.state.inputs.email, "pw" : this.state.inputs.pwd})
+      .then(res => {
+          localStorage.session_id = res.data.session_id
+          window.location.href = `http://localhost:3000/editor/${res.data.current_category}`
       })
+      .catch(function (e) {
+        toast.error("failed to login.", {
+          position: "bottom-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          pauseOnHover: false,
+          draggable: false
+          })
+        }
+      )
     }
 
     this.input_handler = this.input_handler.bind(this)
+    this.login = this.login.bind(this)
+    this.register = this.register.bind(this)
   }
 
   input_handler(e) {
-    let info = this.state.info
-    info[e.target.name] = e.target.value
+    let inputs = this.state.inputs
+    inputs[e.target.name] = e.target.value
     this.setState({
-      info: info
+      inputs: inputs
     })
   }
 
   login() {
-    
+    api.post("/auth/login", {"email" : this.state.inputs.email, "pw" : this.state.inputs.pwd})
+    .then(res => {
+        localStorage.email = this.state.inputs.email
+        localStorage.pwd = this.state.inputs.pwd
+        localStorage.session_id = res.data.session_id
+        window.location.href = `http://localhost:3000/editor/${res.data.current_category}`
+    })
+    .catch(function (e) {
+      toast.error("failed to login.", {
+        position: "bottom-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        pauseOnHover: false,
+        draggable: false
+        })
+      }
+    )
   }
 
   register() {
-    
+    api.post("/auth/register", {"email" : this.state.inputs.email, "pw" : this.state.inputs.pwd})
+    .then(res => {
+      toast.success("Welcome! login to continue", {
+        position: "bottom-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        pauseOnHover: false,
+        draggable: false
+      })
+    })
+    .catch(function (e) {
+      toast.error("please try again", {
+        position: "bottom-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        pauseOnHover: false,
+        draggable: false
+      });
+    })
   }
 
   render() {
@@ -49,13 +94,14 @@ class Login extends Component {
           </h1>
         </div>
         <form id="form">
-          <input id="email_input" className="input" name="email" onChange={ this.input_handler }/>
-          <input id="pwd_input" className="input" name="pwd" onChange={ this.input_handler }/>
+          <input id="email_input" className="input" name="email" placeholder="example@email.com" onChange={ this.input_handler }/>
+          <input id="pwd_input" className="input" name="pwd" placeholder="password" onChange={ this.input_handler }/>
           <div>
-            <input className="button" type="button" value="Login" onChange={ this.login }/>
-            <input className="button" type="button" value="Register" onChange={ this.register }/>
+            <input className="button" type="button" value="Login" onClick={ this.login }/>
+            <input className="button" type="button" value="Register" onClick={ this.register }/>
           </div>
         </form>
+        <ToastContainer theme="colored"/>
       </div>
     )
   }
