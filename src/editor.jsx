@@ -32,7 +32,11 @@ class Editor extends Component {
     reserved_meetings.forEach(meeting => {
       if (meeting.time === `${current_time.getHours()}:${current_time.getMinutes()}` && meeting["repeating-days"].includes(current_time.getDay().toString())) {
         try {
-          window.location.href = `zoommtg://zoom.us/join?action=join&confno=${meeting.id}&pwd=${meeting.pwd}&uname=${meeting.nickname}`
+          if (meeting.meet === "zoom") {
+            window.location.href = `zoommtg://zoom.us/join?action=join&confno=${meeting.id}&pwd=${meeting.pwd}&uname=${meeting.nickname}`
+          } else if (meeting.meet === "link") {
+            window.location.href = meeting.link
+          }
         } catch(errror) {
           //줌이 설치되어있지 않을 때
         }

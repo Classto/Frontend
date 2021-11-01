@@ -17,11 +17,13 @@ class Panel extends Component {
         'nickname': "",
         'id': "",
         'pwd': "",
+        'link': "",
         'options': {
           'video': false,
           'audio': false
         },
-        'category': this.current_ctgr
+        'category': this.current_ctgr,
+        'meet' : "zoom"
       }
     }
     this.new_schedule = this.new_schedule.bind(this)
@@ -31,7 +33,11 @@ class Panel extends Component {
     this.handle_ctgr = this.handle_ctgr.bind(this)
     this.handle_btns = this.handle_btns.bind(this)
     this.handle_opt = this.handle_opt.bind(this)
+    this.change_meet = this.change_meet.bind(this)
+
     this.ctgr_input = React.createRef()
+    this.zoom = React.createRef()
+    this.link = React.createRef()
   }
 
   componentDidMount() {
@@ -99,6 +105,20 @@ class Panel extends Component {
     })
   }
 
+  change_meet(event) {
+    event.preventDefault()
+    if (event.target.value === "link") {
+      this.zoom.current.style.display = "none"
+      this.link.current.style.display = "block"
+    } else if (event.target.value === "zoom") {
+      this.zoom.current.style.display = "block"
+      this.zoom.current.style.display = "none"
+    }
+    this.setState({
+      'meet' : event.target.value
+    })
+  }
+
   new_schedule() {
     for (var options in this.state.inputs) {
       if (options !== "pwd" && this.state.inputs[options] === [] | this.state.inputs[options] === "") {
@@ -130,11 +150,13 @@ class Panel extends Component {
         'nickname': "",
         'id': "",
         'pwd': "",
+        'link': "",
         'options': {
           'video': false,
           'audio': false
         },
-        'category': this.current_ctgr
+        'category': this.current_ctgr,
+        'meet' : 'zoom'
       }
     })
     this.close_schedule_panel()
@@ -177,18 +199,23 @@ class Panel extends Component {
               <input id="nickname_input" type="text" placeholder="Enter Nickname" maxLength="30" name="nickname" onChange={ this.handle_input }></input>
           
               <p id="type">Connection type</p>
-              <select id="type_input">
-                <option id="fst" value="idpw">Zoom Meeting ID & PW</option>
-                {/* <option id="lst" value="link">Zoom Meeting Link</option> */}
+              <select id="type_input" onChange={ this.change_meet }>
+                <option id="fst" value="zoom">Zoom Meeting ID & PW</option>
+                <option id="lst" value="link">Google Meet</option>
+                <option id="lst" value="link">Online Class</option>
               </select>
-          
+
+              <div ref={ this.zoom }>
               <p id="_id">Meeting ID</p>
               <input id="id_input" type="text" maxLength="11" placeholder="Enter Meeting ID" name="id" onChange={ this.handle_input }></input>
               <p id="pw">Meeting PW</p>
               <input id="pw_input" type="text" placeholder="Enter Meeting PW" name="pwd" onChange={ this.handle_input }></input>
-          
-              {/* <p id="link">Meeting Link</p>
-              <input id="link_input" type="text" placeholder="Enter Meeting Link" name="link" onChange={ this.handle_input }></input> */}
+              </div>
+
+              <div ref={ this.link } style={{display: 'none'}}>
+              <p id="link">Meeting Link</p>
+              <input id="link_input" type="text" placeholder="Enter Meeting Link" name="link" onChange={ this.handle_input }></input>
+              </div>
             </div>
             <input id="btn" type="button" value="Submit" onClick={ this.new_schedule }></input>
           </form>
