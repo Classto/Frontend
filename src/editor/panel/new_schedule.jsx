@@ -112,7 +112,7 @@ class Panel extends Component {
       this.link.current.style.display = "block"
     } else if (event.target.value === "zoom") {
       this.zoom.current.style.display = "block"
-      this.zoom.current.style.display = "none"
+      this.link.current.style.display = "none"
     }
     this.setState({
       'meet' : event.target.value
