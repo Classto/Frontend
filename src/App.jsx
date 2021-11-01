@@ -6,25 +6,25 @@ import Login from './login.jsx'
 
 class App extends Component {
   render() {
-    if (window.localStorage.getItem("meetings") === null) {
-      window.localStorage.setItem("meetings", JSON.stringify(
-        {
-          "example":[
-            {
-              "name": "Example Meeting",
-              "time": "00:00",
-              "link": "meeting link",
-              "nickname": "nickname",
-              "id": 11111111111,
-              "password": 1,
-              "repeating-days" : []
-            }
-          ]
-        }
-      ))
-      window.localStorage.setItem("recent_editor", "example")
-      window.localStorage.setItem("categorys", JSON.stringify(["example"]))
-    }
+    // if (window.localStorage.getItem("meetings") === null) {
+    //   window.localStorage.setItem("meetings", JSON.stringify(
+    //     {
+    //       "example":[
+    //         {
+    //           "name": "Example Meeting",
+    //           "time": "00:00",
+    //           "link": "meeting link",
+    //           "nickname": "nickname",
+    //           "id": 11111111111,
+    //           "password": 1,
+    //           "repeating-days" : []
+    //         }
+    //       ]
+    //     }
+    //   ))
+    //   window.localStorage.setItem("recent_editor", "example")
+    //   window.localStorage.setItem("categorys", JSON.stringify(["example"]))
+    // }
     return (
       <div>
         <BrowserRouter>

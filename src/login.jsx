@@ -15,6 +15,7 @@ class Login extends Component {
       api.post("/auth/login", {"email" : localStorage.email, "pw" : localStorage.pwd})
       .then(res => {
           localStorage.session_id = res.data.session_id
+          this.synchronize()
           window.location.href = `http://localhost:3000/editor/${res.data.current_category}`
       })
       .catch(function (e) {
@@ -41,6 +42,7 @@ class Login extends Component {
         localStorage.email = this.state.inputs.email
         localStorage.pwd = this.state.inputs.pwd
         localStorage.session_id = res.data.session_id
+        this.synchronize()
         window.location.href = `http://localhost:3000/editor/${res.data.current_category}`
     })
     .catch(function (e) {
@@ -76,6 +78,17 @@ class Login extends Component {
       });
     })
   }
+
+  synchronize() {
+    api.get(`/schedule/${localStorage.session_id}`)
+      .then(res => {
+        localStorage.meetings = JSON.stringify(res.data.data)
+      })
+    api.get(`/category/${localStorage.session_id}`)
+      .then(res => {
+        localStorage.categorys = JSON.stringify(res.data.data)
+      })
+    }
 
   render() {
     return (
