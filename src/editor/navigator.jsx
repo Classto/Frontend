@@ -1,6 +1,7 @@
 import { Component } from 'react';
 import './styles/navigator.css';
 import logo from '../logo.png'
+import user from '../user.png'
 
 class Navigator extends Component {
   constructor() {
@@ -18,7 +19,7 @@ class Navigator extends Component {
             </h1>
           </div>
           <div id="user">
-            
+            <img src={ user } alt="user" id="usera" width="50" height ="50"></img>
           </div>
         </div>
       </div>
