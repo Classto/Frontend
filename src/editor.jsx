@@ -2,6 +2,7 @@ import { Component } from 'react';
 import Schedule from './editor/schedule';
 import CategoryMenu from './editor/category';
 import AddMenu from './editor/menu';
+import Navigator from './editor/navigator';
 import './styles/editor.css';
 
 class Editor extends Component {
@@ -89,6 +90,8 @@ class Editor extends Component {
 
     return (
       <div>
+        <Navigator id="nav"/>
+        <div id="sche">
         <hr id="ct_hr"></hr>
         <div id="sch_div">
           <Schedule meetings={ meetings } category={ category }/>
@@ -109,6 +112,7 @@ class Editor extends Component {
         </button>
         <div style={{ display: this.state.toggle_add_menu }}>
           <AddMenu params={ this.params }/>
+        </div>
         </div>
       </div>
     );
