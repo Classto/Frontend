@@ -8,18 +8,28 @@ class Navigator extends Component {
     super()
   }
 
+  to_main() {
+      window.location.href = "http://localhost:3000/"
+  }
+
+  to_login() {
+      localStorage.email = undefined
+      localStorage.pwd = undefined
+      window.location.href = "http://localhost:3000/login"
+  }
+
   render() {
     return (
       <div>
         <div id="nav">
-          <div id="logo">
-            <img src={ logo } alt="asdf" id="logo_img" width="70" height="70"/>
+          <div id="logoo" onClick={ this.to_main }>
+            <img src={ logo } alt="asdf" id="logo_img" width="65" height="65"/>
             <h1>
               Classto
             </h1>
           </div>
           <div id="user">
-            <img src={ user } alt="user" id="usera" width="50" height ="50"></img>
+            <img src={ user } alt="user" id="usera" width="50" height ="50" onClick={ this.to_login }></img>
           </div>
         </div>
       </div>

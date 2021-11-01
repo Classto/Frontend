@@ -7,13 +7,17 @@
     box-shadow: 0px 1px 8px 1px gray;
 }
 
-#logo {
+#logoo {
     margin: 5px;
     height: 0%;
     display: flex;
 }
 
-#logo > h1 {
+#logoo:hover, #usera:hover {
+    cursor: pointer;
+}
+
+#logoo > h1 {
     color: white;
     font-size: 30px;
     margin-top: 8%;
