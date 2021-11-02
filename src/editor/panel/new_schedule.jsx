@@ -3,6 +3,7 @@ import TimeField from 'react-simple-timefield';
 import { ToastContainer, toast } from 'react-toastify';
 import './new_schedule.css';
 import 'react-toastify/dist/ReactToastify.css';
+import axios from "axios";
 import api from '../../api.js'
 
 
@@ -119,6 +120,19 @@ class Panel extends Component {
   }
 
   new_schedule() {
+    if (!(this.state.inputs.url === undefined)) {
+      axios.get(this.state.inputs.url)
+        .then(res => {
+          let data = res.data
+          data.nickname = "nickname"
+          api.post(`/schedule/${localStorage.session_id}`, data)
+          data.current_category = JSON.parse(data.current_category)
+          let mts = JSON.parse(localStorage.meetings)
+          mts[this.ctgr_input.current.value].push(data)
+          localStorage.meetings = JSON.stringify(mts)
+        })
+    }
+
     for (var options in this.state.inputs) {
       if (!(this.state.inputs.meet==="zoom") && options !== "pwd" && this.state.inputs[options] === [] | this.state.inputs[options] === "") {
         toast.error(`'${options}' value can't be blank.`, {
@@ -131,13 +145,14 @@ class Panel extends Component {
         return null
       }
     }
+
     let meetings = JSON.parse(localStorage.getItem('meetings'))
     if (!meetings.hasOwnProperty(this.ctgr_input.current.value))
       meetings[this.ctgr_input.current.value] = []
     meetings[this.ctgr_input.current.value].push(this.state.inputs)
     localStorage.setItem('meetings', JSON.stringify(meetings))
+
     this.state.inputs.repeating_days = JSON.stringify(this.state.inputs.repeating_days)
-    console.log(this.state.inputs)
     api.post(`/schedule/${localStorage.session_id}`, this.state.inputs)
       .then(res => {
         toast.success("added new meeing", {
@@ -148,10 +163,6 @@ class Panel extends Component {
           draggable: false
         });
       })
-    // console.log(meetings)
-    // console.log('new!')
-    // console.log(this.state.inputs) // title, nickname, link, time, repeating_days, options
-    // console.log(this.ctgr_input.current.value) // category
 
     this.setState({
       inputs: {
@@ -211,6 +222,9 @@ class Panel extends Component {
                 <option id="lst" value="link">Google Meet</option>
                 <option id="lst" value="link">Online Class</option>
               </select>
+
+              <p id="shared">Shared URL</p>
+              <input id="shared_input" type="text" placeholder="Enter Shared URL" name="url" onChange={ this.handle_input }></input>
 
               <div ref={ this.zoom }>
               <p id="_id">Meeting ID</p>

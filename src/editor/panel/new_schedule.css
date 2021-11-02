@@ -285,6 +285,32 @@
   transition: border 100ms linear;
 }
 
+#shared {
+  position: absolute;
+  margin-top: 20%;
+  left: 55%;
+  font-weight: 700;
+  font-size: 23px;
+  color: #5c5f64;
+  display: flex;
+  align-items: center;
+}
+
+#shared_input {
+  position: absolute;
+  top: 51.8%;
+  left: 55%;
+  width: 325px;
+  font-weight: 700;
+  font-size: 15px;
+  display: flex;
+  outline: none;
+  border: #e7ebf0 solid 1.5px;
+  border-radius: 4px;
+  align-items: center;
+  transition: border 100ms linear;
+}
+
 #type {
   position: absolute;
   margin-top: 30%;
