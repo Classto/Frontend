@@ -21,7 +21,7 @@ label, label > input {
   width: auto;
   max-width: 250px;
   min-width: 145px;
-  margin-left: 20vw;
+  margin-left: -30vw;
   -ms-user-select: none; 
   -moz-user-select: -moz-none;
   -khtml-user-select: none;
@@ -35,7 +35,7 @@ label, label > input {
   width: 50px;
   height: 50px;
   margin-top: -50px;
-  right: 20vw;
+  right: -30vw;
   border: 0;
   border-radius: 10px;
   outline: 0;
@@ -123,6 +123,12 @@ label, label > input {
   border: 0;
   border-radius: 100rem;
   background-color: #e7ebf0;
+}
+
+#sche {
+  position: absolute;
+  left: 55%;
+  top: 30%;
 }
 
 #sch_div {

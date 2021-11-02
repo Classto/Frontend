@@ -96,28 +96,28 @@ class Editor extends Component {
         <Navigator/>
         <SideBar/>
         <div id="sche">
-        <hr id="ct_hr"></hr>
-        <div id="sch_div">
-          <Schedule meetings={ meetings } category={ category }/>
-        </div>
-        <ToastContainer theme="colored"/>
-        <div id="category-div">
-          <div id="category" onClick={ this.toggle_menu.bind(this) }>
-            <div>
-              <p>{ params['category'] }</p>
+          <hr id="ct_hr"></hr>
+          <div id="sch_div">
+            <Schedule meetings={ meetings } category={ category }/>
+          </div>
+          <ToastContainer theme="colored"/>
+          <div id="category-div">
+            <div id="category" onClick={ this.toggle_menu.bind(this) }>
+              <div>
+                <p>{ params['category'] }</p>
+              </div>
+              <i className="fas fa-chevron-down fa-2x"></i>
             </div>
-            <i className="fas fa-chevron-down fa-2x"></i>
+            <div style={{ display: this.state.toggle_menu }}>
+              <CategoryMenu/>
+            </div>
           </div>
-          <div style={{ display: this.state.toggle_menu }}>
-            <CategoryMenu/>
+          <button id="new_schedule" onClick={ this.toggle_add_menu.bind(this) }>
+            <i className="fas fa-plus"></i>
+          </button>
+          <div style={{ display: this.state.toggle_add_menu }}>
+            <AddMenu params={ this.params }/>
           </div>
-        </div>
-        <button id="new_schedule" onClick={ this.toggle_add_menu.bind(this) }>
-          <i className="fas fa-plus"></i>
-        </button>
-        <div style={{ display: this.state.toggle_add_menu }}>
-          <AddMenu params={ this.params }/>
-        </div>
         </div>
       </div>
     );
