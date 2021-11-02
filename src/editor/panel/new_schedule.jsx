@@ -27,7 +27,7 @@ class Panel extends Component {
     this.close_schedule_panel = this.close_schedule_panel.bind(this)
     this.handle_input = this.handle_input.bind(this)
     this.handle_ctgr_input = this.handle_ctgr_input.bind(this)
-    this.handle_ctgr = this.handle_ctgr.bind(this)
+    this.ctgr = this.ctgr.bind(this)
     this.handle_btns = this.handle_btns.bind(this)
     this.handle_opt = this.handle_opt.bind(this)
     this.change_meet = this.change_meet.bind(this)
@@ -38,10 +38,10 @@ class Panel extends Component {
   }
 
   componentDidMount() {
-    this.handle_ctgr()
+    this.ctgr() 
   }
 
-  handle_ctgr() {
+  ctgr() {
     const ctgrs = JSON.parse(localStorage.getItem('categorys'))
     this.ctgr_input.current.innerHTML = ''
     for (let ctg in ctgrs) {

@@ -3,6 +3,7 @@ import Schedule from './editor/schedule';
 import CategoryMenu from './editor/category';
 import AddMenu from './editor/menu';
 import Navigator from './editor/navigator';
+import SideBar from './editor/sidebar';
 import './styles/editor.css';
 
 class Editor extends Component {
@@ -90,7 +91,8 @@ class Editor extends Component {
 
     return (
       <div>
-        <Navigator id="nav"/>
+        <Navigator/>
+        <SideBar/>
         <div id="sche">
         <hr id="ct_hr"></hr>
         <div id="sch_div">

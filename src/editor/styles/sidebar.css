@@ -1,0 +1,14 @@
+#sidebar {
+    background-color: #F7F7F7;
+    position: absolute;
+    top: 0px;
+    display: block;
+    height: 100%;
+    width: 17%;
+    margin: 0%;
+    box-shadow: 0 0 11px -4px gray;
+}
+
+#catego_title {
+    top: 80%;
+}
