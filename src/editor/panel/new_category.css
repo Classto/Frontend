@@ -65,7 +65,6 @@
   top: 20px;
   left: 4.25%;
   margin: 0;
-  font-family: 'Heebo', sans-serif;
   font-weight: 900;
   font-size: 40px;
   display: flex;
@@ -121,7 +120,6 @@
   position: absolute;
   margin-top: 0%;
   left: 1.25%;
-  font-family: 'Heebo', sans-serif;
   font-weight: 700;
   font-size: 23px;
   color: #4a4c53;
@@ -135,7 +133,6 @@
   top: 8.5%;
   left: 1.25%;
   width: 325px;
-  font-family: 'Heebo', sans-serif;
   font-weight: 700;
   font-size: 15px;
   display: flex;
@@ -152,7 +149,6 @@
   left: 1.25%;
   width: 325px;
   margin-top: 30px;
-  font-family: 'Heebo', sans-serif;
   font-weight: 700;
   font-size: 15px;
   display: flex;
@@ -167,7 +163,6 @@
   position: absolute;
   margin-top: 0%;
   left: 55%;
-  font-family: 'Heebo', sans-serif;
   font-weight: 700;
   font-size: 23px;
   display: flex;
@@ -180,7 +175,6 @@
   top: 8.5%;
   left: 55%;
   width: 325px;
-  font-family: 'Heebo', sans-serif;
   font-weight: 700;
   font-size: 15px;
   display: flex;
@@ -196,7 +190,6 @@
   position: absolute;
   margin-top: 10%;
   left: 1.25%;
-  font-family: 'Heebo', sans-serif;
   font-weight: 700;
   font-size: 23px;
   display: flex;
@@ -209,7 +202,6 @@
   top: 30.05%;
   left: 1.25%;
   min-width: 15%;
-  font-family: 'Heebo', sans-serif;
   font-weight: 700;
   font-size: 15px;
   display: flex;
@@ -225,7 +217,6 @@
   position: absolute;
   margin-top: 10%;
   left: 55%;
-  font-family: 'Heebo', sans-serif;
   font-weight: 700;
   font-size: 23px;
   display: flex;
@@ -237,7 +228,6 @@
   position: absolute;
   top: 30.05%;
   left: 55%;
-  font-family: 'Heebo', sans-serif;
   font-weight: 700;
   font-size: 15px;
   display: flex;
@@ -262,7 +252,6 @@
   margin-right: 10px;
   border-radius: 12.5px;
 
-  font-family: 'Heebo', sans-serif;
   font-weight: 600;
   font-size: 15px;
   color: #fff;
@@ -280,7 +269,6 @@
   margin-top: 20%;
   left: 1.25%;
 
-  font-family: 'Heebo', sans-serif;
   font-weight: 700;
   font-size: 23px;
   color: #5c5f64;
@@ -295,7 +283,6 @@
 
   width: 325px;
 
-  font-family: 'Heebo', sans-serif;
   font-weight: 700;
   font-size: 15px;
   display: flex;
@@ -312,7 +299,6 @@
   margin-top: 30%;
   left: 1.25%;
 
-  font-family: 'Heebo', sans-serif;
   font-weight: 700;
   font-size: 23px;
   display: flex;
@@ -328,7 +314,6 @@
 
   width: 325px;
 
-  font-family: 'Heebo', sans-serif;
   font-weight: 700;
   font-size: 15px;
   display: flex;
@@ -346,7 +331,6 @@
   margin-top: 30%;
   left: 55%;
 
-  font-family: 'Heebo', sans-serif;
   font-weight: 700;
   font-size: 23px;
   color: #5895ff;
@@ -361,7 +345,6 @@
 
   width: 150px;
   color: #327DFF;
-  font-family: 'Heebo', sans-serif;
   font-weight: 700;
   font-size: 15px;
   display: flex;
@@ -378,7 +361,6 @@
   margin-top: 30%;
   left: 73.5%;
 
-  font-family: 'Heebo', sans-serif;
   font-weight: 700;
   font-size: 23px;
   color: #5895ff;
@@ -393,7 +375,6 @@
 
   width: 150px;
   color: #327DFF;
-  font-family: 'Heebo', sans-serif;
   font-weight: 700;
   font-size: 15px;
   display: flex;
@@ -412,7 +393,6 @@
 
   width: 325px;
   color: #327DFF;
-  font-family: 'Heebo', sans-serif;
   font-weight: 700;
   font-size: 15px;
   display: flex;
@@ -440,7 +420,6 @@
   cursor: pointer;
 
   color: #fff;
-  font-family: 'Heebo', sans-serif;
   font-weight: 700;
   font-size: 28px;
   text-align: center;

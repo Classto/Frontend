@@ -4,72 +4,68 @@ body {
 
 
 #login {
-    margin-top: 10%;
-    text-align: center;
+  margin-top: 10%;
+  text-align: center;
 }
 
 #login > div > h1 {
-    color: #33353E;
+  color: #33353E;
 }
 
 #form {
-    text-align: center;
-    margin-left: 40%;
-    margin-right: 40%;
+  text-align: center;
+  margin-left: 40%;
+  margin-right: 40%;
 }
 
 #form > div {
-    display: flex;
-    position: relative;
-    left: 24%;
-    right: 25%;
+  display: flex;
+  position: relative;
+  left: 24%;
+  right: 25%;
 }
 
 .input {
-    border: #d2d5d8 solid 1.5px;
-    border-radius: 4px; 
-    outline: none;
-    display: block;
-    width: 100%;
-    margin: 0;
-    margin-top: 8px;
-    margin-left: 0;
-    padding-top: 3%;
-    text-align: center;
-    transition: border 100ms linear;
-    font-family: 'Heebo', sans-serif;
-    font-weight: 600;
-    font-size: 20px;
+  border: #d2d5d8 solid 1.5px;
+  border-radius: 4px; 
+  outline: none;
+  display: block;
+  width: 100%;
+  margin: 0;
+  margin-top: 8px;
+  margin-left: 0;
+  padding-top: 3%;
+  text-align: center;
+  transition: border 100ms linear;
+  font-weight: 600;
+  font-size: 20px;
 }
 
 .input:focus {
-    border: #327DFF solid 2px;
+  border: #327DFF solid 2px;
 }
 
 .button {
-    margin-top: 5%;
-
-    height: 50px;
-    left: 50%;
-    width: 200px;
-    transform: translateX(-50%);
-    bottom: 30px;
-    outline: none;
-    border: none;
-    background-color: #327dff;
-    border-radius: 10px;
-    box-shadow: 0 6px 25px rgba(50, 125, 255, 0.45);
-    transition: background 150ms linear;
-    cursor: pointer;
-
-    color: #fff;
-    font-family: 'Heebo', sans-serif;
-    font-weight: 650;
-    font-size: 26px;
-    text-align: center;
-    transition: background 150ms linear;
+  margin-top: 5%;
+  height: 50px;
+  left: 50%;
+  width: 200px;
+  transform: translateX(-50%);
+  bottom: 30px;
+  outline: none;
+  border: none;
+  background-color: #327dff;
+  border-radius: 10px;
+  box-shadow: 0 6px 25px rgba(50, 125, 255, 0.45);
+  transition: background 150ms linear;
+  cursor: pointer;
+  color: #fff;
+  font-weight: 650;
+  font-size: 26px;
+  text-align: center;
+  transition: background 150ms linear;
 }
 
 .button:first-child{
-    margin-right: 25px;
+  margin-right: 25px;
 }
