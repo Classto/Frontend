@@ -1,3 +1,7 @@
+#clipboard {
+  opacity: 0;
+}
+
 .schedule {
   position: relative;
   width: 100%;

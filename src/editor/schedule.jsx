@@ -1,4 +1,5 @@
-import { Component } from 'react';
+import React, { Component } from 'react';
+import { ToastContainer ,toast } from 'react-toastify';
 import './styles/schedule.css';
 
 class Schedule extends Component {
@@ -8,6 +9,8 @@ class Schedule extends Component {
       meetings : props.meetings,
       category : props.category
     }
+
+    this.clipboard = React.createRef()
   }
 
   del_schedule(meeting) {
@@ -25,13 +28,21 @@ class Schedule extends Component {
     window.location.href = `zoommtg://zoom.us/join?action=join&confno=${meeting.id}&pwd=${meeting.pwd}&uname=${meeting.nickname}`
   }
 
+  share_meet(meeting) {
+    this.clipboard.current.value = `http://localhost:5000/share/meeting?id=${meeting.id}&pwd=${meeting.pwd}&link=${meeting.link}&name=${meeting.name}&time=${meeting.time}&meet=${meeting.link}&repeating_day=${meeting.repeating_days}`
+    this.clipboard.current.select()
+    document.execCommand("copy")
+
+    toast.info("check clipboard", {
+      position: "bottom-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      pauseOnHover: false,
+      draggable: false
+    });
+  }
+
   render() {
-    // try { 이거는 필요함
-    //   const { m } = this.props;
-    // } catch(errror) {
-    //   if (errror instanceof TypeError) {
-    //   }
-    // }
     console.log(this.state)
     const schedule = this.state.meetings.map((meet) =>
       <li key={ meet.name }>
@@ -40,7 +51,7 @@ class Schedule extends Component {
             <h1>{ meet.name }</h1>
           </div>
           <div id="title_i1">
-            <i className="fas fa-external-link-alt" onClick={ this.open_link.bind(this, meet) } />
+            <i className="fas fa-external-link-alt" onClick={ this.share_meet.bind(this, meet) } />
           </div>
           <div id="title_i2">
             <i className="far fa-trash-alt" onClick={ this.del_schedule.bind(this, meet) } />
@@ -57,8 +68,11 @@ class Schedule extends Component {
       </li>
     )
     return (
-      <div id="schedule">
-        <ul>{ schedule }</ul>
+      <div>
+        <div id="schedule">
+          <ul>{ schedule }</ul>
+        </div>
+        <input type="text" ref={ this.clipboard } id="clipboard"/>
       </div>
     );
   }

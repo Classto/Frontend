@@ -4,10 +4,6 @@ import logo from '../logo.png'
 import user from '../user.png'
 
 class Navigator extends Component {
-  constructor() {
-    super()
-  }
-
   to_main() {
       window.location.href = "http://localhost:3000/"
   }

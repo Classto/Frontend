@@ -27,4 +27,4 @@ class SideBar extends Component {
   }
 }
 
-export default SideBar//npm실행셈
+export default SideBar

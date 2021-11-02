@@ -4,6 +4,7 @@ import CategoryMenu from './editor/category';
 import AddMenu from './editor/menu';
 import Navigator from './editor/navigator';
 import SideBar from './editor/sidebar';
+import { ToastContainer } from 'react-toastify';
 import './styles/editor.css';
 
 class Editor extends Component {
@@ -13,6 +14,7 @@ class Editor extends Component {
       toggle_menu : 'none',
       toggle_add_menu: 'none',
     }
+    document.body.style.backgroundColor = "white";
   }
 
   componentDidMount() {
@@ -98,6 +100,7 @@ class Editor extends Component {
         <div id="sch_div">
           <Schedule meetings={ meetings } category={ category }/>
         </div>
+        <ToastContainer theme="colored"/>
         <div id="category-div">
           <div id="category" onClick={ this.toggle_menu.bind(this) }>
             <div>
