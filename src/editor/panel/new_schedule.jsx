@@ -126,6 +126,7 @@ class Panel extends Component {
           let data = res.data
           data.nickname = "nickname"
           api.post(`/schedule/${localStorage.session_id}`, data)
+          
           data.current_category = JSON.parse(data.current_category)
           let mts = JSON.parse(localStorage.meetings)
           mts[this.ctgr_input.current.value].push(data)
