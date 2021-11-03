@@ -4,11 +4,58 @@
     top: 0px;
     display: block;
     height: 100%;
-    width: 17%;
+    width: 15%;
     margin: 0%;
     box-shadow: 0 0 11px -4px gray;
 }
 
 #catego_title {
-    top: 80%;
+    position: absolute;
+    top: 15vh;
+    left: 16.8%;
+    height: 5%;
+}
+
+#catego_title > hr {
+    position: relative;
+    margin: 0;
+    width: 180%;
+    top: -15px;
+}
+
+#cate_title {
+    display: flex;
+}
+
+#cate_title > h2 {
+    margin-top: 0;
+}
+
+#cate_title > img {
+    position: relative;
+    height: 10%;
+    margin: 0%;
+    left: 77%;
+    margin-top: 8px;
+}
+
+#cctt_s {
+    position: relative;
+    top: 21vh;
+    left: 17.2%;
+}
+
+.cctt {
+    display: flex;
+    height: 10px;
+    flex-direction: row;
+    align-items: center;
+}
+
+.cctt > h3 {
+    margin-left: 5%;
+}
+
+.cctt > img {
+    height: 100%;
 }

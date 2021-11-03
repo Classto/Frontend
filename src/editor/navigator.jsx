@@ -5,13 +5,13 @@ import user from '../user.png'
 
 class Navigator extends Component {
   to_main() {
-      window.location.href = "http://classto.net:8080/"
+      window.location.href = "http://localhost:3000/"
   }
 
   to_login() {
       localStorage.email = undefined
       localStorage.pwd = undefined
-      window.location.href = "http://classto.net:8080/login"
+      window.location.href = "http://localhost:3000/login"
   }
 
   render() {
