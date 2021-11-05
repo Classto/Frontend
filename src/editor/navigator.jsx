@@ -25,7 +25,8 @@ class Navigator extends Component {
             </h1>
           </div>
           <div id="user">
-            <img src={ user } alt="user" id="usera" width="30" height ="30" onClick={ this.to_login }></img>
+            <input type="button" onClick={ this.to_login } id="usera" value="Log out"/>
+            {/* <img src={ user } alt="user" id="usera" width="30" height ="30" onClick={ this.to_login }></img> */}
           </div>
         </div>
       </div>

@@ -36,6 +36,12 @@ class Introduce extends Component {
               Click <Link to={link}>Open Editor</Link> button to use Classto.<br/>Add your meetings, and just wait on time. 
             </p>
           </div>
+          <div id="client">
+            <h1>Client App</h1>
+            <p>
+              <a href="https://github.com/Classto/client-background">Download client app.</a><br/>Login, and just wait on time. 
+            </p>
+          </div>
         </nav>
         <p id="copyright">Copyright ©2021 Classto. All rights reserved.</p>
       </div>

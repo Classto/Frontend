@@ -2,7 +2,7 @@
 
 #introduce {
   width: 100vw;
-  height: 110vh;
+  height: 200vh;
   background-color: #327DFF;
 }
 
@@ -90,7 +90,7 @@
   margin-top: -1vh;
   width: 95vw;
   padding-left: 5vw;
-  height: 800px;
+  height: 880px;
   background-color: #33353E;
 }
 
@@ -128,7 +128,7 @@
 
 #copyright {
   position: absolute;
-  top: calc(100vh + 10% + 745px);
+  top: calc(100vh + 10% + 800px);
   left: 50%;
   transform: translateX(-50%);
   font-weight: 500;

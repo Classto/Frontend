@@ -2,9 +2,22 @@ import { Component } from 'react';
 import './styles/sidebar.css';
 import menu from './edit.png';
 import dot from './dot.png'
+import github from './github.png'
 
 class SideBar extends Component {
   render() {
+    const category_li = JSON.parse(localStorage.categorys).map((categg) =>
+      <li key={ categg }>
+        <div className="cctt">
+          <img src={ dot } alt="dot"></img>
+          <h3>
+            { categg }
+          </h3>
+        </div>
+      </li>
+    )
+
+
     return(
       <div>
         <div id="sidebar">
@@ -27,12 +40,19 @@ class SideBar extends Component {
                   </h3>
                 </div>
               </li>
-              {/* { category_li } */}
+              { category_li }
             </ul>
-          </div>
-          <div id="credit">
-            <div id="gitthub">
-              
+            <div id="credit">
+              <h2>
+                credit
+              </h2>
+              <hr></hr>
+              <div id="github">
+                <img src={ github } alt="github" height="35" width="35"></img>
+                <h3>
+                  github
+                </h3>
+              </div>
             </div>
           </div>
         </div>

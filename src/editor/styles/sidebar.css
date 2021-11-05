@@ -23,6 +23,20 @@
     top: -15px;
 }
 
+#credit {
+    position: absolute;
+    top: 70vh;
+    left: 16.8%;
+    height: 5%;
+}
+
+#credit > hr {
+    position: relative;
+    margin: 0;
+    width: 180%;
+    top: -15px;
+}
+
 #cate_title {
     display: flex;
 }
@@ -45,6 +59,15 @@
     left: 17.2%;
 }
 
+#cctt_s > li {
+    margin-bottom: 7%;
+}
+
+#cctt_s > li:hover {
+    cursor: pointer;
+}
+
+
 .cctt {
     display: flex;
     height: 10px;
@@ -58,4 +81,14 @@
 
 .cctt > img {
     height: 100%;
+}
+
+#github {
+    margin-top: -18px;
+    display: flex;
+    align-items: center;
+}
+
+#github > h3 {
+    margin-left: 10px;
 }
