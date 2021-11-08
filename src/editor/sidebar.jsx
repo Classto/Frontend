@@ -5,6 +5,10 @@ import dot from './dot.png'
 import github from './github.png'
 
 class SideBar extends Component {
+  to_github() {
+    window.location.href = "https://github.com/Classto"
+  }
+
   render() {
     const category_li = JSON.parse(localStorage.categorys).map((categg) =>
       <li key={ categg }>
@@ -48,7 +52,7 @@ class SideBar extends Component {
               </h2>
               <hr></hr>
               <div id="github">
-                <img src={ github } alt="github" height="35" width="35"></img>
+                <img src={ github } alt="github" height="35" width="35" onClick={ this.to_github }></img>
                 <h3>
                   github
                 </h3>
