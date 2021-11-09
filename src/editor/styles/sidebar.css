@@ -89,6 +89,10 @@
     align-items: center;
 }
 
+#github:hover {
+    cursor: pointer;
+}
+
 #github > h3 {
     margin-left: 10px;
 }

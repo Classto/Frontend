@@ -43,7 +43,7 @@ class Login extends Component {
         localStorage.pwd = this.state.inputs.pwd
         localStorage.session_id = res.data.session_id
         this.synchronize()
-        window.location.href = `http://https://classto.net/editor/${res.data.current_category}`
+        window.location.href = `https://classto.net/editor/${res.data.current_category}`
     })
     .catch(function (e) {
       toast.error("failed to login.", {

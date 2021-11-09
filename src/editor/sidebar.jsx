@@ -51,8 +51,8 @@ class SideBar extends Component {
                 credit
               </h2>
               <hr></hr>
-              <div id="github">
-                <img src={ github } alt="github" height="35" width="35" onClick={ this.to_github }></img>
+              <div id="github" onClick={ this.to_github }>
+                <img src={ github } alt="github" height="35" width="35"></img>
                 <h3>
                   github
                 </h3>
