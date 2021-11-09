@@ -11,12 +11,13 @@ class Login extends Component {
     this.state = {
       inputs : {}
     }
+    window.location.href = "http://classto.net/login"
     if (!(localStorage.email === undefined)) {
       api.post("/auth/login", {"email" : localStorage.email, "pw" : localStorage.pwd})
       .then(res => {
           localStorage.session_id = res.data.session_id
           this.synchronize()
-          window.location.href = `http://https://classto.net/editor/${res.data.current_category}`
+          window.location.href = `https://classto.net/editor/${res.data.current_category}`
       })
       .catch(function (e) {
         }
