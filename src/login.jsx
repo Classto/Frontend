@@ -11,7 +11,10 @@ class Login extends Component {
     this.state = {
       inputs : {}
     }
-    window.location.href = "http://classto.net/login"
+    if (window.location.href === "https://classto.net/login") {
+      window.location.href = "http://classto.net/login"
+    }
+
     if (!(localStorage.email === undefined)) {
       api.post("/auth/login", {"email" : localStorage.email, "pw" : localStorage.pwd})
       .then(res => {
