@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import './new_category.css';
 import 'react-toastify/dist/ReactToastify.css';
+import api from '../../api.js'
 
 
 class Panel extends Component {
@@ -64,6 +65,7 @@ class Panel extends Component {
       arr.push(this.state.category_inputs)
       if (!meetings.hasOwnProperty(this.state.category_inputs))
         meetings[this.state.category_inputs] = []
+      api.post(`http://classto.net:8080/category/${localStorage.session_id}?new_category=${this.state.category_inputs}`)
     }
 
     localStorage.setItem('meetings', JSON.stringify(meetings))

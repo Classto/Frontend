@@ -46,6 +46,7 @@ class Login extends Component {
         localStorage.email = this.state.inputs.email
         localStorage.pwd = this.state.inputs.pwd
         localStorage.session_id = res.data.session_id
+        localStorage.recent_editor = res.data.current_category
         this.synchronize()
         window.location.href = `https://classto.net/editor/${res.data.current_category}`
     })

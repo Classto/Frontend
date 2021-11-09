@@ -14,6 +14,9 @@ class Editor extends Component {
       toggle_menu : 'none',
       toggle_add_menu: 'none',
     }
+    if (window.location.href === `https://classto.net/editor/${localStorage.recent_editor}`) {
+      window.location.href = `http://classto.net/editor/${localStorage.recent_editor}`
+    }
     document.body.style.backgroundColor = "white";
   }
 
