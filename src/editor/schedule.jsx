@@ -29,7 +29,7 @@ class Schedule extends Component {
   }
 
   share_meet(meeting) {
-    this.clipboard.current.value = `http://http://classto.net/share/meeting?id=${meeting.id}&pwd=${meeting.pwd}&link=${meeting.link}&name=${meeting.name}&time=${meeting.time}&meet=${meeting.link}&repeating_day=${meeting.repeating_days}`
+    this.clipboard.current.value = `http://classto.net:8080/share/meeting?id=${meeting.id}&pwd=${meeting.pwd}&link=${meeting.link}&name=${meeting.name}&time=${meeting.time}&meet=${meeting.link}&repeating_day=${meeting.repeating_days}`
     this.clipboard.current.select()
     document.execCommand("copy")
 
