@@ -20,12 +20,12 @@ class Login extends Component {
       hideProgressBar: false,
       pauseOnHover: false,
       draggable: false
-      })
+    })
     if (!(localStorage.email === undefined)) {
       api.post("/auth/login", {"email" : localStorage.email, "pw" : localStorage.pwd})
       .then(res => {
           localStorage.session_id = res.data.session_id
-          this.synchronize
+          this.synchronize()
           window.location.href = `https://classto.net/editor/${res.data.current_category}`
       })
       .catch(function (e) {
