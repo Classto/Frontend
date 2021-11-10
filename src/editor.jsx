@@ -5,7 +5,7 @@ import AddMenu from './editor/menu';
 import Navigator from './editor/navigator';
 import SideBar from './editor/sidebar';
 import { ToastContainer } from 'react-toastify';
-import api from '../api.js'
+import api from './api.js'
 import './styles/editor.css';
 
 class Editor extends Component {
