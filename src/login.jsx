@@ -14,7 +14,7 @@ class Login extends Component {
     if (window.location.href === "https://classto.net/login") {
       window.location.href = "http://classto.net/login"
     }
-    toast.error("11/9, 11/10일 테스트로 인해 에디터 페이지가 잠시 다운되었습니다. 죄송합니다.", {
+    toast.error("11/9, 11/10일 테스트로 인해 에디터 페이지가 잠시 다운되었었습니다. 죄송합니다.", {
       position: "bottom-right",
       autoClose: 5000,
       hideProgressBar: false,
@@ -26,7 +26,7 @@ class Login extends Component {
       .then(res => {
           localStorage.session_id = res.data.session_id
           this.synchronize()
-          window.location.href = `https://classto.net/editor/${res.data.current_category}`
+          window.location.href = `http://classto.net/editor/${res.data.current_category}`
       })
       .catch(function (e) {
         }
