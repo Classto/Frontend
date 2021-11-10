@@ -26,6 +26,10 @@ class Login extends Component {
       .then(res => {
           localStorage.session_id = res.data.session_id
           this.synchronize()
+          let cr_cat = res.data.current_category
+          if (cr_cat === "sample") {
+            cr_cat = "example"
+          }
           window.location.href = `http://classto.net/editor/${res.data.current_category}`
       })
       .catch(function (e) {
