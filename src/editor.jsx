@@ -17,6 +17,14 @@ class Editor extends Component {
     // if (window.location.href === `https://classto.net/editor/${localStorage.recent_editor}`) {
     //   window.location.href = `http://classto.net/editor/${localStorage.recent_editor}`
     // }
+    api.get(`/schedule/${localStorage.session_id}`)
+    .then(res => {
+      localStorage.meetings = JSON.stringify(res.data.data)
+    })
+    api.get(`/category/${localStorage.session_id}`)
+      .then(res => {
+        localStorage.categorys = JSON.stringify(res.data.data)
+      })
     document.body.style.backgroundColor = "white";
   }
 
