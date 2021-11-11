@@ -14,13 +14,7 @@ class Login extends Component {
     if (window.location.href === "https://classto.net/login") {
       window.location.href = "http://classto.net/login"
     }
-    toast.error("11/9, 11/10일 테스트로 인해 에디터 페이지가 잠시 다운되었었습니다. 죄송합니다.", {
-      position: "bottom-right",
-      autoClose: 5000,
-      hideProgressBar: false,
-      pauseOnHover: false,
-      draggable: false
-    })
+
     if (!(localStorage.email === undefined)) {
       api.post("/auth/login", {"email" : localStorage.email, "pw" : localStorage.pwd})
       .then(res => {
