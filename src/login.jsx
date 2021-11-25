@@ -109,8 +109,8 @@ class Login extends Component {
           </h1>
         </div>
         <form id="form">
-          <input id="email_input" className="input" name="email" placeholder="example@email.com" onChange={ this.input_handler }/>
-          <input id="pwd_input" className="input" name="pwd" placeholder="password" onChange={ this.input_handler }/>
+          <input id="email_input" className="input" type="text" name="email" placeholder="example@email.com" onChange={ this.input_handler }/>
+          <input id="pwd_input" className="input" type="password" name="pwd" placeholder="password" onChange={ this.input_handler }/>
           <div>
             <input className="button" type="button" value="Login" onClick={ this.login }/>
             <input className="button" type="button" value="Register" onClick={ this.register }/>
